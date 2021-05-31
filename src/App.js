@@ -1,13 +1,9 @@
-
-
-
 function App() {
   return (
-    <div className='header'>
-      <div className='menu'>
-        
-      </div>
-      <div className='controls'>
+    <div className="header">
+      <img className="logo" />
+      <div className="controls">
+        <div className="link"></div>
         <button>connect</button>
       </div>
     </div>
