@@ -4,10 +4,11 @@ const Header = () => {
   return (
     <div className="header">
       <img className="logo" />
-      <div className="controls">
-        <div className="link"></div>
-        <button>connect</button>
+
+      <div className="menu">
+        <a id="home">Home</a>
       </div>
+      <button>connect</button>
     </div>
   );
 };

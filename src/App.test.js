@@ -14,17 +14,17 @@ describe("header rendering", () => {
     const wrapper = shallow(<App />);
     expect(wrapper.exists("button")).toBe(true);
   });
-  test("link is rendered", () => {
+  test("button text rendered", () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.exists(".link")).toBe(true);
+    const result = wrapper.find("button").text();
+    expect(result).toBe("connect");
   });
   test("logo is rendered", () => {
     const wrapper = shallow(<App />);
     expect(wrapper.exists(".logo")).toBe(true);
   });
-  test("button text rendered", () => {
+  test("menu is rendered", () => {
     const wrapper = shallow(<App />);
-    const result = wrapper.find("button").text();
-    expect(result).toBe("connect");
+    expect(wrapper.exists(".menu")).toBe(true);
   });
 });
