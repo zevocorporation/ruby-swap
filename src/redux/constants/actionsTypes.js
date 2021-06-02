@@ -1,0 +1,6 @@
+export const CONNECT = "CONNECT";
+export const UPDATE_CONNECTION = "UPDATE_CONNECTION";
+export const DISCONNECT = "DISCONNECT";
+
+export const START_LOADING = "START_LOADING";
+export const STOP_LOADING = "STOP_LOADING";

@@ -59,12 +59,19 @@
       letter-spacing: 0.05em;
       color: #010202;
       background: $primaryText;
+      font-family: $fontRegular;
       padding: 0.5em 1.25em;
       border: none;
       outline: none;
       border-radius: 50px;
       cursor: pointer;
       white-space: nowrap;
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-left: 0.5em;
+      }
     }
   }
 
@@ -88,4 +95,8 @@
   position: fixed;
   top: 90px;
   z-index: 1000;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }

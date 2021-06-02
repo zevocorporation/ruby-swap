@@ -102,7 +102,7 @@ const HomeScreen = () => {
         </div>
       </div>
       <div className="primary_gradient_bg">
-        <p className="text_regular_16">Lootery</p>
+        <p className="text_regular_16">Lottery</p>
         <p className="text_regular_20">Comming Soon</p>
         <div>
           <p className="text_regular_16_o7">Stay Tuned!</p>

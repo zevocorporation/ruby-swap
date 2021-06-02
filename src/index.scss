@@ -56,6 +56,7 @@ body {
   height: calc(100vh - 90px);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   font-family: $fontRegular;
   color: $primaryText;
 }
@@ -74,6 +75,10 @@ body {
   line-height: 1.25em;
   letter-spacing: 0.07em;
   color: $primaryText;
+
+  @media (max-width: 576px) {
+    font-size: 0.75em;
+  }
 }
 
 .text_regular_16 {
@@ -82,6 +87,10 @@ body {
   line-height: 1.25em;
   letter-spacing: 0.07em;
   color: $primaryText;
+
+  @media (max-width: 576px) {
+    font-size: 0.875em;
+  }
 }
 
 .text_regular_20_w500 {
@@ -91,6 +100,10 @@ body {
   letter-spacing: 0.07em;
   color: $primaryText;
   font-weight: 500;
+
+  @media (max-width: 576px) {
+    font-size: 1em;
+  }
 }
 
 .text_regular_24_w600 {
@@ -100,6 +113,10 @@ body {
   letter-spacing: 0.07em;
   color: $primaryText;
   font-weight: 600;
+
+  @media (max-width: 576px) {
+    font-size: 1.25em;
+  }
 }
 
 .text_regular_20 {
@@ -116,6 +133,10 @@ body {
   line-height: 20px;
   letter-spacing: 0.05em;
   color: rgba(255, 255, 255, 0.7);
+
+  @media (max-width: 576px) {
+    font-size: 0.75em;
+  }
 }
 
 .text_regular_16_o7 {
@@ -124,6 +145,10 @@ body {
   line-height: 20px;
   letter-spacing: 0.05em;
   color: rgba(255, 255, 255, 0.7);
+
+  @media (max-width: 576px) {
+    font-size: 0.875em;
+  }
 }
 
 .primary_gradient_bg {

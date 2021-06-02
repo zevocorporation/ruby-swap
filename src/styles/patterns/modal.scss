@@ -1,0 +1,183 @@
+@import "../../index.scss";
+
+.warningModal {
+  height: 315px;
+  width: 474px;
+  border-radius: 5px;
+  position: relative;
+  background: #1a1919;
+}
+
+.wrongNetworkModal {
+  position: relative;
+  width: 474px;
+  height: 245px;
+  background: #1a1919;
+  border-radius: 5px;
+
+  #networkModalAbout {
+    height: 50px;
+    top: 117px;
+  }
+
+  #networkmodalButton {
+    top: 197px;
+  }
+}
+
+.settingsModal {
+  position: relative;
+  width: 534px;
+  height: 205px;
+  background: #1a1919;
+  border-radius: 5px;
+
+  #settingAbout {
+    width: 474px;
+    height: 27px;
+  }
+
+  #settingModalButton {
+    width: 109px;
+    height: 36px;
+    left: 30px;
+    top: 134px;
+  }
+}
+
+.modalHead {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  position: absolute;
+  width: 147px;
+  height: 32px;
+  left: 30px;
+  top: 30px;
+
+  .modalLogo {
+    height: 32px;
+    width: 32px;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+    position: static;
+    left: 0%;
+    right: 78.23%;
+    top: 0%;
+    bottom: 0%;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 10px;
+
+    #icon {
+      height: 26.666667938232422px;
+      width: 26.666667938232422px;
+      left: 2.6666641235351562px;
+      top: 2.666656494140625px;
+      border-radius: 0px;
+      position: absolute;
+      left: 8.33%;
+      right: 8.33%;
+      top: 8.33%;
+      bottom: 8.33%;
+      //   background: #f74242;
+    }
+  }
+
+  .modalText {
+    position: static;
+    left: 28.57%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    // font-family: General Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.07em;
+    color: #ffffff;
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 10px;
+  }
+}
+
+.modalAbout {
+  position: absolute;
+  width: 414px;
+  height: 147px;
+  left: 30px;
+  top: 82px;
+  //   font-family: General Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  /* or 171% */
+  letter-spacing: 0.05em;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.modalButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+
+  position: absolute;
+  width: 414px;
+  height: 36px;
+  left: 30px;
+  top: 249px;
+
+  /* Primary */
+
+  background: #ec1654;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.modalAlert {
+  position: absolute;
+  width: 358px;
+  height: 20px;
+  left: 30px;
+  top: 82px;
+
+  font-family: General Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height, or 125% */
+
+  letter-spacing: 0.05em;
+
+  color: #ffffff;
+}
+
+.modalCloseCrossBox {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 480px;
+  //   top: 34px;
+
+  .modalCloseIcon {
+    position: absolute;
+    left: 20.83%;
+    right: 20.83%;
+    top: 11.83%;
+    bottom: 20.83%;
+    color: #f74242;
+  }
+}

@@ -1,4 +1,7 @@
 import React from "react";
+
+//IMPORTING STYLESHEET
+
 import "../styles/patterns/footer.scss";
 
 //IMPORTING MEDIA ASSETS
