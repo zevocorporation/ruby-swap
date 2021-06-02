@@ -6,6 +6,10 @@ import { useSelector, useDispatch } from "react-redux";
 
 import "../styles/patterns/header.scss";
 
+//IMPORTING PATTERNS
+
+import Modal from "./modals/modal";
+
 //IMPORTING COMPONENTS
 
 import Link from "../components/link";
@@ -138,6 +142,7 @@ const Header = () => {
     <>
       {renderHeader}
       <p className="line"></p>
+      <Modal variant="warning" />
     </>
   );
 };

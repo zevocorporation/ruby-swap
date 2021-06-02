@@ -93,6 +93,19 @@ body {
   }
 }
 
+.text_regular_16_w500 {
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1.25em;
+  letter-spacing: 0.07em;
+  color: $primaryText;
+  font-weight: 500;
+
+  @media (max-width: 576px) {
+    font-size: 0.875em;
+  }
+}
+
 .text_regular_20_w500 {
   font-weight: normal;
   font-size: 1.25em;
@@ -130,7 +143,7 @@ body {
 .text_regular_14_o7 {
   font-weight: normal;
   font-size: 0.875em;
-  line-height: 20px;
+  line-height: 24px;
   letter-spacing: 0.05em;
   color: rgba(255, 255, 255, 0.7);
 
@@ -142,7 +155,7 @@ body {
 .text_regular_16_o7 {
   font-weight: normal;
   font-size: 1em;
-  line-height: 20px;
+  line-height: 24px;
   letter-spacing: 0.05em;
   color: rgba(255, 255, 255, 0.7);
 

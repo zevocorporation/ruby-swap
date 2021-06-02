@@ -1,27 +1,36 @@
 @import "../../index.scss";
 
-.warningModal {
-  height: 315px;
+.modal {
   width: 474px;
-  border-radius: 5px;
-  position: relative;
-  background: #1a1919;
-}
-
-.wrongNetworkModal {
-  position: relative;
-  width: 474px;
-  height: 245px;
   background: #1a1919;
   border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1100;
+  padding: 1em;
 
-  #networkModalAbout {
-    height: 50px;
-    top: 117px;
+  > div {
+    margin-bottom: 1.25em;
+
+    button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
+  > div:nth-last-child(1) {
+    margin-bottom: 0;
+  }
+  .flex {
+    display: flex;
+    align-items: center;
 
-  #networkmodalButton {
-    top: 197px;
+    img {
+      margin-right: 1em;
+    }
   }
 }
 
