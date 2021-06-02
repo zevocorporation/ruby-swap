@@ -10,7 +10,7 @@ import Button from "../../components/button";
 
 //IMPORTING MEDIA ASSETS
 
-import wrongNetworkIcon from "../../assets/icons/wrongNetwork.svg";
+import wrongNetworkIcon from "../../assets/icons/wrong_network.svg";
 
 const Modal = ({ variant }) => {
   const renderWrongNetwork = (
