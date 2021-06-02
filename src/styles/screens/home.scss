@@ -1,0 +1,119 @@
+@import "../../index.scss";
+
+.home {
+  margin-top: 90px;
+  padding: 1em 3em 3em;
+  height: fit-content;
+
+  @media (max-width: 768px) {
+    padding: 1em 2em 3em;
+  }
+  @media (max-width: 576px) {
+    padding: 1em 1em 3em;
+  }
+
+  .card_block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.25em;
+    margin-bottom: 1em;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    > div {
+      position: relative;
+      overflow: hidden;
+
+      > img {
+        position: absolute;
+        right: -10%;
+        top: 35%;
+        transform: translateY(-50%);
+        width: 50%;
+      }
+
+      > p {
+        margin-bottom: 0.5em;
+      }
+      > div {
+        margin-top: 1.5em;
+
+        > p {
+          margin-bottom: 1.25em;
+
+          span {
+            margin-right: 1.5em;
+          }
+        }
+      }
+    }
+
+    .btn {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      place-content: center;
+      grid-gap: 1em;
+    }
+  }
+
+  .earn {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+    margin-bottom: 1em;
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+
+    > div {
+      > p {
+        font-weight: 500;
+        margin-bottom: 1em;
+      }
+
+      > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.25em;
+    margin-bottom: 1em;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    > div {
+      > P {
+        margin-bottom: 10px;
+      }
+      > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1em;
+      }
+
+      .flex {
+        display: flex;
+        align-items: center;
+        img {
+          margin-left: 1em;
+        }
+      }
+    }
+  }
+}

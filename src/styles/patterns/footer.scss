@@ -1,0 +1,47 @@
+@import "../../index.scss";
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3em;
+  background: url(../../assets/images/background.png);
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+  height: 3em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+
+  @media (max-width: 768px) {
+    padding: 1em 2em;
+  }
+  @media (max-width: 576px) {
+    padding: 1em;
+  }
+
+  .social_icons {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-left: 1.25em;
+      transform: scale(0.9);
+      cursor: pointer;
+      transition: 0.3s all;
+
+      @media (max-width: 768px) {
+        margin-left: 1em;
+      }
+      @media (max-width: 576px) {
+        margin-left: 0.75em;
+      }
+
+      &:hover {
+        transform: scale(1);
+      }
+    }
+  }
+}

@@ -1,0 +1,163 @@
+@font-face {
+  src: url(./assets/fonts/GeneralSans-Light.otf);
+  font-family: "sans-light";
+}
+
+@font-face {
+  src: url(./assets/fonts/GeneralSans-Extralight.otf);
+  font-family: "sans-extralight";
+}
+
+@font-face {
+  src: url(./assets/fonts/GeneralSans-Regular.otf);
+  font-family: "sans-regular";
+}
+
+@font-face {
+  src: url(./assets/fonts/GeneralSans-Medium.otf);
+  font-family: "sans-medium";
+}
+
+@font-face {
+  src: url(./assets/fonts/GeneralSans-Semibold.otf);
+  font-family: "sans-semibold";
+}
+
+@font-face {
+  src: url(./assets/fonts/GeneralSans-Bold.otf);
+  font-family: "sans-bold";
+}
+
+$fontLight: "sans-light";
+$fontExtraLight: "sans-extralight";
+$fontRegular: "sans-regular";
+$fontMedium: "sans-medium";
+$fontSemibold: "sans-semibold";
+$fontBold: "sans-bold";
+
+$primary: #ec1654;
+$primaryText: #ffffff;
+$secondaryText: #f7f7f7;
+$textBox: #0b0b0b;
+$dropdown: #1d1d1d;
+$label: #535353;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url(./assets/images/background.png);
+  width: 100%;
+  height: calc(100vh - 90px);
+  background-size: cover;
+  background-position: center;
+  font-family: $fontRegular;
+  color: $primaryText;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.text_regular_14 {
+  font-weight: normal;
+  font-size: 0.875em;
+  line-height: 1.25em;
+  letter-spacing: 0.07em;
+  color: $primaryText;
+}
+
+.text_regular_16 {
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1.25em;
+  letter-spacing: 0.07em;
+  color: $primaryText;
+}
+
+.text_regular_20_w500 {
+  font-weight: normal;
+  font-size: 1.25em;
+  line-height: 1.25em;
+  letter-spacing: 0.07em;
+  color: $primaryText;
+  font-weight: 500;
+}
+
+.text_regular_24_w600 {
+  font-weight: normal;
+  font-size: 1.5em;
+  line-height: 1.25em;
+  letter-spacing: 0.07em;
+  color: $primaryText;
+  font-weight: 600;
+}
+
+.text_regular_20 {
+  font-weight: normal;
+  font-size: 1.25em;
+  line-height: 1.25em;
+  letter-spacing: 0.07em;
+  color: $primaryText;
+}
+
+.text_regular_14_o7 {
+  font-weight: normal;
+  font-size: 0.875em;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.text_regular_16_o7 {
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.primary_gradient_bg {
+  background: linear-gradient(142.2deg, #1a1919 0%, rgba(3, 3, 3, 0.2) 100%);
+  box-shadow: 0px 5px 15px rgba(12, 12, 12, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 5px;
+  padding: 1em;
+}
+
+.btn-primary {
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  color: $primaryText;
+  background: $primary;
+  padding: 0.5em 1.25em;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.3);
+  padding: 0.5em 1.25em;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
