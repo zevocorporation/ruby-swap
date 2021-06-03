@@ -104,6 +104,15 @@ body {
   }
 }
 
+.text_regular_14_w500 {
+  font-weight: normal;
+  font-size: 0.875em;
+  line-height: 1.25em;
+  letter-spacing: 0.05em;
+  color: $primaryText;
+  font-weight: 500;
+}
+
 .text_regular_16_w500 {
   font-weight: normal;
   font-size: 1em;
@@ -149,6 +158,14 @@ body {
   line-height: 1.25em;
   letter-spacing: 0.07em;
   color: $primaryText;
+}
+
+.text_regular_12_o7 {
+  font-weight: normal;
+  font-size: 0.75em;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .text_regular_14_o7 {
@@ -209,4 +226,23 @@ body {
   outline: none;
   border-radius: 50px;
   cursor: pointer;
+}
+
+.backdrop_transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1050;
+  backdrop-filter: blur(0px);
+  visibility: hidden;
+  transition: backdrop-filter 0.2s ease-in-out;
+
+  &.active {
+    visibility: visible;
+    backdrop-filter: blur(10px);
+    transition: backdrop-filter 0.2s ease-in-out;
+  }
 }

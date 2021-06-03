@@ -1,0 +1,161 @@
+@import "../../index.scss";
+
+.trade_type {
+  margin-left: 1.75em;
+
+  .trade_details {
+    p {
+      margin-bottom: 1em;
+    }
+    .flex {
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-left: 1em;
+      }
+    }
+  }
+
+  .trade_stats {
+    > p {
+      margin-bottom: 1em;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1em;
+
+        span {
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: 0.05em;
+          color: rgba(255, 255, 255, 0.7);
+        }
+      }
+    }
+  }
+}
+
+.trade_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  > div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+
+    p:nth-child(1) {
+      margin-bottom: 0.7em;
+    }
+  }
+  > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-left: 1em;
+      cursor: pointer;
+    }
+  }
+}
+
+.exchange_trade_input {
+  background: #0b0b0b;
+  border-radius: 5px;
+  padding: 1.25em;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+
+  > p {
+    margin-bottom: 1em;
+  }
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.5em;
+
+    input {
+      outline: none;
+      border: none;
+      background: transparent;
+    }
+
+    > div {
+      background: #1d1d1d;
+      border-radius: 50px;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+}
+
+.btn_block {
+  margin-top: 1em;
+
+  button {
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+  p {
+    margin-top: 1em;
+    text-align: center;
+  }
+}
+
+.trade_graph {
+  margin-top: 1.5em;
+
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > p {
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-left: 1em;
+      }
+    }
+  }
+}
+
+.migration_content {
+  > p,
+  > div {
+    margin-top: 1em;
+  }
+
+  > div {
+    background: #0b0b0b;
+    border-radius: 5px;
+    padding: 1.25em;
+
+    button {
+      margin-top: 1em;
+    }
+  }
+
+  > p {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-right: 1em;
+    }
+  }
+}
