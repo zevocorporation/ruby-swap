@@ -278,14 +278,238 @@
       top: 120px;
     }
 
-    #aboutText1{
+    #aboutText1 {
       margin-bottom: 14px;
     }
   }
 
-  .switchButton{
+  .switchButton {
     position: relative;
-    top:85%;
+    top: 85%;
+  }
+}
+
+.tokenModal {
+  width: 603px;
+  height: 404px;
+
+  .modalCloseCrossBox {
+    left: 550px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    position: absolute;
+    width: 543px;
+    height: 45px;
+    left: 30px;
+    top: 92px;
+
+    input {
+      position: absolute;
+      width: 509px;
+      height: 45px;
+      left: 0px;
+      top: 0px;
+      margin-left: 2px;
+      background: #0b0b0b;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .searchToken::-webkit-input-placeholder {
+      position: absolute;
+      left: 3.68%;
+      right: 47.15%;
+      top: 26.67%;
+      bottom: 28.89%;
+    }
+
+    button {
+      position: static;
+      width: 24px;
+      height: 24px;
+      left: 519px;
+      top: 10.5px;
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+      margin: 0px 10px;
+
+      img {
+        position: absolute;
+        left: 95.52%;
+        right: 16.28%;
+        top: 12.5%;
+        bottom: 18.3%;
+        background: #ffffff;
+      }
+    }
+  }
+
+  .tokenHead {
+    position: absolute;
+    width: 90%;
+    height: 20px;
+    left: 30px;
+    top: 157px;
+    display: flex;
+  }
+
+  .tokenName {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 200px;
+    margin-left: 15px;
+    width: 90%;
+    .tokenBox {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 0.55em;
+      padding: 20px;
+      width: 100%;
+      border-bottom: 1px solid #6d6d6d;
+
+      img {
+      }
+
+      .token-name {
+        position: absolute;
+        left: 10%;
+        text-transform: capitalize;
+      }
+
+      .smallName {
+        position: absolute;
+        left: 95%;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.investModal {
+  width: 523px;
+  height: 447px;
+
+  .investData {
+    width: 490px;
+    height: 230px;
+  }
+
+  .investData td,
+  .investData th {
+    text-align: center;
+  }
+
+  .investAbout {
+    position: absolute;
+    width: 444px;
+    height: 60px;
+    left: 45px;
+    top: 320px;
+  }
+
+  .investLink {
+    position: absolute;
+    width: 159px;
+    height: 20px;
+    left: 170px;
+    bottom: 25px;
+    display: flex;
+
+    p {
+      margin-right: 10px;
+    }
+  }
+}
+
+.liquidityModal {
+  width: 523px;
+  height: 460px;
+
+  .liquidBox {
+    position: absolute;
+    width: 463px;
+    height: 112px;
+    background-color: #0b0b0b;
+  }
+
+  #boxL1 {
+    left: 30px;
+    top: 101px;
+  }
+
+  #boxL2 {
+    left: 30px;
+    top: 270px;
+  }
+
+  .liquidAdd {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 250px;
+    top: 228px;
+    border: 1px solid white;
+  }
+
+  .boxHead {
+    position: absolute;
+    left: 6.56%;
+    right: 83.37%;
+    top: 10.02%;
+    bottom: 68.53%;
+    display: flex;
+    width: 90%;
+    input {
+      background-color: transparent;
+      border: none;
+    }
+
+    .boxData {
+      position: absolute;
+      left: 80%;
+    }
+  }
+
+  .boxFooter {
+    position: absolute;
+    left: 6.56%;
+    right: 83.37%;
+    top: 70.02%;
+    bottom: 68.53%;
+    display: flex;
+    width: 90%;
+    height: 20%;
+    
+
+    .liquidDropDown {
+      position: absolute;
+      width: 121px;
+      height: 30px;
+      left: 294px;
+      top: -5px;
+      display: flex;
+      border-radius: 50px;
+      background: #1D1D1D
+    }
+
+    #boxL2Drop{
+      width: 145px;
+      left: 275px;
+
+    }
+
+    p{
+      margin-left: 10px;
+      margin-top: 3px;
+    }
+
   }
 }
 
@@ -377,10 +601,10 @@
   padding: 8px 20px;
 
   position: absolute;
-  width: 414px;
+  width: 463px;
   height: 36px;
   left: 30px;
-  top: 249px;
+  bottom: 20px;
 
   /* Primary */
 
@@ -423,6 +647,17 @@
     top: 11.83%;
     bottom: 20.83%;
     color: #f74242;
+  }
+}
+
+.modalDownArrowBox {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 520px;
+  .modalDownArrowIcon {
+    position: absolute;
+    float: right;
   }
 }
 
