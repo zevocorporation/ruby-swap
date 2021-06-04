@@ -45,6 +45,7 @@ const LpMigration = () => {
           You DON’T need to unstake from Syrup Pools.
         </span>
       </p>
+      <p className="text_regular_16_w500">Unstake from other projects</p>
     </div>
   );
   //RENDER MIGRATION COMPONENTS

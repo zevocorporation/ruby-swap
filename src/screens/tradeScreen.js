@@ -47,28 +47,28 @@ const TradeScreen = () => {
       <div>
         <p
           onClick={() => handleToggleState(1)}
-          className={toggleState === 1 && "active"}
+          className={toggleState === 1 ? "active" : null}
         >
           <span>Exchange</span>
           <img src={right_arrow} alt="right arrow" />
         </p>
         <p
           onClick={() => handleToggleState(2)}
-          className={toggleState === 2 && "active"}
+          className={toggleState === 2 ? "active" : null}
         >
           <span>Liquidity</span>
           <img src={right_arrow} alt="right arrow" />
         </p>
         <p
           onClick={() => handleToggleState(3)}
-          className={toggleState === 3 && "active"}
+          className={toggleState === 3 ? "active" : null}
         >
           <span>LP Migration</span>
           <img src={right_arrow} alt="right arrow" />
         </p>
         <p
           onClick={() => handleToggleState(4)}
-          className={toggleState === 4 && "active"}
+          className={toggleState === 4 ? "active" : null}
         >
           <span>V1 Liquidity (old)</span>
           <img src={right_arrow} alt="right arrow" />

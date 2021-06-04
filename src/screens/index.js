@@ -2,7 +2,7 @@ import HomeScreen from "./homeScreen";
 import TradeScreen from "./tradeScreen";
 import FarmsScreen from "./farmsScreen";
 import PoolsScreen from "./poolsScreen";
-import ProductionScreen from "./productionScreen";
+import PredictionScreen from "./predictionScreen";
 import CollectiblesScreen from "./collectiblesScreen";
 
 export {
@@ -10,6 +10,6 @@ export {
   TradeScreen,
   FarmsScreen,
   PoolsScreen,
-  ProductionScreen,
+  PredictionScreen,
   CollectiblesScreen,
 };

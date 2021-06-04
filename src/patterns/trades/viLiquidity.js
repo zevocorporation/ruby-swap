@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 //IMPORTING STYLESHEET
 
@@ -18,6 +18,12 @@ import checkbox_square from "../../assets/icons/checkbox_square.svg";
 import help_circle from "../../assets/icons/help_circle.svg";
 
 const ViLiquidity = () => {
+  //INITIALIZING HOOKS
+
+  const [swapCheckbox, setSwapCheckbox] = useState(false);
+  const [liquidityCheckbox, setLiquidityCheckbox] = useState(false);
+  const [bridgeCheckbox, setBridgeCheckbox] = useState(false);
+
   //RENDER TRADE HEADER
 
   const renderHeader = (
@@ -87,15 +93,51 @@ const ViLiquidity = () => {
         <ul>
           <li>
             <span>Swap</span>
-            <img src={checkbox} alt="checkbox" />
+            {swapCheckbox ? (
+              <img
+                src={checkbox_square}
+                alt="checkbox"
+                onClick={() => setSwapCheckbox(false)}
+              />
+            ) : (
+              <img
+                src={checkbox}
+                alt="checkbox"
+                onClick={() => setSwapCheckbox(true)}
+              />
+            )}
           </li>
           <li>
             <span>Liquidity</span>
-            <img src={checkbox_square} alt="checkbox" />
+            {liquidityCheckbox ? (
+              <img
+                src={checkbox_square}
+                alt="checkbox"
+                onClick={() => setLiquidityCheckbox(false)}
+              />
+            ) : (
+              <img
+                src={checkbox}
+                alt="checkbox"
+                onClick={() => setLiquidityCheckbox(true)}
+              />
+            )}
           </li>
           <li>
             <span>Bridge</span>
-            <img src={checkbox} alt="checkbox" />
+            {bridgeCheckbox ? (
+              <img
+                src={checkbox_square}
+                alt="checkbox"
+                onClick={() => setBridgeCheckbox(false)}
+              />
+            ) : (
+              <img
+                src={checkbox}
+                alt="checkbox"
+                onClick={() => setBridgeCheckbox(true)}
+              />
+            )}
           </li>
         </ul>
       </div>
