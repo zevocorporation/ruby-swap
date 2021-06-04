@@ -69,6 +69,17 @@ body {
   cursor: pointer;
 }
 
+.text_regular_12 {
+  font-weight: normal;
+  font-size: 0.75em;
+  line-height: 1.00em;
+  letter-spacing: 0.07em;
+  color: $label;
+  @media (max-width: 576px) {
+    font-size: 0.55em;
+  }
+}
+
 .text_regular_14 {
   font-weight: normal;
   font-size: 0.875em;

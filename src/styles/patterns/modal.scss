@@ -34,23 +34,258 @@
   }
 }
 
-.settingsModal {
+.recentModal {
   position: relative;
   width: 534px;
   height: 205px;
   background: #1a1919;
   border-radius: 5px;
 
-  #settingAbout {
+  #recentAbout {
     width: 474px;
     height: 27px;
   }
 
-  #settingModalButton {
+  #recentModalButton {
     width: 109px;
     height: 36px;
     left: 30px;
     top: 134px;
+  }
+}
+
+.paymentModal {
+  height: 265px;
+  width: 474px;
+  padding: 26px;
+}
+
+.connectWalletModal {
+  width: 603px;
+  height: 514px;
+
+  .modalCloseCrossBox {
+    left: 90%;
+  }
+
+  .walletBoxes {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .walletContain {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 43px;
+    top: 20px;
+  }
+
+  .walletBox {
+    position: relative;
+    width: 165px;
+    height: 150px;
+    left: 0px;
+    top: 15px;
+    margin: 10px;
+    background: #0b0b0b;
+    border-radius: 5px;
+  }
+
+  .walletBoxImg {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 43px;
+    top: 20px;
+  }
+
+  .walletBoxText {
+    position: absolute;
+    left: 20.88%;
+    right: 26.06%;
+    top: 73.33%;
+    bottom: 13.33%;
+  }
+
+  .modalFooterText {
+    padding-left: 15px;
+    padding-top: 10px;
+    font-size: 0.9em;
+  }
+}
+
+.settingModal {
+  width: 603px;
+  height: 403px;
+
+  .modalCloseCrossBox {
+    left: 90%;
+  }
+
+  .audioBox {
+    width: 75px;
+    height: 71px;
+    left: 30px;
+    top: 302px;
+
+    .audioText {
+      width: 42px;
+      height: 20px;
+      left: 30px;
+      top: 302px;
+
+      > p {
+        position: absolute;
+        left: 4.98%;
+        right: 88.06%;
+        top: 74.94%;
+        bottom: 20.1%;
+      }
+    }
+
+    .audioToggle {
+      position: absolute;
+      width: 75px;
+      height: 31px;
+      left: 30px;
+      top: 342px;
+      background: #0b0b0b;
+      border-radius: 50px;
+
+      .audioOn {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        left: 34px;
+        top: 345px;
+
+        background: #f1f1f1;
+        /* Primary */
+
+        border: 1px solid #ec1654;
+        box-sizing: border-box;
+        border-radius: 50px;
+        > p {
+          position: absolute;
+          left: 11.94%;
+          right: 84.74%;
+          top: 86.85%;
+          bottom: 9.18%;
+        }
+      }
+    }
+  }
+
+  .settingBox1 {
+    position: absolute;
+    width: 543px;
+    height: 95px;
+    left: 30px;
+    top: 92px;
+    border: 1px solid white;
+    display: flex;
+
+    .box1Head {
+      position: absolute;
+      width: 167px;
+      height: 20px;
+      left: 30px;
+      top: 22px;
+      border: 1px solid white;
+
+      > p {
+        position: absolute;
+        left: 4.98%;
+        right: 72.31%;
+        top: 22.83%;
+        bottom: 72.21%;
+      }
+
+      > img {
+        position: absolute;
+        left: 8.33%;
+        right: 8.34%;
+        top: 8.33%;
+        bottom: 8.33%;
+        background: rgba(255, 255, 255, 0.7);
+      }
+    }
+
+    .dataBox1 {
+      position: absolute;
+      width: 75px;
+      height: 45px;
+      top: 132px;
+      border: 1px solid white;
+      background: #0b0b0b;
+      border-radius: 5px;
+
+      > p {
+        position: absolute;
+        left: 8.46%;
+        right: 86.07%;
+        top: 35.98%;
+        bottom: 59.06%;
+      }
+    }
+
+    #databox-1 {
+      left: 30px;
+    }
+
+    #databox-2 {
+      left: 115px;
+    }
+
+    #databox-3 {
+      left: 200px;
+    }
+
+    #databox-4 {
+      left: 30px;
+    }
+
+    .dataBox2 {
+      position: absolute;
+      width: 263px;
+      height: 45px;
+      left: 0px;
+      top: 0px;
+
+      background: #0b0b0b;
+      border-radius: 5px;
+    }
+  }
+}
+
+.switchToDesktopModal {
+  width: 413px;
+  height: 351px;
+
+  .aboutSwitch {
+    position: absolute;
+    width: 353px;
+    height: 230px;
+    left: 30px;
+    top: 30px;
+
+    .aboutSwitchText {
+      position: absolute;
+      width: 353px;
+      height: 108px;
+      left: 5px;
+      top: 120px;
+    }
+
+    #aboutText1{
+      margin-bottom: 14px;
+    }
+  }
+
+  .switchButton{
+    position: relative;
+    top:85%;
   }
 }
 
@@ -188,5 +423,29 @@
     top: 11.83%;
     bottom: 20.83%;
     color: #f74242;
+  }
+}
+
+.modalFooter {
+  position: absolute;
+  width: 272px;
+  height: 28px;
+  left: 30px;
+  top: 207px;
+
+  .modalFooterIcon {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    left: 0px;
+    top: 0px;
+  }
+
+  .modalFooterText {
+    position: absolute;
+    left: 13.35%;
+    right: -9.29%;
+    top: 18.38%;
+    bottom: 13.58%;
   }
 }
