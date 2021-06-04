@@ -4,7 +4,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Header from "./patterns/header";
 import Footer from "./patterns/footer";
-import { HomeScreen, TradeScreen } from "./screens";
+import {
+  FarmsScreen,
+  HomeScreen,
+  PoolsScreen,
+  PredictionScreen,
+  TradeScreen,
+} from "./screens";
 
 const App = () => {
   return (
@@ -16,6 +22,15 @@ const App = () => {
         </Route>
         <Route path="/trade" exact>
           <TradeScreen />
+        </Route>
+        <Route path="/farms" exact>
+          <FarmsScreen />
+        </Route>
+        <Route path="/pools" exact>
+          <PoolsScreen />
+        </Route>
+        <Route path="/prediction" exact>
+          <PredictionScreen />
         </Route>
       </Switch>
       <Footer />

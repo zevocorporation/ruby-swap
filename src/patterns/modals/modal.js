@@ -10,12 +10,11 @@ import Button from "../../components/button";
 
 //IMPORTING MEDIA ASSETS
 
-import {
-  wrongNetworkIcon,
-  closeIcon,
-  paymentConfirmedIcon,
-  paymentProcessingIcon,
-} from "../../assets/icons/iconsExportFile";
+// import warning from "../../assets/icons/warning.svg";
+import wrongNetworkIcon from "../../assets/icons/wrong_network.svg";
+import closeIcon from "../../assets/icons/close.svg";
+import paymentConfirmedIcon from "../../assets/icons/paymentConfirmed.svg";
+import paymentProcessingIcon from "../../assets/icons/paymentProcessing.svg";
 
 const Modal = ({ variant }) => {
   //RENDER WRONG NETWORK

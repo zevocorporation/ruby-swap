@@ -72,7 +72,7 @@ body {
 .text_regular_12 {
   font-weight: normal;
   font-size: 0.75em;
-  line-height: 1.00em;
+  line-height: 1em;
   letter-spacing: 0.07em;
   color: $label;
   @media (max-width: 576px) {
@@ -121,7 +121,7 @@ body {
   line-height: 1.25em;
   letter-spacing: 0.05em;
   color: $primaryText;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .text_regular_16_w500 {
@@ -130,7 +130,7 @@ body {
   line-height: 1.25em;
   letter-spacing: 0.07em;
   color: $primaryText;
-  font-weight: 500;
+  font-weight: 700;
 
   @media (max-width: 576px) {
     font-size: 0.875em;
@@ -143,7 +143,7 @@ body {
   line-height: 1.25em;
   letter-spacing: 0.07em;
   color: $primaryText;
-  font-weight: 500;
+  font-weight: bold;
 
   @media (max-width: 576px) {
     font-size: 1em;
@@ -156,7 +156,7 @@ body {
   line-height: 1.25em;
   letter-spacing: 0.07em;
   color: $primaryText;
-  font-weight: 600;
+  font-weight: bold;
 
   @media (max-width: 576px) {
     font-size: 1.25em;
@@ -209,6 +209,14 @@ body {
   backdrop-filter: blur(15px);
   border-radius: 5px;
   padding: 1em;
+}
+
+.primary_gradient_bg_p28 {
+  background: linear-gradient(142.2deg, #1a1919 0%, rgba(3, 3, 3, 0.2) 100%);
+  box-shadow: 0px 5px 15px rgba(12, 12, 12, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 5px;
+  padding: 1.75em;
 }
 
 .btn-primary {

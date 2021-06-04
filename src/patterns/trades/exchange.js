@@ -41,7 +41,12 @@ const Exchange = () => {
       <div className="exchange_trade_input">
         <p className="text_regular_14">Input</p>
         <div>
-          <input type="number" value="0.00" className="text_regular_20_w500" />
+          <input
+            type="number"
+            value="0.00"
+            className="text_regular_20_w500"
+            readOnly
+          />
           <div>
             <img
               src={binance}
@@ -60,7 +65,12 @@ const Exchange = () => {
       <div className="exchange_trade_input">
         <p className="text_regular_14">Output (estimated)</p>
         <div>
-          <input type="number" value="0.00" className="text_regular_20_w500" />
+          <input
+            type="number"
+            value="0.00"
+            className="text_regular_20_w500"
+            readOnly
+          />
           <div>
             <img
               src={binance}
@@ -91,7 +101,7 @@ const Exchange = () => {
   //RENDER EXCHANGE COMPONENTS
 
   const renderExchangPattern = (
-    <div>
+    <div className="primary_gradient_bg_p28">
       {renderHeader}
       {renderInput}
       {renderButton}

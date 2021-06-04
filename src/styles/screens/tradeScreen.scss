@@ -15,17 +15,14 @@
   }
 
   > div:nth-child(2) {
-    padding: 1.75em;
-    background: linear-gradient(142.2deg, #1a1919 0%, rgba(3, 3, 3, 0.2) 100%);
-    box-shadow: 0px 5px 15px rgba(12, 12, 12, 0.2);
-    backdrop-filter: blur(15px);
-    border-radius: 5px;
     height: fit-content;
   }
 
   .trade_block {
     margin-right: 1.75em;
     height: fit-content;
+    position: sticky;
+    top: 100px;
 
     > div:nth-child(1) {
       p {
@@ -51,11 +48,11 @@
         align-items: center;
         justify-content: space-between;
         cursor: pointer;
-        transition: all 300ms ease-in-out;
+        transition: all 100ms ease-in-out;
 
         &:hover {
           background: rgba(255, 255, 255, 0.1);
-          transition: all 300ms ease-in-out;
+          transition: all 100ms ease-in-out;
         }
 
         &.active {

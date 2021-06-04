@@ -109,8 +109,8 @@ const Header = () => {
       <Link to="/pools" id="pools" activeClassName="active">
         Pools
       </Link>
-      <Link to="/productions" id="productions" activeClassName="active">
-        Productions
+      <Link to="/prediction" id="prediction" activeClassName="active">
+        Prediction
       </Link>
       <Link to="/collectibles" id="collectibles" activeClassName="active">
         Collectibles
@@ -235,7 +235,10 @@ const Header = () => {
     <>
       {renderHeader}
       <p className="line"></p>
+<<<<<<< HEAD
       <Modal variant="settings" />
+=======
+>>>>>>> origin
       <Modal />
       {/* <div className={"backdrop_transition active"}></div> */}
     </>

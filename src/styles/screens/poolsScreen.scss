@@ -1,0 +1,14 @@
+@import "../../index.scss";
+
+.pools_screen {
+  margin-top: 90px;
+  padding: 1em 3em 3em;
+  height: fit-content;
+
+  @media (max-width: 768px) {
+    padding: 1em 2em 3em;
+  }
+  @media (max-width: 576px) {
+    padding: 1em 1em 3em;
+  }
+}
