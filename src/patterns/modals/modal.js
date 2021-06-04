@@ -239,26 +239,28 @@ const Modal = ({ variant }) => {
           <p className="settingBoxHeading">Slippage tolerance</p>
           <img src="" alt="g" />
         </div>
-        <div className="dataBox1" id="dataBox-1">
-          <p>0.1%</p>
-        </div>
-        <div className="dataBox1" id="dataBox-2">
-          <p>0.5%</p>
-        </div>
-        <div className="dataBox1" id="dataBox-3">
-          <p>1%</p>
-        </div>
-        <div className="dataBox2" id="dataBox-4">
-          <p>8%</p>
+        <div className="dataBox1">
+          <input type="text" placeholder="0.1%" />
+
+          <input type="text" placeholder="0.5%" />
+
+          <input type="text" placeholder="1%" />
+          <div className="dataBox2">
+            <input type="text" placeholder="8%" />
+            <p className="text_regular_14_o7">%</p>
+          </div>
         </div>
       </div>
-      <div className="settingBox1">
+      <div className="settingBox1 settingBox2">
         <div className="box1Head">
-          <p>Transaction deadline </p>
+          <p className="settingBoxHeading">Transaction deadline </p>
           <img src="" alt="g" />
         </div>
         <div className="dataBox1">
-          <p>20</p>
+          <div className="dataBox1">
+            <input type="text" placeholder="8%" />
+            <p className="text_regular_14_o7">Minutes</p>
+          </div>
         </div>
       </div>
       <div></div>
@@ -269,8 +271,8 @@ const Modal = ({ variant }) => {
         </div>
         <div className="audioToggle">
           <div className="audioOn">
-            <p className="text_regular_14_o7">ON</p>
           </div>
+          <p className="text_regular_12">ON</p>
         </div>
       </div>
     </div>

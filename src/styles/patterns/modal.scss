@@ -147,32 +147,30 @@
     .audioToggle {
       position: absolute;
       width: 75px;
-      height: 31px;
+      height: 28px;
       left: 30px;
       top: 342px;
       background: #0b0b0b;
       border-radius: 50px;
+      display: flex;
 
       .audioOn {
         position: absolute;
         width: 25px;
         height: 25px;
-        left: 34px;
-        top: 345px;
-
+          // left: 0px;
+          // top: 2px;
         background: #f1f1f1;
         /* Primary */
-
         border: 1px solid #ec1654;
-        box-sizing: border-box;
         border-radius: 50px;
-        > p {
-          position: absolute;
-          left: 11.94%;
-          right: 84.74%;
-          top: 86.85%;
-          bottom: 9.18%;
-        }
+      }
+      p {
+        position: absolute;
+        left: 50.94%;
+        right: 84.74%;
+        top: 25%;
+        bottom: 9.18%;
       }
     }
   }
@@ -183,78 +181,71 @@
     height: 95px;
     left: 30px;
     top: 92px;
-    border: 1px solid white;
     display: flex;
 
     .box1Head {
       position: absolute;
-      width: 167px;
-      height: 20px;
-      left: 30px;
-      top: 22px;
-      border: 1px solid white;
-
+      width: 267px;
+      height: 40px;
+      left: 0px;
+      top: 0px;
+      display: flex;
       > p {
-        position: absolute;
-        left: 4.98%;
+        position: relative;
+        left: 0.98%;
         right: 72.31%;
-        top: 22.83%;
+        top: 3.83%;
         bottom: 72.21%;
       }
 
       > img {
         position: absolute;
-        left: 8.33%;
+        left: 62.33%;
         right: 8.34%;
         top: 8.33%;
-        bottom: 8.33%;
         background: rgba(255, 255, 255, 0.7);
       }
     }
 
     .dataBox1 {
       position: absolute;
+      height: 50px;
+      width: 100%;
+      top: 50%;
+      display: flex;
+    }
+
+    .dataBox1 input {
       width: 75px;
       height: 45px;
-      top: 132px;
-      border: 1px solid white;
-      background: #0b0b0b;
+      margin-right: 20px;
       border-radius: 5px;
-
-      > p {
+      border: none;
+      padding: 22px;
+      background-color: #0b0b0b;
+    }
+    .dataBox2 {
+      display: flex;
+      input {
+        width: 220px;
+      }
+      p {
         position: absolute;
-        left: 8.46%;
-        right: 86.07%;
-        top: 35.98%;
-        bottom: 59.06%;
+        top: 13px;
+        right: 0px;
       }
     }
+  }
 
-    #databox-1 {
-      left: 30px;
-    }
-
-    #databox-2 {
-      left: 115px;
-    }
-
-    #databox-3 {
-      left: 200px;
-    }
-
-    #databox-4 {
-      left: 30px;
-    }
-
-    .dataBox2 {
-      position: absolute;
-      width: 263px;
-      height: 45px;
-      left: 0px;
-      top: 0px;
-
-      background: #0b0b0b;
-      border-radius: 5px;
+  .settingBox2{
+    top: 50%;
+    .dataBox1{
+      top:20px;
+      p{
+        position: absolute;
+        top:10px;
+        left: 85px;
+      }
     }
   }
 }
@@ -486,7 +477,6 @@
     display: flex;
     width: 90%;
     height: 20%;
-    
 
     .liquidDropDown {
       position: absolute;
@@ -496,20 +486,18 @@
       top: -5px;
       display: flex;
       border-radius: 50px;
-      background: #1D1D1D
+      background: #1d1d1d;
     }
 
-    #boxL2Drop{
+    #boxL2Drop {
       width: 145px;
       left: 275px;
-
     }
 
-    p{
+    p {
       margin-left: 10px;
       margin-top: 3px;
     }
-
   }
 }
 
