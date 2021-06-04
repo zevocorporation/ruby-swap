@@ -101,7 +101,7 @@ const Exchange = () => {
   //RENDER EXCHANGE COMPONENTS
 
   const renderExchangPattern = (
-    <div>
+    <div className="primary_gradient_bg_p28">
       {renderHeader}
       {renderInput}
       {renderButton}

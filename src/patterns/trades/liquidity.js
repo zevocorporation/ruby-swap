@@ -63,7 +63,7 @@ const Liquidity = () => {
   //RENDER LIQUIDITY COMPONENTS
 
   const renderLiquidityPattern = (
-    <div>
+    <div className="primary_gradient_bg_p28">
       {renderHeader}
       <Button
         className="btn-primary"

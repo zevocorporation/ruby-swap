@@ -69,7 +69,7 @@ const ViLiquidity = () => {
   //RENDER VL LIQUIDITY COMPONENTS
 
   const renderExchangPattern = (
-    <div>
+    <div className="primary_gradient_bg_p28">
       {renderHeader}
       <Button
         className="btn-primary"

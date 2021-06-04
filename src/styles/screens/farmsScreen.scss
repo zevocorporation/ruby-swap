@@ -11,4 +11,63 @@
   @media (max-width: 576px) {
     padding: 1em 1em 3em;
   }
+
+  .farms_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > div {
+      display: flex;
+      align-items: center;
+    }
+
+    .block_left {
+      > img {
+        margin-right: 1em;
+        width: 24px;
+        cursor: pointer;
+      }
+      > span {
+        margin-right: 1em;
+      }
+    }
+
+    .block_right {
+      > img {
+        margin-left: 1em;
+        width: 24px;
+      }
+      > p {
+        margin-left: 1em;
+        display: flex;
+        align-items: center;
+
+        img {
+          margin-left: 0.5em;
+        }
+      }
+      > input {
+        margin-left: 1em;
+        background: #0b0b0b;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        padding: 0.75em 1em;
+        color: $primaryText;
+        font-size: 0.875em;
+        font-family: $fontRegular;
+        letter-spacing: 0.05em;
+
+        &::placeholder {
+          font-weight: normal;
+          font-size: 0.875em;
+          line-height: 20px;
+          letter-spacing: 0.05em;
+          color: rgba(255, 255, 255, 0.7);
+          font-family: $fontRegular;
+        }
+      }
+    }
+  }
 }

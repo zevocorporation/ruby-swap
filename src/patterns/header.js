@@ -110,7 +110,7 @@ const Header = () => {
         Pools
       </Link>
       <Link to="/prediction" id="prediction" activeClassName="active">
-        prediction
+        Prediction
       </Link>
       <Link to="/collectibles" id="collectibles" activeClassName="active">
         Collectibles
@@ -235,7 +235,7 @@ const Header = () => {
     <>
       {renderHeader}
       <p className="line"></p>
-      <Modal variant="connectWallet" />
+      <Modal />
       {/* <div className={"backdrop_transition active"}></div> */}
     </>
   );
