@@ -1,0 +1,33 @@
+@import "../../index.scss";
+
+.cardFarm {
+  .cardHead {
+    .cardLogo {
+      width: 70%;
+    }
+    .cardName {
+      width: 30%;
+      .cardHead2 {
+        display: flex;
+        #core {
+          color: #ec1654;
+          font-size: 12px;
+          display: flex;
+        }
+        #coreButton {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          padding: 1px 7px 1px;
+          background: #ec1654;
+          border-radius: 50px;
+          width: 31px;
+          height: 18px;
+          border:none;
+          margin-left:10px;
+          color: white;
+        }
+      }
+    }
+  }
+}

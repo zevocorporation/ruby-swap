@@ -1,0 +1,30 @@
+#poolCard2 {
+  position: absolute;
+  left: 40%;
+  height: 285px;
+  width: 347px;
+
+  .cardDes {
+    padding: 0px;
+    width: 100%;
+  }
+
+  .poolInput{
+    position: absolute;
+    margin-top:20px;
+    margin-left: 20px;
+    
+    
+    input{
+        width: 307px;
+        height: 80px;
+        background-color: black;
+        border: none;
+        color: white;
+    }
+  }
+
+  .cardButton{
+      margin-top: 36%;
+  }
+}

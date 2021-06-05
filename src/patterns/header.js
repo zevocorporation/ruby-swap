@@ -235,10 +235,7 @@ const Header = () => {
     <>
       {renderHeader}
       <p className="line"></p>
-<<<<<<< HEAD
-      <Modal variant="settings" />
-=======
->>>>>>> origin
+      <Modal variant="grid" />
       <Modal />
       {/* <div className={"backdrop_transition active"}></div> */}
     </>

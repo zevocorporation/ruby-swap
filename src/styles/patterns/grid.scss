@@ -1,0 +1,102 @@
+@import "../../index.scss";
+
+.grid {
+  position: absolute;
+  width: 1130px;
+  height: fit-content;
+  left: 155px;
+  top: 160px;
+  background: linear-gradient(142.2deg, #1a1919 0%, rgba(3, 3, 3, 0.2) 100%);
+  box-shadow: 0px 5px 15px rgba(12, 12, 12, 0.2);
+  backdrop-filter: blur(15px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 5px;
+}
+
+.grid-box {
+  height: fit-content;
+  width: 100%;
+}
+
+.grid-box-row {
+  width: 100%;
+  height: 110px;
+  display: flex;
+  padding: 3%;
+  flex-wrap: nowrap;
+}
+
+.grid-box-col1 {
+  width: 270px;
+  height: 46px;
+  display: flex;
+  border: 1px solid white;
+
+  .grid-box-img {
+    width: 77px;
+    height: 46px;
+  }
+
+  .grid-box-name {
+    width: 75px;
+    height: 20px;
+    margin-left: 7px;
+    margin-top: 10px;
+  }
+
+  .grid-box-name-farm{
+      margin-top:5px;
+  }
+}
+
+#grid-second-col{
+    margin-left: 30%;
+}
+
+.grid-box-col2 {
+  height: 20px;
+  width: 70px;
+  margin-left: 20%;
+  margin-top: 1%;
+  display: flex;
+  #core {
+    color: #ec1654;
+    font-size: 12px;
+    display: flex;
+    margin-left: 7px;
+  }
+}
+
+.grid-box-col3 {
+  width: 78px;
+  height: 46px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+
+  .grid-col3-data {
+    display: flex;
+
+    img {
+      margin-left: 8px;
+    }
+  }
+}
+
+.grid-box-col4 {
+  width: 92px;
+  height: 46px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+
+#grid-detail{
+    margin-left:15px;
+}
+
+hr{
+    margin-left: 4%;
+    width:90%;
+    border: 1px solid #6D6D6D;
+}   
