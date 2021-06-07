@@ -151,7 +151,7 @@ const FarmCard = ({ variant }) => {
     </div>
   );
 
-  return variant === "grid" ? renderGridView : renderGridView;
+  return variant === "grid" ? renderGridView : renderCardView;
 };
 
 export default FarmCard;

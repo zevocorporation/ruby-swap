@@ -12,3 +12,166 @@
     padding: 1em 1em 3em;
   }
 }
+
+.prediction_screen_head {
+  width: 1079px;
+  height: 46px;
+  position: absolute;
+  margin-left: 10%;
+  display: flex;
+  justify-content: space-between;
+  > div {
+    background: #1a1919;
+    border-radius: 5px;
+    justify-content: space-between;
+    display: flex;
+    padding : 10px;
+  }
+  .prediction_screen_head_box1 {
+    width: 237px;
+    height: 46px;
+  }
+  .prediction_screen_head_box2 {
+    width: 128px;
+    height: 46px;
+    border: 1px solid white;
+    background-color: transparent;
+  }
+  .prediction_screen_head_box3 {
+    width: 151px;
+    height: 46px;
+  }
+}
+
+#card2{
+  margin-top: 12%;
+  margin-left: 55%;
+}
+
+.prediction_card {
+  width: 315px;
+  height: 381px;
+  background: linear-gradient(142.2deg, #1a1919 0%, rgba(3, 3, 3, 0.2) 100%);
+  box-shadow: 0px 5px 15px rgba(12, 12, 12, 0.2);
+  backdrop-filter: blur(15px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 5px;
+  position: absolute;
+  margin-top: 10%;
+  margin-left: 30%;
+  padding: 1.2%;
+}
+
+.prediction_card_head {
+  width: 275px;
+  height: 24px;
+  display: flex;
+  #live_next {
+    margin-left: 6%;
+  }
+  #data {
+    margin-left: 57%;
+  }
+}
+
+.prediction_progress {
+  width: 275px;
+  height: 7px;
+  margin-top: 4%;
+  border-radius: 5px;
+  background: #1a1919;
+
+  .progress_per {
+    width: 60%;
+    height: 7px;
+    border-radius: 5px;
+    background-color: #ec1654;
+  }
+}
+
+.prediction_upDown {
+  width: 200px;
+  height: 48px;
+  margin-left: 13%;
+  position: absolute;
+  border-radius: 5px;
+  display: flex;
+  p {
+    margin-left: 10%;
+    margin-top: 7%;
+  }
+  #pre_num {
+    margin-left: 30%;
+    margin-top: 9%;
+  }
+}
+
+.prediction_body {
+  position: absolute;
+  width: 275px;
+  height: 190px;
+  background: #0b0b0b;
+  border-radius: 5px;
+  top: 33%;
+  z-index: 1;
+  margin-left: 1.88%;
+
+  .body_head {
+    height: 35px;
+    width: 150px;
+    padding: 15px;
+  }
+
+  .body_range {
+    margin-top: 20px;
+    height: 35px;
+    width: 270px;
+    padding: 15px;
+    display: flex;
+    
+  }
+
+  .body-range-data {
+    display: flex;
+    margin-left: 100px;
+    img {
+      margin-right: 5px;
+    }
+  }
+
+  .body-data {
+    margin-top: 20px;
+    height: 65px;
+    width: 270px;
+    padding: 15px;
+    display: flex;
+
+    table tr td:nth-child(2) {
+      padding-left: 65px;
+    }
+  }
+}
+
+#pup {
+  margin-top: 8%;
+  background: #ec1654;
+  p {
+    color: white;
+  }
+}
+
+#pdown {
+  background: #1a1919;
+  margin-top: 80%;
+  #pre_num {
+    margin-left: 19%;
+  }
+}
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-left: 20px;
+  margin-top: 20px;
+}
