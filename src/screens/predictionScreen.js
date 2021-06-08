@@ -5,113 +5,218 @@ import React from "react";
 import "../styles/screens/predictionScreen.scss";
 import "../styles/patterns/card.scss";
 
+import play from "../assets/icons/play.svg";
+import arrowRight from "../assets/icons/arrowRight.svg";
+import arrowLeft from "../assets/icons/arrowLeft.svg";
+import prediction from "../assets/icons/prediction.svg";
+import singleCoin from "../assets/icons/singleCoin.svg";
+import clock from "../assets/icons/clock.svg";
+
 import Button from "../components/button";
 
 const PredictionScreen = () => {
-  const renderScreen = (
-    <div className="prediction_screen">
-      <div className="prediction_screen_head">
-        <div className="prediction_screen_head_box1 text_regular_14">
-          <img src="" alt="t" />
-          <p>BNBUSDT</p>
-          <p>$429.905</p>
-        </div>
-        <div className="prediction_screen_head_box2 text_regular_12">
-          <p>TODO: ALL IMAGES</p>
-        </div>
-        <div className="prediction_screen_head_box3">
+  const renderScreenHeader = (
+    <div className="prediction_header">
+      <div className="block_left" id="bg">
+        <img src={singleCoin} alt="t" />
+        <p>BNBUSDT</p>
+        <p>$429.905</p>
+      </div>
+      <div className="block_mid">
+        <img src={arrowLeft} alt="t"/>
+        <img src={prediction} alt="t"/>
+        <img src={arrowRight} alt="t"/>
+      </div>
+      <div className="block_right">
+        <div className="bR" id="bg">
           <p>04:27</p>
-          <p>5m</p>
-          <img src="" alt="t" />
+          <p>5m</p>{"   "}
+          <img src={clock} alt="t" />
+        </div>
+        <img src={clock} alt="t" />
+      </div>
+    </div>
+  );
+
+  const renderView = (
+    <div className="card_container">
+      <div className="cardPrediction" style={{ width: "315px" }}>
+        <div className="card">
+          <div className="cardHead">
+            <div className="cardLogo">
+              <img
+                src={play}
+                alt="t"
+                style={{ width: "75px", height: "45px" }}
+              />
+              {/* <p>LIVE</p> */}
+            </div>
+
+            <div className="cardName">
+              <p className="text_regular_14_o7">
+                <p>#1234</p>
+              </p>
+            </div>
+          </div>
+
+          <div className="cardAbout">
+            <div className="prediction_progress">
+              <div className="progress_per"></div>
+            </div>
+          </div>
+
+          <div className="cardAbout" id="changeFlex">
+            <div
+              className="prediction_upDown"
+              style={{ background: "#EC1654" }}
+            >
+              <span>
+                <p>
+                  UP 3.74X{" "}
+                  <span className="text_regular_12" style={{ color: "white" }}>
+                    Payout
+                  </span>
+                </p>
+              </span>
+            </div>
+            <div className="prediction_body">
+              <div className="cardAbout">
+                <div className="cardDes">
+                  <p className="text_regular_12_o7">Last Price</p>
+                </div>
+              </div>
+              <div className="cardAbout">
+                <div className="cardDes">
+                  <p className="text_regular_16">$412.03</p>
+                </div>
+                <div className="cardStats">
+                  <img src="" alt />
+                  <p className="text_regular_14">$0.993</p>
+                </div>
+              </div>
+              <div className="cardAbout">
+                <div className="cardDes">
+                  <p className="text_regular_14_o7">Locked price</p>
+                </div>
+                <div className="cardStats">
+                  <p className="text_regular_14">$424.85</p>
+                </div>
+              </div>
+              <div className="cardAbout">
+                <div className="cardDes">
+                  <p className="text_regular_14_o7">Prize pool</p>
+                </div>
+                <div className="cardStats">
+                  <p className="text_regular_16">61.187 BNB</p>
+                </div>
+              </div>
+            </div>
+            <div
+              className="prediction_upDown"
+              style={{ background: "#1A1919" }}
+            >
+              <span>
+                <p>
+                  Down 3.74X{" "}
+                  <span className="text_regular_12" style={{ color: "white" }}>
+                    Payout
+                  </span>
+                </p>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="prediction_card">
-        <div className="prediction_card_head">
-          <img src="" alt="t" />
-          <p id="live_next">LIVE</p>
-          <p id="data">#1234</p>
-        </div>
-        <div className="prediction_progress">
-          <div className="progress_per"></div>
-        </div>
-        <div className="prediction_upDown" id="pup">
-          <p>UP</p>
-          <p className="text_regular_12" id="pre_num">
-            3.74X Payout
-          </p>
-        </div>
-        <div className="prediction_body">
-          <div className="body_head">
-            <p>Last Price</p>
-          </div>
-          <div className="body_range">
-            <p>$412.03</p>
-            <div className="body-range-data">
-              <img src="" alt="p" />
-              <p className="text_regular_12_o7">$0.993</p>
+      <div className="cardPrediction" style={{ width: "315px" }}>
+        <div className="card">
+          <div className="cardHead">
+            <div className="cardLogo">
+              <img
+                src={play}
+                alt="t"
+                style={{ width: "75px", height: "45px" }}
+              />
+              {/* <p>Next</p> */}
             </div>
-          </div>
-          <div className="body-data">
-            <table className="text_regular_14_o7">
-              <tr>
-                <td>Locked price</td>
-                <td>$424.85</td>
-              </tr>
-              <tr>
-                <td>Prize pool</td>
-                <td className="text_regular_14">61.187 BNB </td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        <div className="prediction_upDown" id="pdown">
-          <p>DOWN</p>
-          <p className="text_regular_12" id="pre_num">
-            3.74X Payout
-          </p>
-        </div>
-      </div>
 
-      <div className="prediction_card" id="card2">
-        <div className="prediction_card_head">
-          <img src="" alt="t" />
-          <p id="live_next">NEXT</p>
-          <p id="data">#1234</p>
-        </div>
-          <div className="prediction_progress">
-            <div className="progress_per"></div>
-          </div>
-        <div className="prediction_upDown" id="pup">
-          <p>UP</p>
-          <p className="text_regular_12" id="pre_num">
-            3.74X Payout
-          </p>
-        </div>
-        <div className="prediction_body">
-          <div className="body_range">
-            <p>$412.03</p>
-            <div className="body-range-data">
-              <img src="" alt="p" />
-              <p className="text_regular_12_o7">$0.993</p>
+            <div className="cardName">
+              <p className="text_regular_14_o7">
+                <p>#1234</p>
+              </p>
             </div>
           </div>
-          <div className="buttons">
-          <Button className="btn-primary" >Enter UP</Button><br></br>
-          <Button className="btn-primary" >Enter DOWN</Button>
+
+          <div className="cardAbout">
+            <div className="prediction_progress">
+              <div className="progress_per"></div>
+            </div>
           </div>
-          
-        </div>
-        <div className="prediction_upDown" id="pdown">
-          <p>DOWN</p>
-          <p className="text_regular_12" id="pre_num">
-            3.74X Payout
-          </p>
+
+          <div className="cardAbout" id="changeFlex">
+            <div
+              className="prediction_upDown"
+              style={{ background: "#EC1654" }}
+            >
+              <span>
+                <p>
+                  UP 3.74X{" "}
+                  <span className="text_regular_12" style={{ color: "white" }}>
+                    Payout
+                  </span>
+                </p>
+              </span>
+            </div>
+            <div className="prediction_body">
+              <div className="cardAbout">
+                <div className="cardDes">
+                  <p className="text_regular_14_o7">Prize pool</p>
+                </div>
+                <div className="cardStats">
+                  <p className="text_regular_14">61.187 BNB</p>
+                </div>
+              </div>
+              <div className="buttons">
+                <Button className="btn-primary">Enter UP</Button>
+                <br></br>
+                <Button className="btn-primary">Enter DOWN</Button>
+              </div>
+            </div>
+            <div
+              className="prediction_upDown"
+              style={{ background: "#1A1919" }}
+            >
+              <span>
+                <p>
+                  Down 3.74X{" "}
+                  <span className="text_regular_12" style={{ color: "white" }}>
+                    Payout
+                  </span>
+                </p>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
-  return <>{renderScreen}</>;
+
+  //RENDER SCREEN
+
+  const renderScreen = (
+    <div className="prediction_screen">
+      {renderScreenHeader}
+      {renderView}
+    </div>
+  );
+
+  return (
+    <>
+      {renderScreen}
+
+      {/* <div className={"backdrop_transition active"}></div> */}
+    </>
+  );
 };
 
 export default PredictionScreen;

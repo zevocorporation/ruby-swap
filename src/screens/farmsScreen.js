@@ -75,21 +75,23 @@ const FarmsScreen = () => {
     <div>
       {cardView ? (
         <div className="card_container">
-          <FarmCard />
-          <FarmCard />
-          <FarmCard />
-          <FarmCard />
-        </div>
+        <FarmCard />
+        <FarmCard />
+        <FarmCard />
+        <FarmCard />
+      </div>
       ) : (
         <div className="grid_container">
-          <FarmCard variant="grid" />
-          <FarmCard variant="grid" />
-          <FarmCard variant="grid" />
-          <FarmCard variant="grid" />
-        </div>
+        <FarmCard variant="grid" />
+        <FarmCard variant="grid" />
+        <FarmCard variant="grid" />
+        <FarmCard variant="grid" />
+      </div>
       )}
     </div>
   );
+
+  
 
   //RENDER SCREEN
 
