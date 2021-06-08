@@ -70,4 +70,34 @@
       }
     }
   }
+
+  .card_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1.5em;
+    margin: 1em 0;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .grid_container {
+    background: linear-gradient(142.2deg, #1a1919 0%, rgba(3, 3, 3, 0.2) 100%);
+    box-shadow: 0px 5px 15px rgba(12, 12, 12, 0.2);
+    backdrop-filter: blur(15px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 5px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0;
+
+    > div:not(:last-of-type) {
+      border-bottom: 0.5px solid #6d6d6d;
+    }
+  }
 }

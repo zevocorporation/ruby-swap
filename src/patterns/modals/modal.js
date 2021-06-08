@@ -238,26 +238,28 @@ const Modal = ({ variant }) => {
           <p className="settingBoxHeading">Slippage tolerance</p>
           <img src="" alt="g" />
         </div>
-        <div className="dataBox1" id="dataBox-1">
-          <p>0.1%</p>
-        </div>
-        <div className="dataBox1" id="dataBox-2">
-          <p>0.5%</p>
-        </div>
-        <div className="dataBox1" id="dataBox-3">
-          <p>1%</p>
-        </div>
-        <div className="dataBox2" id="dataBox-4">
-          <p>8%</p>
+        <div className="dataBox1">
+          <input type="text" placeholder="0.1%" />
+
+          <input type="text" placeholder="0.5%" />
+
+          <input type="text" placeholder="1%" />
+          <div className="dataBox2">
+            <input type="text" placeholder="8%" />
+            <p className="text_regular_14_o7">%</p>
+          </div>
         </div>
       </div>
-      <div className="settingBox1">
+      <div className="settingBox1 settingBox2">
         <div className="box1Head">
-          <p>Transaction deadline </p>
+          <p className="settingBoxHeading">Transaction deadline </p>
           <img src="" alt="g" />
         </div>
         <div className="dataBox1">
-          <p>20</p>
+          <div className="dataBox1">
+            <input type="text" placeholder="8%" />
+            <p className="text_regular_14_o7">Minutes</p>
+          </div>
         </div>
       </div>
       <div></div>
@@ -268,8 +270,8 @@ const Modal = ({ variant }) => {
         </div>
         <div className="audioToggle">
           <div className="audioOn">
-            <p className="text_regular_14_o7">ON</p>
           </div>
+          <p className="text_regular_12">ON</p>
         </div>
       </div>
     </div>
@@ -298,6 +300,186 @@ const Modal = ({ variant }) => {
     </div>
   );
 
+  const renderTokenModal = (
+    <div className="modal tokenModal">
+      <div className="flex">
+        <img src={wrongNetworkIcon} alt="token" />
+        <p className="text_regular_24_w600">Select a Token</p>
+        <div className="modalCloseCrossBox">
+          <div className="modalCloseIcon">
+            <img src={closeIcon} alt="x" />
+          </div>
+        </div>
+      </div>
+
+      <form>
+        <input
+          class="searchToken"
+          type="text"
+          placeholder="Search token name or paste address"
+        />
+        <button>
+          <img src="" alt="Magnify" />
+        </button>
+      </form>
+
+      <div className="tokenHead">
+        <p className="text_regular_14">Token Name</p>
+        <div className="modalDownArrowBox">
+          <div className="modalDownArrowIcon">
+            <img src={closeIcon} alt="x" />
+          </div>
+        </div>
+      </div>
+
+      <div className="tokenName">
+        <div className="tokenBox text_regular_14">
+          <img src="" alt="1" />
+          <div className="token-name">
+            <p>Binance</p>
+          </div>
+          <div className="smallName">
+            <p>bnb</p>
+          </div>
+        </div>
+        <div className="tokenBox text_regular_14">
+          <img src="" alt="1" />
+          <div className="token-name">
+            <p>Etherium</p>
+          </div>
+          <div className="smallName">
+            <p>eth</p>
+          </div>
+        </div>
+        <div className="tokenBox text_regular_14">
+          <img src="" alt="1" />
+          <div className="token-name">
+            <p>Alpaca</p>
+          </div>
+          <div className="smallName">
+            <p>ALP</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderReturnOfInvest = (
+    <div className="modal investModal">
+      <div className="flex">
+        <img src={wrongNetworkIcon} alt="invest" />
+        <p className="text_regular_24_w600">Return of Invest</p>
+        <div className="modalCloseCrossBox">
+          <div className="modalCloseIcon">
+            <img src={closeIcon} alt="x" />
+          </div>
+        </div>
+      </div>
+
+      <table className="investData text_regular_14">
+        <tr>
+          <th>TimeFrame</th>
+          <th>ROI</th>
+          <th>RUBY per $1000</th>
+        </tr>
+        <tr>
+          <td>1 Day</td>
+          <td>0.17%</td>
+          <td>0.09</td>
+        </tr>
+        <tr>
+          <td>1 Day</td>
+          <td>0.17%</td>
+          <td>0.09</td>
+        </tr>
+        <tr>
+          <td>30 Day</td>
+          <td>5.18%</td>
+          <td>2.71</td>
+        </tr>
+        <tr>
+          <td>365 Day (APY)</td>
+          <td>84.83%</td>
+          <td>44.41</td>
+        </tr>
+      </table>
+
+      <div className="investAbout">
+        <p className="text_regular_12_o7">
+          Calculated based on current rates. Compounding 1x daily. Rates are
+          estimates provided for your convenience only, and by no means
+          represent guaranteed returns.
+        </p>
+      </div>
+
+      <div className="investLink">
+        <p className="text_regular_14_o7">Get RUBY-BNB LP</p>
+        <img src={wrongNetworkIcon} />
+      </div>
+    </div>
+  );
+
+  const renderLiquidityModal = (
+    <div className="modal liquidityModal">
+      <div className="flex">
+        <img src={wrongNetworkIcon} alt="liquidity" />
+        <p className="text_regular_24_w600">Add liquidity</p>
+        <div className="modalCloseCrossBox">
+          <div className="modalCloseIcon">
+            <img src={closeIcon} alt="x" />
+          </div>
+        </div>
+      </div>
+
+      <div className="liquidBox" id="boxL1">
+        <div className="boxHead text_regular_14_o7">
+          <input placeholder="Input" />
+
+          <div className="boxData">
+            <p>Balance: 0</p>
+          </div>
+        </div>
+
+        <div className="boxFooter">
+          <div className="boxData">
+            <p>0.0</p>
+            <div className="liquidDropDown">
+              <img src="" alt="p" />
+              <p className="text_regular_12_o7">Binance</p>
+              <img src="" alt="p" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="liquidAdd">
+        <img src="" alt="p" />
+      </div>
+
+      <div className="liquidBox" id="boxL2">
+        <div className="boxHead text_regular_14_o7">
+          <input placeholder="Input" />
+
+          <div className="boxData">
+            <p>_</p>
+          </div>
+        </div>
+
+        <div className="boxFooter">
+          <div className="boxData">
+            <p>0.0</p>
+            <div className="liquidDropDown" id="boxL2Drop">
+              <p className="text_regular_12_o7">Select Currency</p>
+              <img src="" alt="p" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Button className="btn-secondary modalButton">Invalid Pair</Button>
+    </div>
+  );
+
   switch (variant) {
     case "wrongNetwork":
       return renderWrongNetwork;
@@ -315,6 +497,12 @@ const Modal = ({ variant }) => {
       return renderSettings;
     case "switchToDesktop":
       return renderSwitchToDesktop;
+    case "token":
+      return renderTokenModal;
+    case "returnOfInvestment":
+      return renderReturnOfInvest;
+    case "liquidity":
+      return renderLiquidityModal;
     default:
       return null;
   }

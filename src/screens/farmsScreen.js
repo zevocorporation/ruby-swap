@@ -4,6 +4,8 @@ import React, { useState } from "react";
 
 import "../styles/screens/farmsScreen.scss";
 
+import FarmCard from "../patterns/cards/farmCard";
+
 //IMPORTING MEDIA ASSETS
 
 import cardview_selected from "../assets/icons/cardview_selected.svg";
@@ -69,7 +71,25 @@ const FarmsScreen = () => {
     </div>
   );
 
-  const renderView = <div>{cardView ? "card" : "list"}</div>;
+  const renderView = (
+    <div>
+      {cardView ? (
+        <div className="card_container">
+          <FarmCard />
+          <FarmCard />
+          <FarmCard />
+          <FarmCard />
+        </div>
+      ) : (
+        <div className="grid_container">
+          <FarmCard variant="grid" />
+          <FarmCard variant="grid" />
+          <FarmCard variant="grid" />
+          <FarmCard variant="grid" />
+        </div>
+      )}
+    </div>
+  );
 
   //RENDER SCREEN
 
@@ -80,7 +100,13 @@ const FarmsScreen = () => {
     </div>
   );
 
-  return <>{renderScreen}</>;
+  return (
+    <>
+      {renderScreen}
+
+      {/* <div className={"backdrop_transition active"}></div> */}
+    </>
+  );
 };
 
 export default FarmsScreen;

@@ -1,0 +1,88 @@
+@import "../../index.scss";
+
+.grid-box {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1em 0;
+
+  .grid_row_one {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .block_left {
+      display: flex;
+      align-items: center;
+    }
+
+    .block_right {
+      display: flex;
+      align-items: center;
+
+      > p,
+      > div {
+        margin-left: 3em;
+
+        section {
+          margin-bottom: 0.5em;
+        }
+      }
+
+      p {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  .grid_row_two {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1em;
+
+    .block_left {
+      display: flex;
+      flex-direction: column;
+
+      > div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5em;
+        grid-gap: 1em;
+      }
+      p {
+        display: flex;
+        align-items: center;
+
+        img {
+          margin-left: 0.25em;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .block_right {
+      display: flex;
+      align-items: center;
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        margin-left: 3em;
+
+        div {
+          display: flex;
+          align-items: center;
+          grid-gap: 2em;
+        }
+
+        > p {
+          margin-bottom: 1em;
+        }
+      }
+    }
+  }
+}

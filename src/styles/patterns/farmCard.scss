@@ -1,0 +1,66 @@
+@import "../../index.scss";
+
+.cardFarm {
+  transition: all 300ms ease-in-out;
+  .cardHead {
+    .cardName {
+      .cardHead2 {
+        display: flex;
+        align-items: center;
+        #core {
+          color: #ec1654;
+          font-size: 12px;
+          display: flex;
+          align-items: center;
+        }
+        #coreButton {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          padding: 1px 7px 1px;
+          background: #ec1654;
+          border-radius: 50px;
+          width: 31px;
+          height: 18px;
+          border: none;
+          margin-left: 10px;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .dropdown_content {
+    visibility: hidden;
+    height: 0;
+    transition: height 200ms ease-in-out;
+
+    &.active {
+      margin-top: 1em;
+      visibility: visible;
+      height: fit-content;
+      transition: height 200ms ease-in-out;
+    }
+
+    > div:not(:last-of-type) {
+      padding-bottom: 0.5em;
+    }
+
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      grid-gap: 0.5em;
+
+      > p {
+        display: flex;
+        align-items: center;
+
+        img {
+          margin-left: 0.25em;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
