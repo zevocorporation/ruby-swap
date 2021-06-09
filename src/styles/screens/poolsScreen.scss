@@ -11,4 +11,93 @@
   @media (max-width: 576px) {
     padding: 1em 1em 3em;
   }
+
+  .pools_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > div {
+      display: flex;
+      align-items: center;
+    }
+
+    .block_left {
+      > img {
+        margin-right: 1em;
+        width: 24px;
+        cursor: pointer;
+      }
+      > span {
+        margin-right: 1em;
+      }
+    }
+
+    .block_right {
+      > img {
+        margin-left: 1em;
+        width: 24px;
+      }
+      > p {
+        margin-left: 1em;
+        display: flex;
+        align-items: center;
+
+        img {
+          margin-left: 0.5em;
+        }
+      }
+      > input {
+        margin-left: 1em;
+        background: #0b0b0b;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        padding: 0.75em 1em;
+        color: $primaryText;
+        font-size: 0.875em;
+        font-family: $fontRegular;
+        letter-spacing: 0.05em;
+
+        &::placeholder {
+          font-weight: normal;
+          font-size: 0.875em;
+          line-height: 20px;
+          letter-spacing: 0.05em;
+          color: rgba(255, 255, 255, 0.7);
+          font-family: $fontRegular;
+        }
+      }
+    }
+  }
+
+  .card_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1.5em;
+    margin: 1em 0;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .grid_container {
+    background: linear-gradient(142.2deg, #1a1919 0%, rgba(3, 3, 3, 0.2) 100%);
+    box-shadow: 0px 5px 15px rgba(12, 12, 12, 0.2);
+    backdrop-filter: blur(15px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 5px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0;
+
+    > div:not(:last-of-type) {
+      border-bottom: 0.5px solid #6d6d6d;
+    }
+  }
 }
