@@ -9,8 +9,8 @@ import "../styles/screens/predictionScreen.scss";
 import "../styles/patterns/card.scss";
 
 import play from "../assets/icons/play.svg";
-import arrowRight from "../assets/icons/arrowRight.svg";
-import arrowLeft from "../assets/icons/arrowLeft.svg";
+// import arrowRight from "../assets/icons/arrowRight.svg";
+// import arrowLeft from "../assets/icons/arrowLeft.svg";
 import prediction from "../assets/icons/prediction.svg";
 import singleCoin from "../assets/icons/singleCoin.svg";
 import clock from "../assets/icons/clock.svg";
@@ -29,19 +29,18 @@ const PredictionScreen = () => {
       {
         breakpoint: 768,
         settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-        }
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
       },
       {
         breakpoint: 1000,
         settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-        }
-      }
-     ]
-
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+    ],
   };
 
   const renderScreenHeader = (
@@ -124,7 +123,7 @@ const PredictionScreen = () => {
                     <p className="text_regular_16">$412.03</p>
                   </div>
                   <div className="cardStats">
-                    <img src="" alt />
+                    {/* <img src="" alt="stats" /> */}
                     <p className="text_regular_14">$0.993</p>
                   </div>
                 </div>
@@ -376,7 +375,7 @@ const PredictionScreen = () => {
                     <p className="text_regular_16">$412.03</p>
                   </div>
                   <div className="cardStats">
-                    <img src="" alt />
+                    {/* <img src="" alt="stats" /> */}
                     <p className="text_regular_14">$0.993</p>
                   </div>
                 </div>

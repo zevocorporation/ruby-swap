@@ -1,4 +1,6 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import Web3 from "web3";
 
 //IMPORTING STYLESHEETS
 
@@ -7,6 +9,7 @@ import "../../styles/patterns/modal.scss";
 //IMPORTING COMPONENTS
 
 import Button from "../../components/button";
+import * as actionType from "../../redux/constants/actionsTypes";
 
 //IMPORTING MEDIA ASSETS
 
@@ -16,7 +19,62 @@ import closeIcon from "../../assets/icons/close.svg";
 import paymentConfirmedIcon from "../../assets/icons/paymentConfirmed.svg";
 import paymentProcessingIcon from "../../assets/icons/paymentProcessing.svg";
 
+//GET USER BALANCE
+
+export const balance = async (address) => {
+  const balance1 = await window.web3.eth.getBalance(address);
+  const balance2 = Web3.utils.fromWei(balance1, "ether");
+
+  return balance2;
+};
+
 const Modal = ({ variant, setIsOpenModal }) => {
+  const dispatch = useDispatch();
+
+  const connect = async () => {
+    dispatch({
+      type: actionType.START_LOADING,
+    });
+    // CONNECTING METAMASK WALLET
+    try {
+      if (window.ethereum) {
+        window.web3 = new Web3(window.ethereum);
+        // await window.ethereum.enable()
+
+        const accounts = await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        const res = await balance(window.ethereum.selectedAddress);
+        localStorage.setItem(
+          "user_id",
+          JSON.stringify(window.ethereum.selectedAddress)
+        );
+
+        dispatch({
+          type: actionType.CONNECT,
+          payload: {
+            address: Web3.utils.toChecksumAddress(accounts[0]),
+            balance: res,
+          },
+        });
+        dispatch({
+          type: actionType.STOP_LOADING,
+        });
+        setIsOpenModal(false);
+      }
+      if (window.ethereum === undefined) {
+        dispatch({
+          type: actionType.STOP_LOADING,
+        });
+        alert("Install metamask");
+      }
+    } catch (err) {
+      dispatch({
+        type: actionType.STOP_LOADING,
+      });
+      console.log(err);
+    }
+  };
   //RENDER WRONG NETWORK
 
   const renderWrongNetwork = (
@@ -170,7 +228,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
         </div>
       </div>
       <div className="walletBoxes">
-        <div className="walletBox">
+        <div className="walletBox" onClick={() => connect()}>
           <div className="wallentcontain">
             <div className="walletBoxImg"></div>
             <div className="walletBoxText text_regular_14">

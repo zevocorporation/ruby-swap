@@ -8,10 +8,9 @@ import Button from "../../components/button";
 import dropDown from "../../assets/icons/downarrow_white.svg";
 import bar_chart from "../../assets/icons/bar_chart.svg";
 import singleCoin from "../../assets/icons/singleCoin.svg";
-import checked from "../../assets/icons/checked.svg";
+// import checked from "../../assets/icons/checked.svg";
 import learn_more from "../../assets/icons/learn_more.svg";
 import metamask from "../../assets/icons/metamask.svg";
-import { useStore } from "react-redux";
 
 const PoolsCard = ({ variant }) => {
   const [isOpen, setIsOpen] = useState(false);

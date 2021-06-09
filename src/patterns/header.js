@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Web3 from "web3";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 //IMPORTING STYLESHEET
@@ -28,17 +27,6 @@ import edit_user from "../assets/icons/edit_user.svg";
 import logout from "../assets/icons/logout.svg";
 import chat from "../assets/icons/chat.svg";
 
-import * as actionType from "../redux/constants/actionsTypes";
-
-//GET USER BALANCE
-
-export const balance = async (address) => {
-  const balance1 = await window.web3.eth.getBalance(address);
-  const balance2 = Web3.utils.fromWei(balance1, "ether");
-
-  return balance2;
-};
-
 const Header = () => {
   //INITIALIZING HOOKS
 
@@ -46,53 +34,8 @@ const Header = () => {
   const [dropdown, setDropdown] = useState(false);
   const [connectWalletModal, setConnectWalletModal] = useState(false);
   const user = useSelector((state) => state.user);
-  const dispatch = useDispatch();
 
   //HANDLING METHODS
-
-  const connect = async () => {
-    dispatch({
-      type: actionType.START_LOADING,
-    });
-    // CONNECTING METAMASK WALLET
-    try {
-      if (window.ethereum) {
-        window.web3 = new Web3(window.ethereum);
-        // await window.ethereum.enable()
-
-        const accounts = await window.ethereum.request({
-          method: "eth_requestAccounts",
-        });
-        const res = await balance(window.ethereum.selectedAddress);
-        localStorage.setItem(
-          "user_id",
-          JSON.stringify(window.ethereum.selectedAddress)
-        );
-
-        dispatch({
-          type: actionType.CONNECT,
-          payload: {
-            address: Web3.utils.toChecksumAddress(accounts[0]),
-            balance: res,
-          },
-        });
-        dispatch({
-          type: actionType.STOP_LOADING,
-        });
-      }
-      if (window.ethereum === undefined) {
-        dispatch({
-          type: actionType.STOP_LOADING,
-        });
-        alert("Install metamask");
-      }
-    } catch (err) {
-      dispatch({
-        type: actionType.STOP_LOADING,
-      });
-      console.log(err);
-    }
-  };
 
   //RENDER LINKS
 
