@@ -17,7 +17,6 @@ import bar_chart from "../../assets/icons/bar_chart.svg";
 import coins from "../../assets/icons/coins.svg";
 import checked from "../../assets/icons/checked.svg";
 import learn_more from "../../assets/icons/learn_more.svg";
-import { useStore } from "react-redux";
 
 const FarmCard = ({ variant }) => {
   //INITIALIZING HOOKS
@@ -96,7 +95,9 @@ const FarmCard = ({ variant }) => {
             src={dropDown}
             alt="t"
             onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
-            style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+            className={
+              isOpen ? "card_details_arrow active" : "card_details_arrow"
+            }
           />
         </div>
         <div
@@ -173,6 +174,7 @@ const FarmCard = ({ variant }) => {
             <img
               src={dropDown}
               alt="down_arrow"
+              className="cursor"
               onClick={() => setIsGridOpen((prevIsGridOpen) => !prevIsGridOpen)}
               style={{
                 transform: isGridOpen ? "rotate(180deg)" : "rotate(0deg)",

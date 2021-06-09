@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 //IMPORTING STYLESHEET
 
@@ -14,8 +14,13 @@ import right_arrow from "../assets/icons/right_arrow.svg";
 import learn_more from "../assets/icons/learn_more.svg";
 import ruby from "../assets/images/ruby.svg";
 import lottery from "../assets/images/lottery.svg";
+import Modal from "../patterns/modals/modal";
 
 const HomeScreen = () => {
+  //INItiALIZING HOOKS
+
+  const [approveRuby, setApproveRuby] = useState(false);
+
   //RENDER RUBY FORM
 
   const renderRubyForm = (
@@ -69,7 +74,9 @@ const HomeScreen = () => {
       </div>
       <div className="btn">
         <Button className="btn-secondary">Collect Winnings</Button>
-        <Button className="btn-primary">Approve Ruby</Button>
+        <Button className="btn-primary" onClick={() => setApproveRuby(true)}>
+          Approve Ruby
+        </Button>
       </div>
     </div>
   );
@@ -155,7 +162,15 @@ const HomeScreen = () => {
       {renderStatistics}
     </div>
   );
-  return <>{renderScreen}</>;
+  return (
+    <>
+      {renderScreen}
+      {approveRuby && (
+        <Modal variant="warning" setIsOpenModal={setApproveRuby} />
+      )}
+      {approveRuby && <div className={"backdrop_transition active"}></div>}
+    </>
+  );
 };
 
 export default HomeScreen;

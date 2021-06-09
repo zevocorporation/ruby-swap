@@ -44,6 +44,7 @@ const Header = () => {
 
   const [accountModal, setAccountModal] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [connectWalletModal, setConnectWalletModal] = useState(false);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
@@ -126,7 +127,7 @@ const Header = () => {
         onClick={
           user?.isConnected
             ? () => setAccountModal((prevAccountModal) => !prevAccountModal)
-            : () => connect()
+            : () => setConnectWalletModal(true)
         }
         style={{ pointerEvents: user?.isLoading && "none" }}
       >
@@ -236,8 +237,12 @@ const Header = () => {
       {renderHeader}
       <p className="line"></p>
       <Modal variant="grid" />
-      <Modal />
-      {/* <div className={"backdrop_transition active"}></div> */}
+      {connectWalletModal && (
+        <Modal variant="connectWallet" setIsOpenModal={setConnectWalletModal} />
+      )}
+      {connectWalletModal && (
+        <div className={"backdrop_transition active"}></div>
+      )}
     </>
   );
 };

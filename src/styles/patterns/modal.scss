@@ -62,7 +62,7 @@
 
 .connectWalletModal {
   width: 603px;
-  height: 514px;
+  padding: 1em;
 
   .modalCloseCrossBox {
     left: 90%;
@@ -109,7 +109,6 @@
   }
 
   .modalFooterText {
-    padding-left: 15px;
     padding-top: 10px;
     font-size: 0.9em;
   }
@@ -158,8 +157,8 @@
         position: absolute;
         width: 25px;
         height: 25px;
-          // left: 0px;
-          // top: 2px;
+        // left: 0px;
+        // top: 2px;
         background: #f1f1f1;
         /* Primary */
         border: 1px solid #ec1654;
@@ -237,13 +236,13 @@
     }
   }
 
-  .settingBox2{
+  .settingBox2 {
     top: 50%;
-    .dataBox1{
-      top:20px;
-      p{
+    .dataBox1 {
+      top: 20px;
+      p {
         position: absolute;
-        top:10px;
+        top: 10px;
         left: 85px;
       }
     }
@@ -364,9 +363,6 @@
       padding: 20px;
       width: 100%;
       border-bottom: 1px solid #6d6d6d;
-
-      img {
-      }
 
       .token-name {
         position: absolute;

@@ -16,7 +16,7 @@ import closeIcon from "../../assets/icons/close.svg";
 import paymentConfirmedIcon from "../../assets/icons/paymentConfirmed.svg";
 import paymentProcessingIcon from "../../assets/icons/paymentProcessing.svg";
 
-const Modal = ({ variant }) => {
+const Modal = ({ variant, setIsOpenModal }) => {
   //RENDER WRONG NETWORK
 
   const renderWrongNetwork = (
@@ -91,7 +91,9 @@ const Modal = ({ variant }) => {
         </p>
       </div>
       <div>
-        <Button className="btn-primary">I understand</Button>
+        <Button className="btn-primary" onClick={() => setIsOpenModal(false)}>
+          I understand
+        </Button>
       </div>
     </div>
   );
@@ -158,7 +160,12 @@ const Modal = ({ variant }) => {
         <p className="text_regular_24_w600">Connect to a wallet</p>
         <div className="modalCloseCrossBox">
           <div className="modalCloseIcon">
-            <img src={closeIcon} alt="x" />
+            <img
+              src={closeIcon}
+              alt="x"
+              className="cursor"
+              onClick={() => setIsOpenModal(false)}
+            />
           </div>
         </div>
       </div>
@@ -269,8 +276,7 @@ const Modal = ({ variant }) => {
           <p className="text_regular_14_o7">Audio</p>
         </div>
         <div className="audioToggle">
-          <div className="audioOn">
-          </div>
+          <div className="audioOn"></div>
           <p className="text_regular_12">ON</p>
         </div>
       </div>
@@ -414,7 +420,7 @@ const Modal = ({ variant }) => {
 
       <div className="investLink">
         <p className="text_regular_14_o7">Get RUBY-BNB LP</p>
-        <img src={wrongNetworkIcon} />
+        <img src={wrongNetworkIcon} alt="w" />
       </div>
     </div>
   );
