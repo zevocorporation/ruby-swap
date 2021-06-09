@@ -9,22 +9,42 @@
     width: 100%;
   }
 
-  .poolInput{
+  .poolInput {
     position: absolute;
-    margin-top:20px;
+    margin-top: 20px;
     margin-left: 20px;
-    
-    
-    input{
-        width: 307px;
-        height: 80px;
-        background-color: black;
-        border: none;
-        color: white;
+
+    input {
+      width: 307px;
+      height: 80px;
+      background-color: black;
+      border: none;
+      color: white;
     }
   }
 
-  .cardButton{
-      margin-top: 36%;
+  .cardButton {
+    margin-top: 36%;
+  }
+}
+
+.cardPool {
+  .dropdown_content {
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.5em;
+
+      p {
+        display: flex;
+        align-items: center;
+
+        img {
+          margin-left: 0.25em;
+          cursor: pointer;
+        }
+      }
+    }
   }
 }

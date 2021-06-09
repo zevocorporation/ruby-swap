@@ -77,39 +77,39 @@ const PoolsCard = ({ variant }) => {
           <img
             src={dropDown}
             alt="t"
+            className="cursor"
             onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
             style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
           />
         </div>
-        <div
-          className={isOpen ? "dropdown_content active" : "dropdown_content"}
-        >
-          <div>
-            <p className="text_regular_16_o7">Total Staked</p>
-            <p className="text_regular_20_w500">175,329,827</p>
-          </div>
-          <div>
-            <p className="text_regular_16_o7">Total Staked</p>
-            <p className="text_regular_20_w500">2%</p>
-          </div>
-          <div>
-            <p>
-              <span className="text_regular_14">View project site</span>
-              <img src={learn_more} alt="learn" />
-            </p>
-          </div>
-          <div>
-            <p>
-              <span className="text_regular_14">View contract</span>
-              <img src={learn_more} alt="learn" />
-              
-            </p>
+        {isOpen && (
+          <div className="dropdown_content">
             <div>
-              <span className="text_regular_14">Add to Metamask</span>
-              <img src={metamask} alt="learn" />
-              </div>
+              <p className="text_regular_16_o7">Total Staked</p>
+              <p className="text_regular_20_w500">175,329,827</p>
+            </div>
+            <div>
+              <p className="text_regular_16_o7">Performance Fee</p>
+              <p className="text_regular_16_w500">2%</p>
+            </div>
+            <div>
+              <p>
+                <span className="text_regular_14">View project site</span>
+                <img src={learn_more} alt="learn" />
+              </p>
+            </div>
+            <div>
+              <p>
+                <span className="text_regular_14">View contract</span>
+                <img src={learn_more} alt="learn" />
+              </p>
+              <p>
+                <span className="text_regular_14">Add to Metamask</span>
+                <img src={metamask} alt="learn" />
+              </p>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

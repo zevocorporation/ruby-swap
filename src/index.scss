@@ -57,7 +57,7 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  font-family: $fontRegular;
+  font-family: $fontLight;
   color: $primaryText;
 }
 
@@ -83,7 +83,7 @@ body {
 .text_regular_12_o7 {
   font-weight: normal;
   font-size: 0.75em;
-  line-height: 1.00em;
+  line-height: 1em;
   letter-spacing: 0.07em;
   color: $label;
   @media (max-width: 576px) {
@@ -192,6 +192,7 @@ body {
 }
 
 .text_regular_16_o7 {
+  font-family: $fontLight;
   font-weight: normal;
   font-size: 1em;
   line-height: 24px;
