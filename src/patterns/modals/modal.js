@@ -18,6 +18,13 @@ import wrongNetworkIcon from "../../assets/icons/wrong_network.svg";
 import closeIcon from "../../assets/icons/close.svg";
 import paymentConfirmedIcon from "../../assets/icons/paymentConfirmed.svg";
 import paymentProcessingIcon from "../../assets/icons/paymentProcessing.svg";
+import metamask from "../../assets/icons/metamask.svg";
+import mathWallet from "../../assets/icons/mathWallet.svg";
+import tokenPocket from "../../assets/icons/tokenPocket.svg";
+import trustWallet from "../../assets/icons/trustWallet.svg";
+import vector from "../../assets/icons/vector.svg";
+import walletConnect from "../../assets/icons/walletConnect.svg";
+import binanceChain from "../../assets/icons/binanceChain.svg";
 
 //GET USER BALANCE
 
@@ -214,7 +221,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
   const renderConnectWallet = (
     <div className="modal connectWalletModal">
       <div className="flex">
-        <img src="" alt="wallet" />
+        <img src={vector} alt="wallet" />
         <p className="text_regular_24_w600">Connect to a wallet</p>
         <div className="modalCloseCrossBox">
           <div className="modalCloseIcon">
@@ -230,7 +237,9 @@ const Modal = ({ variant, setIsOpenModal }) => {
       <div className="walletBoxes">
         <div className="walletBox" onClick={() => connect()}>
           <div className="wallentcontain">
-            <div className="walletBoxImg"></div>
+            <div className="walletBoxImg">
+              <img src={metamask} alt="metamask" />
+            </div>
             <div className="walletBoxText text_regular_14">
               <p>Metamask</p>
             </div>
@@ -238,7 +247,9 @@ const Modal = ({ variant, setIsOpenModal }) => {
         </div>
         <div className="walletBox">
           <div className="wallentcontain">
-            <div className="walletBoxImg"></div>
+            <div className="walletBoxImg">
+              <img src={trustWallet} />
+            </div>
             <div className="walletBoxText text_regular_14">
               <p>TrustWallet</p>
             </div>
@@ -246,7 +257,9 @@ const Modal = ({ variant, setIsOpenModal }) => {
         </div>
         <div className="walletBox">
           <div className="wallentcontain">
-            <div className="walletBoxImg"></div>
+            <div className="walletBoxImg">
+              <img src={mathWallet} />
+            </div>
             <div className="walletBoxText text_regular_14">
               <p>MathWallet</p>
             </div>
@@ -254,7 +267,9 @@ const Modal = ({ variant, setIsOpenModal }) => {
         </div>
         <div className="walletBox">
           <div className="wallentcontain">
-            <div className="walletBoxImg"></div>
+            <div className="walletBoxImg">
+              <img src={tokenPocket} />
+            </div>
             <div className="walletBoxText text_regular_14">
               <p>TokenPocket</p>
             </div>
@@ -262,7 +277,9 @@ const Modal = ({ variant, setIsOpenModal }) => {
         </div>
         <div className="walletBox">
           <div className="wallentcontain">
-            <div className="walletBoxImg"></div>
+            <div className="walletBoxImg">
+              <img src={walletConnect} />
+            </div>
             <div className="walletBoxText text_regular_14">
               <p>WalletConnect</p>
             </div>
@@ -270,7 +287,9 @@ const Modal = ({ variant, setIsOpenModal }) => {
         </div>
         <div className="walletBox">
           <div className="wallentcontain">
-            <div className="walletBoxImg"></div>
+            <div className="walletBoxImg">
+              <img src={binanceChain} />
+            </div>
             <div className="walletBoxText text_regular_14">
               <p>Binance Chain</p>
             </div>
