@@ -1,5 +1,7 @@
 @import "../../index.scss";
 
+
+
 .prediction_screen {
   margin-top: 90px;
   padding: 1em 3em 3em;
@@ -180,3 +182,11 @@
 }
 
 
+.slick-prev {
+  left: 48.5%;
+  top: -21px;
+}
+.slick-next {
+  right:  45%;
+  top:-21px;
+}

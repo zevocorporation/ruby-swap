@@ -25,6 +25,23 @@ const PredictionScreen = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 1000,
+        settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+        }
+      }
+     ]
+
   };
 
   const renderScreenHeader = (
@@ -35,9 +52,9 @@ const PredictionScreen = () => {
         <p>$429.905</p>
       </div>
       <div className="block_mid">
-        <img src={arrowLeft} alt="t" />
+        {/* <img src={arrowLeft} alt="t" /> */}
         <img src={prediction} alt="t" />
-        <img src={arrowRight} alt="t" />
+        {/* <img src={arrowRight} alt="t" /> */}
       </div>
       <div className="block_right">
         <div className="bR" id="bg">
