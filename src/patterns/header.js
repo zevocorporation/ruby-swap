@@ -96,11 +96,11 @@ const Header = () => {
 
   const renderDropdown = (
     <div className={dropdown ? "dropdown_content active" : "dropdown_content"}>
-      <Link to="/productions">Get in touch</Link>
-      <Link to="/collectibles">Voting</Link>
-      <Link to="/collectibles">Documents</Link>
-      <Link to="/productions">Blogs</Link>
-      <Link to="/collectibles">Merchandise</Link>
+      <span to="/productions">Get in touch</span>
+      <span to="/collectibles">Voting</span>
+      <span to="/collectibles">Documents</span>
+      <span to="/productions">Blogs</span>
+      <span to="/collectibles">Merchandise</span>
     </div>
   );
 

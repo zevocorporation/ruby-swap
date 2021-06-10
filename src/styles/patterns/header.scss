@@ -135,9 +135,13 @@
             transition: top 300ms ease-in-out, opacity 100ms ease-in-out;
           }
 
-          a {
+          span {
             margin-bottom: 1em;
+            font-size: 14px;
             width: fit-content;
+            color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            letter-spacing: 0.03em;
             transition: 300ms all;
 
             &:hover {
@@ -145,7 +149,7 @@
               transition: 300ms all;
             }
           }
-          a:nth-last-child(1) {
+          span:nth-last-child(1) {
             margin-bottom: 0;
           }
         }

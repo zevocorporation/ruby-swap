@@ -106,13 +106,18 @@
     position: absolute;
     width: 80px;
     height: 80px;
-    left: 43px;
-    top: 20px;
+    
+    // align-items: center;
+    img{
+      margin-top: 8%;
+      height: 93px;
+      width: 200%
+    }
   }
 
   .walletBoxText {
     position: absolute;
-    left: 20.88%;
+    left: 24.88%;
     right: 26.06%;
     top: 73.33%;
     bottom: 13.33%;
