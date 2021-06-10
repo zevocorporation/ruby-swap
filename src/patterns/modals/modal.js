@@ -35,9 +35,9 @@ import settingModal from "../../assets/icons/settingModal.svg";
 import tokenModal from "../../assets/icons/tokenModal.svg";
 import etherium from "../../assets/icons/etherium.svg";
 import alpaca from "../../assets/icons/alpaca.svg";
-import bar_chart from "../../assets/icons/bar_chart.svg"
-import learn_more from "../../assets/icons/learn_more.svg"
-import downarrow_white from "../../assets/icons/downarrow_white.svg"
+import bar_chart from "../../assets/icons/bar_chart.svg";
+import learn_more from "../../assets/icons/learn_more.svg";
+import downarrow_white from "../../assets/icons/downarrow_white.svg";
 import liquidity from "../../assets/icons/liquidity.svg";
 
 //GET USER BALANCE
@@ -126,11 +126,10 @@ const Modal = ({ variant, setIsOpenModal }) => {
 
   const renderRecent = (
     <div className="recentModal">
-
       <div className="modalHead">
         <div className="modalLogo">
           <div id="icon">
-            <img src={clock} alt="clock"/>
+            <img src={clock} alt="clock" />
           </div>
         </div>
         <div className="modalText">
@@ -144,41 +143,42 @@ const Modal = ({ variant, setIsOpenModal }) => {
       </div>
 
       <div className="modalAbout" id="recentAbout">
-      
-      <p className="text_regular_14_o7">
-        Please connect your crypto wallet to view your recent transactions
-      </p>
-      <Button className="btn-primary" onClick={() => setIsOpenModal(false)}>
-        Close
-      </Button>
-    </div>
+        <p className="text_regular_14_o7">
+          Please connect your crypto wallet to view your recent transactions
+        </p>
+        <Button className="btn-primary" onClick={() => setIsOpenModal(false)}>
+          Close
+        </Button>
+      </div>
     </div>
   );
 
   //RENDER WARNING
 
-  const renderWarning = (
-    <div className="modal">
-      <div className="flex">
-        <img src={wrongNetworkIcon} alt="wrongNetwork" />
-        <p className="text_regular_24_w600">Warning</p>
-      </div>
-      <div>
-        <p className="text_regular_14_o7">
-          Lottery ticket purchases are final. Your RUBY will not be returned to
-          you after you spend it to buy tickets. Tickets are only valid for one
-          lottery draw, and will be burned after the draw. Buying tickets does
-          not guarantee you will win anything. Please only participate once you
-          understand the risks.
-        </p>
-      </div>
-      <div>
-        <Button className="btn-primary" onClick={() => setIsOpenModal(false)}>
-          I understand
-        </Button>
-      </div>
-    </div>
-  );
+  // const renderWarning = (
+  //   <div className="modal">
+  //     <div className="flex">
+  //       <img src={wrongNetworkIcon} alt="wrongNetwork" />
+  //       <p className="text_regular_24_w600">Warning</p>
+  //     </div>
+  //     <div>
+  //       <p className="text_regular_14_o7">
+  //         Lottery ticket purchases are final. Your RUBY will not be returned to
+  //         you after you spend it to buy tickets. Tickets are only valid for one
+  //         lottery draw, and will be burned after the draw. Buying tickets does
+  //         not guarantee you will win anything. Please only participate once you
+  //         understand the risks.
+  //       </p>
+  //     </div>
+  //     <div>
+  //       <Button className="btn-primary" onClick={() => setIsOpenModal(false)}>
+  //         I understand
+  //       </Button>
+  //     </div>
+  //   </div>
+  // );
+
+  const renderWarning = <div className="card"></div>;
 
   const renderPaymentProcessing = (
     <div className="modal paymentModal">
@@ -585,6 +585,126 @@ const Modal = ({ variant, setIsOpenModal }) => {
     </div>
   );
 
+  const renderSaveChart = (
+    <div className="card">
+      <div className="cardHead" style={{ justifyContent: "left" }}>
+        <img src="" alt="t" style={{ width: "75px", height: "78px" }} />
+        <p className="text_regular_16">Save Chart</p>
+      </div>
+      <div className="cardAbout">
+        <input type="text" placeholder="https://tradingview_chartimage.in" />
+        <p className="text_regular_14_o7">Copy URL</p>
+      </div>
+      <div className="cardAbout" style={{ justifyContent: "left" }}>
+        <img src="" alt="down" />
+        <p>Save Image</p>
+      </div>
+    </div>
+  );
+
+  const renderIndicator = (
+    <div className="card">
+      <div className="cardHead" style={{ justifyContent: "space-between" }}>
+        <div>
+          <img src="" alt="i" />
+          <p>Indicators</p>
+        </div>
+        <div>
+          <img src="" alt="cross" />
+        </div>
+      </div>
+      <div className="cardAbout">
+        <input type="text" placeholder="Search token name or paste address" />
+        <img src="" alt="i" />
+      </div>
+      <div className="cardAbout">
+        <p>Script Name</p>
+        <img src="" alt="i" />
+      </div>
+      <div className="cardAbout">
+        <p className="text_regular_14">Accumulation/Distribution</p>
+      </div>
+      <div className="cardLine" style={{ marginBottom: "5%" }}></div>
+      <div className="cardAbout">
+        <p className="text_regular_14">Advance Decline Line</p>
+      </div>
+      <div className="cardLine" style={{ marginBottom: "5%" }}></div>
+      <div className="cardAbout">
+        <p className="text_regular_14">Advance Decline Ratio</p>
+      </div>
+    </div>
+  );
+
+  const renderHistory = (
+    <div className="card">
+      <div className="cardHead" style={{ justifyContent: "space-between" }}>
+        <div className="cardHeadRight">
+          <img src={clock} alt="i" />
+          <p>History</p>
+          <p className="text_regular_14">Rounds</p> <p>|</p>
+          <p className="text_regular_12_o7">PNL</p>
+        </div>
+        <div>
+          <img src={closeIcon} alt="cross" />
+        </div>
+      </div>
+      <div className="cardHead" style={{ justifyContent: "space-between" }}>
+        <div className="cardHeadRight">
+          <p>Filter:</p>
+          <p>All</p>
+          <p>Collected</p>
+          <p>Uncollected</p>
+        </div>
+      </div>
+      <div className="cardAbout">
+        <p className="text_regular_14">No prediction history available</p>
+      </div>
+
+      <div className="cardAbout">
+        <p className="text_regular_12_o7">
+          If you are sure you should see history here, make sure you’re
+          connected to the correct wallet and try again.
+        </p>
+      </div>
+    </div>
+  );
+
+  const settingLen = (
+    <div className="card">
+      <div className="cardHead" style={{ justifyContent: "left" }}>
+        <img src={settingModal} alt="t" />
+        <p className="text_regular_16">Settings</p>
+      </div>
+      <div className="cardHead" style={{ justifyContent: "space-between" }}>
+        <div className="cardHeadRight">
+          <p className="text_regular_12_o7" style={{ color: "#EC1654" }}>
+            Input
+          </p>
+          <p className="text_regular_12_o7">Stock</p>
+        </div>
+      </div>
+      <div className="cardAbout">
+        <p className="text_regular_14">MA Length:</p>
+      </div>
+
+      <div className="cardAbout">
+        <input type="text" placeholder="20" />
+        <div
+          style={{
+            backgroundColor: "#0B0B0B",
+            borderRadius: "5px",
+            marginLeft: "-6%",
+          }}
+        >
+          <img src="" alt="arror" />
+          <img src="" alt="arror" />
+        </div>
+      </div>
+      <Button className="btn-primary">OK</Button>
+      <Button className="btn-secondary">Cancel</Button>
+    </div>
+  );
+
   switch (variant) {
     case "wrongNetwork":
       return renderWrongNetwork;
@@ -608,6 +728,12 @@ const Modal = ({ variant, setIsOpenModal }) => {
       return renderReturnOfInvest;
     case "liquidity":
       return renderLiquidityModal;
+    case "saveChart":
+      return renderSaveChart;
+    case "indicator":
+      return renderIndicator;
+    case "history":
+      return renderHistory;
     default:
       return null;
   }
