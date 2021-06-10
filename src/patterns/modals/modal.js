@@ -16,6 +16,7 @@ import * as actionType from "../../redux/constants/actionsTypes";
 // import warning from "../../assets/icons/warning.svg";
 import wrongNetworkIcon from "../../assets/icons/wrong_network.svg";
 import closeIcon from "../../assets/icons/close.svg";
+import clock from "../../assets/icons/clock.svg";
 import paymentConfirmedIcon from "../../assets/icons/paymentConfirmed.svg";
 import paymentProcessingIcon from "../../assets/icons/paymentProcessing.svg";
 import metamask from "../../assets/icons/metamask.svg";
@@ -25,6 +26,18 @@ import trustWallet from "../../assets/icons/trustWallet.svg";
 import vector from "../../assets/icons/vector.svg";
 import walletConnect from "../../assets/icons/walletConnect.svg";
 import binanceChain from "../../assets/icons/binanceChain.svg";
+import binance from "../../assets/icons/binance.svg";
+import processOn from "../../assets/icons/processOn.svg";
+import processDone from "../../assets/icons/processDone.svg";
+import questionMark from "../../assets/icons/questionMark.svg";
+import settingModal from "../../assets/icons/settingModal.svg";
+import tokenModal from "../../assets/icons/tokenModal.svg";
+import etherium from "../../assets/icons/etherium.svg";
+import alpaca from "../../assets/icons/alpaca.svg";
+import bar_chart from "../../assets/icons/bar_chart.svg"
+import learn_more from "../../assets/icons/learn_more.svg"
+import downarrow_white from "../../assets/icons/downarrow_white.svg"
+import liquidity from "../../assets/icons/liquidity.svg";
 
 //GET USER BALANCE
 
@@ -114,7 +127,9 @@ const Modal = ({ variant, setIsOpenModal }) => {
     <div className="recentModal">
       <div className="modalHead">
         <div className="modalLogo">
-          <div id="icon"></div>
+          <div id="icon">
+            <img src={clock} alt="clock"/>
+          </div>
         </div>
         <div className="modalText">
           <p>Recent transactions</p>
@@ -183,7 +198,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
 
       <div className="modalFooter">
         <div className="modalFooterIcon">
-          <img src="" alt="u" />
+          <img src={processOn} alt="u" />
         </div>
         <div>
           <p className="text_regular_12 modalFooterText">
@@ -212,7 +227,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
 
       <div className="modalFooter">
         <div className="modalFooterIcon">
-          <img src="" alt="u" />
+          <img src={processDone} alt="u" />
         </div>
       </div>
     </div>
@@ -248,7 +263,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
         <div className="walletBox">
           <div className="wallentcontain">
             <div className="walletBoxImg">
-              <img src={trustWallet} />
+              <img src={trustWallet} alt="img"/>
             </div>
             <div className="walletBoxText text_regular_14">
               <p>TrustWallet</p>
@@ -258,7 +273,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
         <div className="walletBox">
           <div className="wallentcontain">
             <div className="walletBoxImg">
-              <img src={mathWallet} />
+              <img src={mathWallet} alt="img"/>
             </div>
             <div className="walletBoxText text_regular_14">
               <p>MathWallet</p>
@@ -268,7 +283,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
         <div className="walletBox">
           <div className="wallentcontain">
             <div className="walletBoxImg">
-              <img src={tokenPocket} />
+              <img src={tokenPocket} alt="img"/>
             </div>
             <div className="walletBoxText text_regular_14">
               <p>TokenPocket</p>
@@ -278,7 +293,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
         <div className="walletBox">
           <div className="wallentcontain">
             <div className="walletBoxImg">
-              <img src={walletConnect} />
+              <img src={walletConnect} alt="img"/>
             </div>
             <div className="walletBoxText text_regular_14">
               <p>WalletConnect</p>
@@ -288,7 +303,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
         <div className="walletBox">
           <div className="wallentcontain">
             <div className="walletBoxImg">
-              <img src={binanceChain} />
+              <img src={binanceChain} alt="img"/>
             </div>
             <div className="walletBoxText text_regular_14">
               <p>Binance Chain</p>
@@ -309,18 +324,18 @@ const Modal = ({ variant, setIsOpenModal }) => {
   const renderSettings = (
     <div className="modal settingModal ">
       <div className="flex">
-        <img src="" alt="setting" />
+        <img src={settingModal} alt="setting" />
         <p className="text_regular_24_w600">Settings</p>
         <div className="modalCloseCrossBox">
           <div className="modalCloseIcon">
-            <img src={closeIcon} alt="x" />
+            <img src={closeIcon} alt="img" />
           </div>
         </div>
       </div>
       <div className="settingBox1">
         <div className="box1Head">
           <p className="settingBoxHeading">Slippage tolerance</p>
-          <img src="" alt="g" />
+          <img src={questionMark} alt="img" />
         </div>
         <div className="dataBox1">
           <input type="text" placeholder="0.1%" />
@@ -337,7 +352,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
       <div className="settingBox1 settingBox2">
         <div className="box1Head">
           <p className="settingBoxHeading">Transaction deadline </p>
-          <img src="" alt="g" />
+          <img src={questionMark} alt="img" />
         </div>
         <div className="dataBox1">
           <div className="dataBox1">
@@ -386,11 +401,11 @@ const Modal = ({ variant, setIsOpenModal }) => {
   const renderTokenModal = (
     <div className="modal tokenModal">
       <div className="flex">
-        <img src={wrongNetworkIcon} alt="token" />
+        <img src={tokenModal} alt="token" />
         <p className="text_regular_24_w600">Select a Token</p>
         <div className="modalCloseCrossBox">
           <div className="modalCloseIcon">
-            <img src={closeIcon} alt="x" />
+            <img src={closeIcon} alt="img" />
           </div>
         </div>
       </div>
@@ -410,14 +425,14 @@ const Modal = ({ variant, setIsOpenModal }) => {
         <p className="text_regular_14">Token Name</p>
         <div className="modalDownArrowBox">
           <div className="modalDownArrowIcon">
-            <img src={closeIcon} alt="x" />
+            <img src={closeIcon} alt="img" />
           </div>
         </div>
       </div>
 
       <div className="tokenName">
         <div className="tokenBox text_regular_14">
-          <img src="" alt="1" />
+          <img src={binance} alt="img" />
           <div className="token-name">
             <p>Binance</p>
           </div>
@@ -426,7 +441,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
           </div>
         </div>
         <div className="tokenBox text_regular_14">
-          <img src="" alt="1" />
+          <img src={etherium} alt="img" />
           <div className="token-name">
             <p>Etherium</p>
           </div>
@@ -435,7 +450,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
           </div>
         </div>
         <div className="tokenBox text_regular_14">
-          <img src="" alt="1" />
+          <img src={alpaca} alt="img" />
           <div className="token-name">
             <p>Alpaca</p>
           </div>
@@ -450,7 +465,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
   const renderReturnOfInvest = (
     <div className="modal investModal">
       <div className="flex">
-        <img src={wrongNetworkIcon} alt="invest" />
+        <img src={bar_chart} alt="invest" />
         <p className="text_regular_24_w600">Return of Invest</p>
         <div className="modalCloseCrossBox">
           <div className="modalCloseIcon">
@@ -497,7 +512,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
 
       <div className="investLink">
         <p className="text_regular_14_o7">Get RUBY-BNB LP</p>
-        <img src={wrongNetworkIcon} alt="w" />
+        <img src={learn_more} alt="img" />
       </div>
     </div>
   );
@@ -505,11 +520,11 @@ const Modal = ({ variant, setIsOpenModal }) => {
   const renderLiquidityModal = (
     <div className="modal liquidityModal">
       <div className="flex">
-        <img src={wrongNetworkIcon} alt="liquidity" />
+        <img src={liquidity} alt="liquidity" />
         <p className="text_regular_24_w600">Add liquidity</p>
         <div className="modalCloseCrossBox">
           <div className="modalCloseIcon">
-            <img src={closeIcon} alt="x" />
+            <img src={closeIcon} alt="img" />
           </div>
         </div>
       </div>
@@ -527,16 +542,16 @@ const Modal = ({ variant, setIsOpenModal }) => {
           <div className="boxData">
             <p>0.0</p>
             <div className="liquidDropDown">
-              <img src="" alt="p" />
+              <img src={binance} alt="img" />
               <p className="text_regular_12_o7">Binance</p>
-              <img src="" alt="p" />
+              <img src={downarrow_white} alt="img" />
             </div>
           </div>
         </div>
       </div>
 
       <div className="liquidAdd">
-        <img src="" alt="p" />
+        <img src="" alt="img" />
       </div>
 
       <div className="liquidBox" id="boxL2">
@@ -553,7 +568,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
             <p>0.0</p>
             <div className="liquidDropDown" id="boxL2Drop">
               <p className="text_regular_12_o7">Select Currency</p>
-              <img src="" alt="p" />
+              <img src={downarrow_white} alt="img" />
             </div>
           </div>
         </div>
