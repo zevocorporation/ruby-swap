@@ -18,6 +18,7 @@ import wrongNetworkIcon from "../../assets/icons/wrong_network.svg";
 import closeIcon from "../../assets/icons/close.svg";
 import paymentConfirmedIcon from "../../assets/icons/paymentConfirmed.svg";
 import paymentProcessingIcon from "../../assets/icons/paymentProcessing.svg";
+import clockIcon from "../../assets/icons/clock.svg";
 
 //GET USER BALANCE
 
@@ -105,29 +106,29 @@ const Modal = ({ variant, setIsOpenModal }) => {
 
   const renderRecent = (
     <div className="recentModal">
-      <div className="modalHead">
-        <div className="modalLogo">
-          <div id="icon"></div>
-        </div>
-        <div className="modalText">
-          <p>Recent transactions</p>
-        </div>
-        <div className="modalCloseCrossBox">
-          <div className="modalCloseIcon">
-            <img src={closeIcon} alt="x" />
-          </div>
-        </div>
-      </div>
-
-      <div className="modalAbout" id="recentAbout">
+      <div>
         <p>
-          Please connect your crypto wallet to view your recent transactions
+          <img
+            src={clockIcon}
+            alt="x"
+            style={{ width: "32px", height: "32px" }}
+          />
+          <span className="text_regular_24_w600">Recent transactions</span>
         </p>
+        <img
+          src={closeIcon}
+          alt="x"
+          className="cursor"
+          style={{ width: "24px", height: "24px" }}
+          onClick={() => setIsOpenModal(false)}
+        />
       </div>
-
-      <button className="modalButton" id="recentModalButton">
-        <Button className="btn-primary">Close</Button>
-      </button>
+      <p className="text_regular_14_o7">
+        Please connect your crypto wallet to view your recent transactions
+      </p>
+      <Button className="btn-primary" onClick={() => setIsOpenModal(false)}>
+        Close
+      </Button>
     </div>
   );
 
@@ -294,7 +295,12 @@ const Modal = ({ variant, setIsOpenModal }) => {
         <p className="text_regular_24_w600">Settings</p>
         <div className="modalCloseCrossBox">
           <div className="modalCloseIcon">
-            <img src={closeIcon} alt="x" />
+            <img
+              src={closeIcon}
+              alt="x"
+              className="cursor"
+              onClick={() => setIsOpenModal(false)}
+            />
           </div>
         </div>
       </div>

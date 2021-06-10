@@ -15,10 +15,13 @@ import listview_unselected from "../assets/icons/listview_unselected.svg";
 import search from "../assets/icons/search.svg";
 import downarrow_white from "../assets/icons/downarrow_white.svg";
 import toggleoff from "../assets/icons/toggleoff.svg";
+import toggleon from "../assets/icons/toggleon.svg";
 
 const FarmsScreen = () => {
   const [cardView, setCardView] = useState(true);
   const [listView, setListView] = useState(false);
+  const [multiplierDropdown, setMultiplierDropdown] = useState(false);
+  const [staked, setstaked] = useState(false);
 
   const handleToggleView = () => {
     if (cardView) {
@@ -29,6 +32,21 @@ const FarmsScreen = () => {
       setListView(false);
     }
   };
+
+  const renderMultiplierdropdown = (
+    <div
+      className={
+        multiplierDropdown
+          ? "multiplier_dropdown_content active"
+          : "multiplier_dropdown_content"
+      }
+    >
+      <p>APR</p>
+      <p>HOT</p>
+      <p>Earn</p>
+      <p>Liquidity</p>
+    </div>
+  );
   //RENDER SCREEN HEADER
 
   const renderScreenHeader = (
@@ -53,17 +71,49 @@ const FarmsScreen = () => {
           />
         )}
         <span className="text_regular_16_w500">Staked only</span>
-        <img src={toggleoff} alt="toggleoff" style={{ width: "40px" }} />
+        {!staked ? (
+          <img
+            src={toggleoff}
+            alt="toggleoff"
+            style={{ width: "40px" }}
+            onClick={() => setstaked(true)}
+          />
+        ) : (
+          <img
+            src={toggleon}
+            alt="toggleoff"
+            style={{ width: "40px" }}
+            onClick={() => setstaked(false)}
+          />
+        )}
+
         <p>
-          <span className="text_regular_14_w500">Live</span> |{" "}
-          <span className="text_regular_14_w500">Finished</span>
+          <span
+            className={staked ? "text_regular_14_o7" : "text_regular_14_w500"}
+          >
+            Live
+          </span>
+          <span style={{ margin: "0 1em", color: " #6D6D6D" }}>|</span>
+          <span
+            className={staked ? "text_regular_14_w500" : "text_regular_14_o7"}
+          >
+            Finished
+          </span>
         </p>
       </div>
       <div className="block_right">
         <p className="text_regular_14">Sort by:</p>
-        <p className="cursor">
+        <p
+          className="cursor multiplier_dropdown"
+          onClick={() =>
+            setMultiplierDropdown(
+              (prevMultiplierDropdown) => !prevMultiplierDropdown
+            )
+          }
+        >
           <span className="text_regular_16_w500">Multiplier</span>
           <img src={downarrow_white} alt="down arrow" />
+          {renderMultiplierdropdown}
         </p>
         <input type="text" placeholder="Search farms" />
         <img src={search} alt="search" />
@@ -75,23 +125,21 @@ const FarmsScreen = () => {
     <div>
       {cardView ? (
         <div className="card_container">
-        <FarmCard />
-        <FarmCard />
-        <FarmCard />
-        <FarmCard />
-      </div>
+          <FarmCard />
+          <FarmCard />
+          <FarmCard />
+          <FarmCard />
+        </div>
       ) : (
         <div className="grid_container">
-        <FarmCard variant="grid" />
-        <FarmCard variant="grid" />
-        <FarmCard variant="grid" />
-        <FarmCard variant="grid" />
-      </div>
+          <FarmCard variant="grid" />
+          <FarmCard variant="grid" />
+          <FarmCard variant="grid" />
+          <FarmCard variant="grid" />
+        </div>
       )}
     </div>
   );
-
-  
 
   //RENDER SCREEN
 

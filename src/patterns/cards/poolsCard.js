@@ -46,7 +46,6 @@ const PoolsCard = ({ variant }) => {
             <p className="text_regular_14">61.4%</p>
           </div>
         </div>
-        <div className="cardAbout"></div>
         <div className="cardAbout">
           <p className="text_regular_14">Recent RUBY profit:</p>
           <br />
@@ -54,7 +53,6 @@ const PoolsCard = ({ variant }) => {
         <div className="cardAbout">
           <div className="cardDes">
             <p className="text_regular_14_o7">
-              {" "}
               0.1% unstaking fee if withdrawn within 72h
             </p>
           </div>
@@ -68,7 +66,7 @@ const PoolsCard = ({ variant }) => {
           <p className="text_regular_14_o7">Stake RUBY</p>
         </div>
         <div className="cardButton">
-          <Button className="btn-primary ">Approve Contract</Button>
+          <Button className="btn-primary ">Enable</Button>
         </div>
         <div className="cardLine"></div>
         <div className="cardDropDown">
@@ -76,39 +74,41 @@ const PoolsCard = ({ variant }) => {
           <img
             src={dropDown}
             alt="t"
-            className="cursor"
             onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
-            style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+            className={
+              isOpen ? "card_details_arrow active" : "card_details_arrow"
+            }
           />
         </div>
-        {isOpen && (
-          <div className="dropdown_content">
-            <div>
-              <p className="text_regular_16_o7">Total Staked</p>
-              <p className="text_regular_20_w500">175,329,827</p>
-            </div>
-            <div>
-              <p className="text_regular_16_o7">Performance Fee</p>
-              <p className="text_regular_16_w500">2%</p>
-            </div>
-            <div>
-              <p>
-                <span className="text_regular_14">View project site</span>
-                <img src={learn_more} alt="learn" />
-              </p>
-            </div>
-            <div>
-              <p>
-                <span className="text_regular_14">View contract</span>
-                <img src={learn_more} alt="learn" />
-              </p>
-              <p>
-                <span className="text_regular_14">Add to Metamask</span>
-                <img src={metamask} alt="learn" />
-              </p>
-            </div>
+
+        <div
+          className={isOpen ? "dropdown_content active" : "dropdown_content"}
+        >
+          <div>
+            <p className="text_regular_16_o7">Total Staked</p>
+            <p className="text_regular_20_w500">175,329,827</p>
           </div>
-        )}
+          <div>
+            <p className="text_regular_16_o7">Performance Fee</p>
+            <p className="text_regular_16_w500">2%</p>
+          </div>
+          <div>
+            <p>
+              <span className="text_regular_14">View project site</span>
+              <img src={learn_more} alt="learn" />
+            </p>
+          </div>
+          <div>
+            <p>
+              <span className="text_regular_14">View contract</span>
+              <img src={learn_more} alt="learn" />
+            </p>
+            <p>
+              <span className="text_regular_14">Add to Metamask</span>
+              <img src={metamask} alt="learn" />
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -155,54 +155,48 @@ const PoolsCard = ({ variant }) => {
               src={dropDown}
               alt="down_arrow"
               onClick={() => setIsGridOpen((prevIsGridOpen) => !prevIsGridOpen)}
-              style={{
-                transform: isGridOpen ? "rotate(180deg)" : "rotate(0deg)",
-                marginLeft: "0.5em",
-              }}
+              className={
+                isGridOpen ? "card_details_arrow active" : "card_details_arrow"
+              }
             />
           </p>
         </div>
       </div>
-      {isGridOpen && (
-        <div className="grid_row_two">
-          <div className="block_left">
-            <div>
-              <p>
-                <span className="text_regular_14">View project site</span>
-                <img src={learn_more} alt="learn_more" />
-              </p>
-              <p>
-                <span className="text_regular_14">View Contract</span>
-                <img src={learn_more} alt="learn_more" />
-              </p>
-            </div>
+      <div className={isGridOpen ? "grid_row_two active" : "grid_row_two"}>
+        <div className="block_left">
+          <div>
             <p>
-              <span className="text_regular_14">Add to Metamask</span>
-              <img src={metamask} alt="learn_more" />
+              <span className="text_regular_14">View project site</span>
+              <img src={learn_more} alt="learn_more" />
+            </p>
+            <p>
+              <span className="text_regular_14">View Contract</span>
+              <img src={learn_more} alt="learn_more" />
             </p>
           </div>
-          <div className="block_right">
+          <p>
+            <span className="text_regular_14">Add to Metamask</span>
+            <img src={metamask} alt="learn_more" />
+          </p>
+        </div>
+        <div className="block_right">
+          <div>
+            <p className="text_regular_14">Recent RUBY Profit</p>
             <div>
-              <p className="text_regular_14">Recent RUBY Profit</p>
-              <div>
-                <p>0.0~ $0</p>
-                <Button
-                  className="btn-secondary"
-                  style={{ padding: "5px 1em" }}
-                >
-                  Harvest
-                </Button>
-              </div>
-            </div>
-            <div>
-              <p className="text_regular_14">RUBY-BNB LP Staked</p>
-              <Button className="btn-primary" style={{ padding: "5px 1em" }}>
-                Approve Contract
+              <p>0.0~ $0</p>
+              <Button className="btn-secondary" style={{ padding: "5px 1em" }}>
+                Harvest
               </Button>
             </div>
           </div>
+          <div>
+            <p className="text_regular_14">RUBY-BNB LP Staked</p>
+            <Button className="btn-primary" style={{ padding: "5px 1em" }}>
+              Enable
+            </Button>
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 

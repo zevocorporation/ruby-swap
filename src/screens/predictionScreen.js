@@ -19,8 +19,8 @@ import Button from "../components/button";
 
 const PredictionScreen = () => {
   let settings = {
-    dot: true,
-    infinte: true,
+    dot: false,
+    infinte: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
