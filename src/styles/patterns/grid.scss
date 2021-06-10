@@ -11,6 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: 300ms all;
 
     .block_left {
       display: flex;
@@ -41,7 +42,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 1em;
+    visibility: hidden;
+    height: 0;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out, margin-top 200ms ease-in-out;
+
+    &.active {
+      margin-top: 1em;
+      visibility: visible;
+      height: fit-content;
+      opacity: 1;
+      transition: opacity 300ms ease-in-out, margin-top 200ms ease-in-out;
+    }
 
     .block_left {
       display: flex;

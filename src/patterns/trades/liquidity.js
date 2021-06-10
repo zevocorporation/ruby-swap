@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 //IMPORTING STYLESHEET
 
@@ -7,6 +7,10 @@ import "../../styles/patterns/trade.scss";
 //IMPORTING COMPONENTS
 
 import Button from "../../components/button";
+
+//IMPORTING PATTERNS
+
+import Modal from "../../patterns/modals/modal";
 
 //IMPORTING MEDIA ASSETS
 
@@ -18,6 +22,14 @@ import checkbox_square from "../../assets/icons/checkbox_square.svg";
 import help_circle from "../../assets/icons/help_circle.svg";
 
 const Liquidity = () => {
+  //INITIALIZING HOOKS
+
+  const [swapCheckbox, setSwapCheckbox] = useState(false);
+  const [liquidityCheckbox, setLiquidityCheckbox] = useState(false);
+  const [bridgeCheckbox, setBridgeCheckbox] = useState(false);
+  const [recentTransactionModal, setRecentTransactionModal] = useState(false);
+  const [settingsModal, setSettingsModal] = useState(false);
+
   //RENDER TRADE HEADER
 
   const renderHeader = (
@@ -27,8 +39,16 @@ const Liquidity = () => {
         <p className="text_regular_14_o7">Add liquidity to receive LP tokens</p>
       </div>
       <div>
-        <img src={settings} alt="settings" />
-        <img src={clock} alt="clock" />
+        <img
+          src={settings}
+          alt="settings"
+          onClick={() => setSettingsModal(true)}
+        />
+        <img
+          src={clock}
+          alt="clock"
+          onClick={() => setRecentTransactionModal(true)}
+        />
       </div>
     </div>
   );
@@ -87,15 +107,51 @@ const Liquidity = () => {
         <ul>
           <li>
             <span>Swap</span>
-            <img src={checkbox_square} alt="checkbox" />
+            {swapCheckbox ? (
+              <img
+                src={checkbox_square}
+                alt="checkbox"
+                onClick={() => setSwapCheckbox(false)}
+              />
+            ) : (
+              <img
+                src={checkbox}
+                alt="checkbox"
+                onClick={() => setSwapCheckbox(true)}
+              />
+            )}
           </li>
           <li>
             <span>Liquidity</span>
-            <img src={checkbox} alt="checkbox" />
+            {liquidityCheckbox ? (
+              <img
+                src={checkbox_square}
+                alt="checkbox"
+                onClick={() => setLiquidityCheckbox(false)}
+              />
+            ) : (
+              <img
+                src={checkbox}
+                alt="checkbox"
+                onClick={() => setLiquidityCheckbox(true)}
+              />
+            )}
           </li>
           <li>
             <span>Bridge</span>
-            <img src={checkbox} alt="checkbox" />
+            {bridgeCheckbox ? (
+              <img
+                src={checkbox_square}
+                alt="checkbox"
+                onClick={() => setBridgeCheckbox(false)}
+              />
+            ) : (
+              <img
+                src={checkbox}
+                alt="checkbox"
+                onClick={() => setBridgeCheckbox(true)}
+              />
+            )}
           </li>
         </ul>
       </div>
@@ -119,6 +175,15 @@ const Liquidity = () => {
     <>
       {renderLiquidityPattern}
       {renderTradeDetails}
+      {recentTransactionModal && (
+        <Modal variant="recent" setIsOpenModal={setRecentTransactionModal} />
+      )}
+      {settingsModal && (
+        <Modal variant="settings" setIsOpenModal={setSettingsModal} />
+      )}
+      {(recentTransactionModal || settingsModal) && (
+        <div className={"backdrop_transition active"}></div>
+      )}
     </>
   );
 };

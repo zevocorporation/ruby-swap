@@ -266,3 +266,15 @@ body {
     transition: backdrop-filter 0.2s ease-in-out;
   }
 }
+
+.card_details_arrow {
+  margin-left: 0.5em;
+  cursor: pointer;
+  transform: rotate(0);
+  transition: transform 300ms ease-in-out;
+
+  &.active {
+    transform: rotate(-180deg);
+    transition: transform 300ms ease-in-out;
+  }
+}

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./patterns/header";
 import Footer from "./patterns/footer";
 import {
+  CollectiblesScreen,
   FarmsScreen,
   HomeScreen,
   PoolsScreen,
@@ -31,6 +32,9 @@ const App = () => {
         </Route>
         <Route path="/prediction" exact>
           <PredictionScreen />
+        </Route>
+        <Route path="/collectibles" exact>
+          <CollectiblesScreen />
         </Route>
       </Switch>
       <Footer />

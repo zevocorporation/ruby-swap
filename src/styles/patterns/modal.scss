@@ -35,22 +35,31 @@
 }
 
 .recentModal {
-  position: relative;
-  width: 534px;
-  height: 205px;
   background: #1a1919;
   border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1100;
+  padding: 1em;
 
-  #recentAbout {
-    width: 474px;
-    height: 27px;
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-right: 1em;
+      }
+    }
   }
-
-  #recentModalButton {
-    width: 109px;
-    height: 36px;
-    left: 30px;
-    top: 134px;
+  > p {
+    margin: 1em 0;
   }
 }
 

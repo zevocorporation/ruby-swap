@@ -174,56 +174,50 @@ const FarmCard = ({ variant }) => {
             <img
               src={dropDown}
               alt="down_arrow"
-              className="cursor"
               onClick={() => setIsGridOpen((prevIsGridOpen) => !prevIsGridOpen)}
-              style={{
-                transform: isGridOpen ? "rotate(180deg)" : "rotate(0deg)",
-                marginLeft: "0.5em",
-              }}
+              className={
+                isGridOpen ? "card_details_arrow active" : "card_details_arrow"
+              }
             />
           </p>
         </div>
       </div>
-      {isGridOpen && (
-        <div className="grid_row_two">
-          <div className="block_left">
-            <div>
-              <p>
-                <span className="text_regular_14">Get RUBY-BNB LP</span>
-                <img src={learn_more} alt="learn_more" />
-              </p>
-              <p>
-                <span className="text_regular_14">View Contract</span>
-                <img src={learn_more} alt="learn_more" />
-              </p>
-            </div>
+
+      <div className={isGridOpen ? "grid_row_two active" : "grid_row_two"}>
+        <div className="block_left">
+          <div>
             <p>
-              <span className="text_regular_14">See pair info</span>
+              <span className="text_regular_14">Get RUBY-BNB LP</span>
+              <img src={learn_more} alt="learn_more" />
+            </p>
+            <p>
+              <span className="text_regular_14">View Contract</span>
               <img src={learn_more} alt="learn_more" />
             </p>
           </div>
-          <div className="block_right">
+          <p>
+            <span className="text_regular_14">See pair info</span>
+            <img src={learn_more} alt="learn_more" />
+          </p>
+        </div>
+        <div className="block_right">
+          <div>
+            <p className="text_regular_14">RUBY Earned</p>
             <div>
-              <p className="text_regular_14">RUBY Earned</p>
-              <div>
-                <p>0</p>
-                <Button
-                  className="btn-secondary"
-                  style={{ padding: "5px 1em" }}
-                >
-                  Harvest
-                </Button>
-              </div>
-            </div>
-            <div>
-              <p className="text_regular_14">RUBY-BNB LP Staked</p>
-              <Button className="btn-primary" style={{ padding: "5px 1em" }}>
-                Approve Contract
+              <p>0</p>
+              <Button className="btn-secondary" style={{ padding: "5px 1em" }}>
+                Harvest
               </Button>
             </div>
           </div>
+          <div>
+            <p className="text_regular_14">RUBY-BNB LP Staked</p>
+            <Button className="btn-primary" style={{ padding: "5px 1em" }}>
+              Approve Contract
+            </Button>
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 

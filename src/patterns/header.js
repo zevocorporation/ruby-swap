@@ -9,6 +9,7 @@ import "../styles/patterns/header.scss";
 //IMPORTING PATTERNS
 
 import Modal from "./modals/modal";
+import Sidebar from "./sidebar";
 
 //IMPORTING COMPONENTS
 
@@ -26,6 +27,7 @@ import external_link from "../assets/icons/external_link.svg";
 import edit_user from "../assets/icons/edit_user.svg";
 import logout from "../assets/icons/logout.svg";
 import chat from "../assets/icons/chat.svg";
+import menuIcon from "../assets/icons/menu.svg";
 
 const Header = () => {
   //INITIALIZING HOOKS
@@ -33,6 +35,7 @@ const Header = () => {
   const [accountModal, setAccountModal] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [connectWalletModal, setConnectWalletModal] = useState(false);
+  const [sidebar, setSidebar] = useState(false);
   const user = useSelector((state) => state.user);
 
   //HANDLING METHODS
@@ -93,11 +96,11 @@ const Header = () => {
 
   const renderDropdown = (
     <div className={dropdown ? "dropdown_content active" : "dropdown_content"}>
-      <Link to="/productions">Get in touch</Link>
-      <Link to="/collectibles">Voting</Link>
-      <Link to="/collectibles">Documents</Link>
-      <Link to="/productions">Blogs</Link>
-      <Link to="/collectibles">Merchandise</Link>
+      <span to="/productions">Get in touch</span>
+      <span to="/collectibles">Voting</span>
+      <span to="/collectibles">Documents</span>
+      <span to="/productions">Blogs</span>
+      <span to="/collectibles">Merchandise</span>
     </div>
   );
 
@@ -153,7 +156,7 @@ const Header = () => {
     <div className="controls">
       <div className="menu">
         {renderLinks}
-        <div className="dropdown">
+        <div className={dropdown ? "dropdown active" : "dropdown"}>
           <p onClick={() => setDropdown((prevDropdowm) => !prevDropdowm)}>
             <span>More</span>
             <img src={downarrow_white} alt="down_arrow" />
@@ -162,23 +165,32 @@ const Header = () => {
         </div>
       </div>
       {renderButton}
+      <div
+        className="hamburger"
+        onClick={() => setSidebar((prevSidebar) => !prevSidebar)}
+      >
+        <img src={menuIcon} alt="x" />
+      </div>
     </div>
   );
 
   const renderHeader = (
-    <div className="header">
-      <Link to="/">
-        <img src={logo} alt="logo" className="logo" />
-      </Link>
-      {renderControls}
-      {accountModal && renderAccountDropdown}
-    </div>
+    <>
+      <div className="header">
+        <Link to="/">
+          <img src={logo} alt="logo" className="logo" />
+        </Link>
+        {renderControls}
+        {accountModal && renderAccountDropdown}
+        <p className="line"></p>
+      </div>
+    </>
   );
 
   return (
     <>
       {renderHeader}
-      <p className="line"></p>
+      {sidebar && <Sidebar setSidebar={setSidebar} />}
       <Modal variant="grid" />
       {connectWalletModal && (
         <Modal variant="connectWallet" setIsOpenModal={setConnectWalletModal} />

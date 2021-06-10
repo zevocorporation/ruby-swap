@@ -19,6 +19,7 @@ import closeIcon from "../../assets/icons/close.svg";
 import clock from "../../assets/icons/clock.svg";
 import paymentConfirmedIcon from "../../assets/icons/paymentConfirmed.svg";
 import paymentProcessingIcon from "../../assets/icons/paymentProcessing.svg";
+import clockIcon from "../../assets/icons/clock.svg";
 import metamask from "../../assets/icons/metamask.svg";
 import mathWallet from "../../assets/icons/mathWallet.svg";
 import tokenPocket from "../../assets/icons/tokenPocket.svg";
@@ -125,6 +126,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
 
   const renderRecent = (
     <div className="recentModal">
+
       <div className="modalHead">
         <div className="modalLogo">
           <div id="icon">
@@ -142,14 +144,30 @@ const Modal = ({ variant, setIsOpenModal }) => {
       </div>
 
       <div className="modalAbout" id="recentAbout">
+      <div>
         <p>
-          Please connect your crypto wallet to view your recent transactions
+          <img
+            src={clockIcon}
+            alt="x"
+            style={{ width: "32px", height: "32px" }}
+          />
+          <span className="text_regular_24_w600">Recent transactions</span>
         </p>
+        <img
+          src={closeIcon}
+          alt="x"
+          className="cursor"
+          style={{ width: "24px", height: "24px" }}
+          onClick={() => setIsOpenModal(false)}
+        />
       </div>
-
-      <button className="modalButton" id="recentModalButton">
-        <Button className="btn-primary">Close</Button>
-      </button>
+      <p className="text_regular_14_o7">
+        Please connect your crypto wallet to view your recent transactions
+      </p>
+      <Button className="btn-primary" onClick={() => setIsOpenModal(false)}>
+        Close
+      </Button>
+    </div>
     </div>
   );
 
@@ -263,7 +281,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
         <div className="walletBox">
           <div className="wallentcontain">
             <div className="walletBoxImg">
-              <img src={trustWallet} alt="img"/>
+              <img src={trustWallet} alt="trustwallet" />
             </div>
             <div className="walletBoxText text_regular_14">
               <p>TrustWallet</p>
@@ -273,7 +291,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
         <div className="walletBox">
           <div className="wallentcontain">
             <div className="walletBoxImg">
-              <img src={mathWallet} alt="img"/>
+              <img src={mathWallet} alt="mathwallet" />
             </div>
             <div className="walletBoxText text_regular_14">
               <p>MathWallet</p>
@@ -283,7 +301,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
         <div className="walletBox">
           <div className="wallentcontain">
             <div className="walletBoxImg">
-              <img src={tokenPocket} alt="img"/>
+              <img src={tokenPocket} alt="tokenpocket" />
             </div>
             <div className="walletBoxText text_regular_14">
               <p>TokenPocket</p>
@@ -293,7 +311,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
         <div className="walletBox">
           <div className="wallentcontain">
             <div className="walletBoxImg">
-              <img src={walletConnect} alt="img"/>
+              <img src={walletConnect} alt="walletconnect" />
             </div>
             <div className="walletBoxText text_regular_14">
               <p>WalletConnect</p>
@@ -303,7 +321,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
         <div className="walletBox">
           <div className="wallentcontain">
             <div className="walletBoxImg">
-              <img src={binanceChain} alt="img"/>
+              <img src={binanceChain} alt="binance" />
             </div>
             <div className="walletBoxText text_regular_14">
               <p>Binance Chain</p>
@@ -328,7 +346,12 @@ const Modal = ({ variant, setIsOpenModal }) => {
         <p className="text_regular_24_w600">Settings</p>
         <div className="modalCloseCrossBox">
           <div className="modalCloseIcon">
-            <img src={closeIcon} alt="img" />
+            <img
+              src={closeIcon}
+              alt="x"
+              className="cursor"
+              onClick={() => setIsOpenModal(false)}
+            />
           </div>
         </div>
       </div>

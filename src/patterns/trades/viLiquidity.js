@@ -8,6 +8,10 @@ import "../../styles/patterns/trade.scss";
 
 import Button from "../../components/button";
 
+//IMPORTING PATTERNS
+
+import Modal from "../../patterns/modals/modal";
+
 //IMPORTING MEDIA ASSETS
 
 import learn_more from "../../assets/icons/learn_more.svg";
@@ -23,6 +27,8 @@ const ViLiquidity = () => {
   const [swapCheckbox, setSwapCheckbox] = useState(false);
   const [liquidityCheckbox, setLiquidityCheckbox] = useState(false);
   const [bridgeCheckbox, setBridgeCheckbox] = useState(false);
+  const [recentTransactionModal, setRecentTransactionModal] = useState(false);
+  const [settingsModal, setSettingsModal] = useState(false);
 
   //RENDER TRADE HEADER
 
@@ -33,8 +39,16 @@ const ViLiquidity = () => {
         <p className="text_regular_14_o7">Add liquidity to receive LP tokens</p>
       </div>
       <div>
-        <img src={settings} alt="settings" />
-        <img src={clock} alt="clock" />
+        <img
+          src={settings}
+          alt="settings"
+          onClick={() => setSettingsModal(true)}
+        />
+        <img
+          src={clock}
+          alt="clock"
+          onClick={() => setRecentTransactionModal(true)}
+        />
       </div>
     </div>
   );
@@ -161,6 +175,15 @@ const ViLiquidity = () => {
     <>
       {renderExchangPattern}
       {renderTradeDetails}
+      {recentTransactionModal && (
+        <Modal variant="recent" setIsOpenModal={setRecentTransactionModal} />
+      )}
+      {settingsModal && (
+        <Modal variant="settings" setIsOpenModal={setSettingsModal} />
+      )}
+      {(recentTransactionModal || settingsModal) && (
+        <div className={"backdrop_transition active"}></div>
+      )}
     </>
   );
 };
