@@ -144,23 +144,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
       </div>
 
       <div className="modalAbout" id="recentAbout">
-      <div>
-        <p>
-          <img
-            src={clockIcon}
-            alt="x"
-            style={{ width: "32px", height: "32px" }}
-          />
-          <span className="text_regular_24_w600">Recent transactions</span>
-        </p>
-        <img
-          src={closeIcon}
-          alt="x"
-          className="cursor"
-          style={{ width: "24px", height: "24px" }}
-          onClick={() => setIsOpenModal(false)}
-        />
-      </div>
+      
       <p className="text_regular_14_o7">
         Please connect your crypto wallet to view your recent transactions
       </p>
