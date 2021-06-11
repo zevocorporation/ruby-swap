@@ -5,6 +5,7 @@ import Web3 from "web3";
 //IMPORTING STYLESHEETS
 
 import "../../styles/patterns/modal.scss";
+import "../../styles/patterns/card.scss";
 
 //IMPORTING COMPONENTS
 
@@ -39,6 +40,24 @@ import bar_chart from "../../assets/icons/bar_chart.svg";
 import learn_more from "../../assets/icons/learn_more.svg";
 import downarrow_white from "../../assets/icons/downarrow_white.svg";
 import liquidity from "../../assets/icons/liquidity.svg";
+import line from "../assets/icons/line.svg";
+import Button from "../components/button";
+import downarrow_white from "../assets/icons/downarrow_white.svg";
+import areachart from "../assets/icons/areachart.svg";
+import barchart from "../assets/icons/bar-chart.svg";
+import candlestick from "../assets/icons/candlestick.svg";
+import lineChart from "../assets/icons/line-chart.svg";
+import plusCircle from "../assets/icons/plusCircle.svg";
+import soundfx from "../assets/icons/soundfx.svg";
+import camera from "../assets/icons/camera.svg";
+import close from "../assets/icons/close.svg";
+import chart from "../assets/icons/chart.svg";
+import sun from "../assets/icons/sun.svg";
+import eye from "../assets/icons/eye.svg";
+import points from "../assets/icons/points.svg";
+import whiteCross from "../assets/icons/whiteCross.svg";
+import greenDot from "../assets/icons/greenDot.svg";
+import settings from "../assets/icons/settings.svg";
 
 //GET USER BALANCE
 
@@ -705,6 +724,69 @@ const Modal = ({ variant, setIsOpenModal }) => {
     </div>
   );
 
+  const renderChart = (
+    <div className="card" style={{ width: "1079px" }}>
+      <div className="cardHead">
+        <div className="cardHeadRight">
+          <img src={chart} alt="u" />
+          <p>Chart</p>
+          <img src={line} alt="|" />
+          <Button className="btn-secondary">1m</Button>
+          <Button className="btn-secondary">5m</Button>
+          <Button className="btn-secondary">30m</Button>
+          <Button className="btn-secondary">1hr</Button>
+          <img src={downarrow_white} alt="arrow" />
+          <img src={line} alt="|" />
+          <img src={barchart} alt="barChart" />
+          <img src={candlestick} alt="candlestick" />
+          <img src={areachart} alt="areaChart" />
+          <img src={lineChart} alt="lineChart" />
+          <img src={line} alt="|" />
+          <img src={plusCircle} alt="plus" />
+          <p>Compare</p>
+          <img src={soundfx} alt="fx" />
+          <p>Indicator</p>
+        </div>
+
+        <div>
+          <div>
+            <img src={camera} alt="camera" />
+            <img src={close} alt="close" />
+          </div>
+        </div>
+      </div>
+      <div className="cardHead">
+        <div className="cardAbout" style={{ justifyContent: "left" }}>
+          <p className="text_regular_14">Binance Coin / TetherUS 5 BINANCE</p>
+          <div id="posImg">
+            <div className="image">
+              <img src={eye} alt="see" />
+            </div>
+            <div className="image">
+              <img src={points} alt="point" />
+            </div>
+            <div className="image">
+              <img src={greenDot} alt="dot" />
+            </div>
+          </div>
+          <p>418.24</p>
+          <p style={{ marginLeft: "2%" }}>+2.59 (+0.82%)</p>
+        </div>
+      </div>
+      <div className="box_1">
+        <p>Vol</p>
+        <p>23,885k</p>
+        <img src={eye} alt="see" />
+        <img src={settings} alt="settings" />
+        <img src={whiteCross} alt="cross" />
+        <img src={points} alt="point" />
+      </div>
+      <div style={{float:"right"}}>
+        <img src={sun} alt="sun" />
+      </div>
+    </div>
+  );
+
   switch (variant) {
     case "wrongNetwork":
       return renderWrongNetwork;
@@ -734,6 +816,8 @@ const Modal = ({ variant, setIsOpenModal }) => {
       return renderIndicator;
     case "history":
       return renderHistory;
+    case "chart":
+      return renderChart;
     default:
       return null;
   }

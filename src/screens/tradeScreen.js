@@ -18,6 +18,9 @@ import {
 import learn_more from "../assets/icons/learn_more.svg";
 import right_arrow from "../assets/icons/right_arrow.svg";
 
+//Modal
+
+
 const TradeScreen = () => {
   //INITIALIZING HOOKS
 
@@ -86,12 +89,76 @@ const TradeScreen = () => {
     </>
   );
 
+  const renderModals = (
+    <div className="card" style={{ width: "1079px" }}>
+      <div className="cardHead">
+        <div className="cardHeadRight">
+          <img src={chart} alt="u" />
+          <p>Chart</p>
+          <img src={line} alt="|" />
+          <Button className="btn-secondary">1m</Button>
+          <Button className="btn-secondary">5m</Button>
+          <Button className="btn-secondary">30m</Button>
+          <Button className="btn-secondary">1hr</Button>
+          <img src={downarrow_white} alt="arrow" />
+          <img src={line} alt="|" />
+          <img src={barchart} alt="barChart" />
+          <img src={candlestick} alt="candlestick" />
+          <img src={areachart} alt="areaChart" />
+          <img src={lineChart} alt="lineChart" />
+          <img src={line} alt="|" />
+          <img src={plusCircle} alt="plus" />
+          <p>Compare</p>
+          <img src={soundfx} alt="fx" />
+          <p>Indicator</p>
+        </div>
+
+        <div>
+          <div>
+            <img src={camera} alt="camera" />
+            <img src={close} alt="close" />
+          </div>
+        </div>
+      </div>
+      <div className="cardHead">
+        <div className="cardAbout" style={{ justifyContent: "left" }}>
+          <p className="text_regular_14">Binance Coin / TetherUS 5 BINANCE</p>
+          <div id="posImg">
+            <div className="image">
+              <img src={eye} alt="see" />
+            </div>
+            <div className="image">
+              <img src={points} alt="point" />
+            </div>
+            <div className="image">
+              <img src={greenDot} alt="dot" />
+            </div>
+          </div>
+          <p>418.24</p>
+          <p style={{ marginLeft: "2%" }}>+2.59 (+0.82%)</p>
+        </div>
+      </div>
+      <div className="box_1">
+        <p>Vol</p>
+        <p>23,885k</p>
+        <img src={eye} alt="see" />
+        <img src={settings} alt="settings" />
+        <img src={whiteCross} alt="cross" />
+        <img src={points} alt="point" />
+      </div>
+      <div style={{float:"right"}}>
+        <img src={sun} alt="sun" />
+      </div>
+    </div>
+  );
+
   //RENDER TRADE SCREEN
 
   const renderScreen = (
     <div className="trade_screen">
       {renderTradeTemplate}
-      {renderTradeTypes}
+      {renderModals}
+      {/* {renderTradeTypes} */}
     </div>
   );
 
