@@ -156,6 +156,12 @@
       }
     }
 
+    .profile_img {
+      @media (max-width: 576px) {
+        display: none;
+      }
+    }
+
     button {
       font-size: 1em;
       line-height: 20px;

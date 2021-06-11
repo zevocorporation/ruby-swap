@@ -1,5 +1,20 @@
 @import "../../index.scss";
 
+.modal_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  > div {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-right: 1em;
+    }
+  }
+}
+
 .modal {
   width: 474px;
   background: #1a1919;
@@ -10,6 +25,10 @@
   transform: translate(-50%, -50%);
   z-index: 1100;
   padding: 1em;
+
+  @media (max-width: 576px) {
+    width: 90%;
+  }
 
   > div {
     margin-bottom: 1.25em;
@@ -44,6 +63,10 @@
   z-index: 1100;
   padding: 1em;
 
+  @media (max-width: 576px) {
+    width: 80%;
+  }
+
   > div {
     display: flex;
     align-items: center;
@@ -73,193 +96,112 @@
   width: 603px;
   padding: 1em;
 
-  .modalCloseCrossBox {
-    left: 90%;
+  @media (max-width: 576px) {
+    width: 90%;
   }
 
-  .walletBoxes {
-    display: flex;
-    flex-wrap: wrap;
-  }
+  .walletbox {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
 
-  .walletContain {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    left: 43px;
-    top: 20px;
-  }
+    .wallet_card {
+      background: #0b0b0b;
+      border-radius: 5px;
+      padding: 0.5em;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      grid-gap: 0.5em;
+      cursor: pointer;
 
-  .walletBox {
-    position: relative;
-    width: 165px;
-    height: 150px;
-    left: 0px;
-    top: 15px;
-    margin: 10px;
-    background: #0b0b0b;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+      @media (max-width: 576px) {
+        height: 120px;
+      }
 
-  .walletBoxImg {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    
-    // align-items: center;
-    img{
-      margin-top: 8%;
-      height: 93px;
-      width: 200%
+      > div {
+        width: 100%;
+        height: 80%;
+        display: grid;
+        place-items: center;
+
+        img {
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.07em;
+        color: #ffffff;
+        text-align: center;
+      }
     }
   }
 
-  .walletBoxText {
-    position: absolute;
-    left: 20.88%;
-    // right: 26.06%;
-    top: 73.33%;
-    bottom: 13.33%;
-    text-align: center;
-  }
-
   .modalFooterText {
-    padding-top: 10px;
     font-size: 0.9em;
   }
 }
 
 .settingModal {
-  width: 603px;
-  height: 403px;
+  max-width: 570px;
+  padding: 1em;
 
-  .modalCloseCrossBox {
-    left: 90%;
+  @media (max-width: 576px) {
+    max-width: 90%;
   }
 
-  .audioBox {
-    width: 75px;
-    height: 71px;
-    left: 30px;
-    top: 302px;
-
-    .audioText {
-      width: 42px;
-      height: 20px;
-      left: 30px;
-      top: 302px;
-
-      > p {
-        position: absolute;
-        left: 4.98%;
-        right: 88.06%;
-        top: 74.94%;
-        bottom: 20.1%;
-      }
-    }
-
-    .audioToggle {
-      position: absolute;
-      width: 75px;
-      height: 28px;
-      left: 30px;
-      top: 342px;
-      background: #0b0b0b;
-      border-radius: 50px;
-      display: flex;
-
-      .audioOn {
-        position: absolute;
-        width: 25px;
-        height: 25px;
-        // left: 0px;
-        // top: 2px;
-        background: #f1f1f1;
-        /* Primary */
-        border: 1px solid #ec1654;
-        border-radius: 50px;
-      }
-      p {
-        position: absolute;
-        left: 50.94%;
-        right: 84.74%;
-        top: 25%;
-        bottom: 9.18%;
-      }
-    }
-  }
-
-  .settingBox1 {
-    position: absolute;
-    width: 543px;
-    height: 95px;
-    left: 30px;
-    top: 92px;
+  > p {
     display: flex;
+    align-items: center;
+    margin: 1em 0;
 
-    .box1Head {
-      position: absolute;
-      width: 267px;
-      height: 40px;
-      left: 0px;
-      top: 0px;
-      display: flex;
-      > p {
-        position: relative;
-        left: 0.98%;
-        right: 72.31%;
-        top: 3.83%;
-        bottom: 72.21%;
-      }
-
-      > img {
-        position: absolute;
-        left: 62.33%;
-        right: 8.34%;
-        top: 8.33%;
-        background: rgba(255, 255, 255, 0.7);
-      }
-    }
-
-    .dataBox1 {
-      position: absolute;
-      height: 50px;
-      width: 100%;
-      top: 50%;
-      display: flex;
-    }
-
-    .dataBox1 input {
-      width: 75px;
-      height: 45px;
-      margin-right: 20px;
-      border-radius: 5px;
-      border: none;
-      padding: 22px;
-      background-color: #0b0b0b;
-    }
-    .dataBox2 {
-      display: flex;
-      input {
-        width: 220px;
-      }
-      p {
-        position: absolute;
-        top: 13px;
-        right: 0px;
-      }
+    img {
+      margin-left: 1em;
     }
   }
 
-  .settingBox2 {
-    top: 50%;
-    .dataBox1 {
-      top: 20px;
-      p {
-        position: absolute;
-        top: 10px;
-        left: 85px;
+  input {
+    background: #0b0b0b;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 0.75em 1em;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.07em;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .transaction {
+    input {
+      width: 75px;
+      margin-right: 1em;
+    }
+  }
+
+  .slippage_input {
+    display: grid;
+    grid-template-columns: 75px 75px 75px auto;
+
+    > input {
+      margin-right: 1em;
+    }
+    > div {
+      display: flex;
+      align-items: center;
+
+      input {
+        width: 100%;
+      }
+
+      span {
+        margin-left: 0.5em;
       }
     }
   }

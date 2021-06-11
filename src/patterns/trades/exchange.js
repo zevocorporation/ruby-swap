@@ -30,6 +30,8 @@ const Exchange = () => {
   const [bridgeCheckbox, setBridgeCheckbox] = useState(false);
   const [recentTransactionModal, setRecentTransactionModal] = useState(false);
   const [settingsModal, setSettingsModal] = useState(false);
+  const [exchangeInput, setExchangeInput] = useState(0);
+  const [exchangeOutput, setExchangeOutput] = useState(0);
 
   //RENDER TRADE HEADER
 
@@ -63,8 +65,9 @@ const Exchange = () => {
         <div>
           <input
             type="number"
-            value="0.00"
+            value={exchangeInput}
             className="text_regular_20_w500"
+            onChange={(e) => setExchangeInput(e.target.value)}
             readOnly
           />
           <div>
@@ -87,8 +90,9 @@ const Exchange = () => {
         <div>
           <input
             type="number"
-            value="0.00"
+            value={exchangeOutput}
             className="text_regular_20_w500"
+            onChange={(e) => setExchangeOutput(e.target.value)}
             readOnly
           />
           <div>
