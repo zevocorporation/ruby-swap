@@ -56,6 +56,8 @@ import eye from "../../assets/icons/eye.svg";
 import points from "../../assets/icons/points.svg";
 import whiteCross from "../../assets/icons/whiteCross.svg";
 import greenDot from "../../assets/icons/greenDot.svg";
+import bitcoin from "../../assets/icons/bitcoin.svg";
+
 
 //GET USER BALANCE
 
@@ -194,8 +196,6 @@ const Modal = ({ variant, setIsOpenModal }) => {
       </div>
     </div>
   );
-
-  
 
   const renderPaymentProcessing = (
     <div className="modal paymentModal">
@@ -738,8 +738,47 @@ const Modal = ({ variant, setIsOpenModal }) => {
         <img src={whiteCross} alt="cross" />
         <img src={points} alt="point" />
       </div>
-      <div style={{float:"right"}}>
+      <div style={{ float: "right" }}>
         <img src={sun} alt="sun" />
+      </div>
+    </div>
+  );
+
+  const renderCompare = (
+    <div className="card" style={{ width: "463px" }}>
+      <div className="cardHead text_regular_12_o7">
+        <p>All</p>
+        <p>Stock</p>
+        <p>Futures</p>
+        <p>Forex</p>
+        <p>CFD</p>
+        <p>Crypto</p>
+        <p>Index</p>
+        <p>Economy</p>
+      </div>
+
+      <div className="cardHead">
+        <div className="cardHead" style={{ width: "200px", marginTop: "3%" }}>
+          <p>TUSDBTC</p>
+          <p className="text_regular_12_o7">TRUEUSD / BITCOIN</p>
+        </div>
+        <div className="cardHead" style={{ width: "150px" }}>
+          <p>Crypto- Bitrex</p>
+          <img src={bitcoin} alt="bitcoin" />
+        </div>
+      </div>
+
+      <div className="cardLine" style={{ marginBottom: "5%" }}></div>
+
+      <div className="cardHead">
+        <div className="cardHead" style={{ width: "200px" }}>
+          <p>TUSDBTC</p>
+          <p className="text_regular_12_o7">TRUEUSD / BITCOIN</p>
+        </div>
+        <div className="cardHead" style={{ width: "150px" }}>
+          <p>Crypto- Bitrex</p>
+          <img src={bitcoin} alt="bitcoin" />
+        </div>
       </div>
     </div>
   );
@@ -775,6 +814,8 @@ const Modal = ({ variant, setIsOpenModal }) => {
       return renderHistory;
     case "chart":
       return renderChart;
+    case "compare":
+      return renderCompare;
     default:
       return null;
   }
