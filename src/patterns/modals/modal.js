@@ -26,6 +26,8 @@ import trustWallet from "../../assets/icons/trustWallet.svg";
 import vector from "../../assets/icons/vector.svg";
 import walletConnect from "../../assets/icons/walletConnect.svg";
 import binanceChain from "../../assets/icons/binanceChain.svg";
+import settings from "../../assets/icons/settings.svg";
+import help_circle from "../../assets/icons/help_circle.svg";
 
 //GET USER BALANCE
 
@@ -221,80 +223,55 @@ const Modal = ({ variant, setIsOpenModal }) => {
 
   const renderConnectWallet = (
     <div className="modal connectWalletModal">
-      <div className="flex">
-        <img src={vector} alt="wallet" />
-        <p className="text_regular_24_w600">Connect to a wallet</p>
-        <div className="modalCloseCrossBox">
-          <div className="modalCloseIcon">
-            <img
-              src={closeIcon}
-              alt="x"
-              className="cursor"
-              onClick={() => setIsOpenModal(false)}
-            />
-          </div>
+      <div className="modal_header">
+        <div>
+          <img src={vector} alt="vector" style={{ width: "28px" }} />
+          <p className="text_regular_24_w600">Connect to a wallet</p>
         </div>
+        <img
+          src={closeIcon}
+          alt="x"
+          style={{ width: "24px", height: "24px" }}
+          className="cursor"
+          onClick={() => setIsOpenModal(false)}
+        />
       </div>
-      <div className="walletBoxes">
-        <div className="walletBox" onClick={() => connect()}>
-          <div className="wallentcontain">
-            <div className="walletBoxImg">
-              <img src={metamask} alt="metamask" />
-            </div>
-            <div className="walletBoxText text_regular_14">
-              <p>Metamask</p>
-            </div>
+      <div className="walletbox">
+        <div className="wallet_card" onClick={() => connect()}>
+          <div>
+            <img src={metamask} alt="metamask" />
           </div>
+          <p>Metamask</p>
         </div>
-        <div className="walletBox">
-          <div className="wallentcontain">
-            <div className="walletBoxImg">
-              <img src={trustWallet} alt="trustwallet" />
-            </div>
-            <div className="walletBoxText text_regular_14">
-              <p>TrustWallet</p>
-            </div>
+        <div className="wallet_card">
+          <div>
+            <img src={trustWallet} alt="trustWallet" />
           </div>
+          <p>TrustWallet</p>
         </div>
-        <div className="walletBox">
-          <div className="wallentcontain">
-            <div className="walletBoxImg">
-              <img src={mathWallet} alt="mathwallet" />
-            </div>
-            <div className="walletBoxText text_regular_14">
-              <p>MathWallet</p>
-            </div>
+        <div className="wallet_card">
+          <div>
+            <img src={mathWallet} alt="mathWallet" />
           </div>
+          <p>MathWallet</p>
         </div>
-        <div className="walletBox">
-          <div className="wallentcontain">
-            <div className="walletBoxImg">
-              <img src={tokenPocket} alt="tokenpocket" />
-            </div>
-            <div className="walletBoxText text_regular_14">
-              <p>TokenPocket</p>
-            </div>
+        <div className="wallet_card">
+          <div>
+            <img src={tokenPocket} alt="tokenPocket" />
           </div>
+          <p>TokenPocket</p>
         </div>
-        <div className="walletBox">
-          <div className="wallentcontain">
-            <div className="walletBoxImg">
-              <img src={walletConnect} alt="walletconnect" />
-            </div>
-            <div className="walletBoxText text_regular_14">
-              <p>WalletConnect</p>
-            </div>
+        <div className="wallet_card">
+          <div>
+            <img src={walletConnect} alt="walletConnect" />
           </div>
+          <p>WalletConnect</p>
         </div>
-        <div className="walletBox">
-          <div className="wallentcontain">
-            <div className="walletBoxImg">
-              <img src={binanceChain} alt="binance" />
-            </div>
-            <div className="walletBoxText text_regular_14">
-              <p>Binance Chain</p>
-            </div>
+        <div className="wallet_card">
+          <div>
+            <img src={binanceChain} alt="binanceChain" />
           </div>
+          <p>Binance Chain</p>
         </div>
       </div>
       <div>
@@ -309,60 +286,44 @@ const Modal = ({ variant, setIsOpenModal }) => {
 
   const renderSettings = (
     <div className="modal settingModal ">
-      <div className="flex">
-        <img src="" alt="setting" />
-        <p className="text_regular_24_w600">Settings</p>
-        <div className="modalCloseCrossBox">
-          <div className="modalCloseIcon">
-            <img
-              src={closeIcon}
-              alt="x"
-              className="cursor"
-              onClick={() => setIsOpenModal(false)}
-            />
-          </div>
+      <div className="modal_header">
+        <div>
+          <img
+            src={settings}
+            alt="setting"
+            style={{ width: "30px", height: "30px" }}
+          />
+          <p className="text_regular_24_w600">Settings</p>
+        </div>
+        <img
+          src={closeIcon}
+          alt="x"
+          className="cursor"
+          onClick={() => setIsOpenModal(false)}
+        />
+      </div>
+      <p>
+        <span className="text_regular_14">Slippage tolerance</span>
+        <img src={help_circle} alt="help" />
+      </p>
+      <div className="slippage_input">
+        <input type="text" readOnly value="0.0%" />
+        <input type="text" readOnly value="0.0%" />
+        <input type="text" readOnly value="0.0%" />
+        <div>
+          <input type="text" readOnly value="0.0%" />
+          <span className="text_regular_14_o7">%</span>
         </div>
       </div>
-      <div className="settingBox1">
-        <div className="box1Head">
-          <p className="settingBoxHeading">Slippage tolerance</p>
-          <img src="" alt="g" />
-        </div>
-        <div className="dataBox1">
-          <input type="text" placeholder="0.1%" />
-
-          <input type="text" placeholder="0.5%" />
-
-          <input type="text" placeholder="1%" />
-          <div className="dataBox2">
-            <input type="text" placeholder="8%" />
-            <p className="text_regular_14_o7">%</p>
-          </div>
-        </div>
+      <p>
+        <span className="text_regular_14">Transaction deadline </span>
+        <img src={help_circle} alt="help" />
+      </p>
+      <div className="transaction">
+        <input type="number" value="02" readOnly />
+        <span className="text_regular_14_o7">Minutes</span>
       </div>
-      <div className="settingBox1 settingBox2">
-        <div className="box1Head">
-          <p className="settingBoxHeading">Transaction deadline </p>
-          <img src="" alt="g" />
-        </div>
-        <div className="dataBox1">
-          <div className="dataBox1">
-            <input type="text" placeholder="8%" />
-            <p className="text_regular_14_o7">Minutes</p>
-          </div>
-        </div>
-      </div>
-      <div></div>
-
-      <div className="audioBox">
-        <div className="audioText">
-          <p className="text_regular_14_o7">Audio</p>
-        </div>
-        <div className="audioToggle">
-          <div className="audioOn"></div>
-          <p className="text_regular_12">ON</p>
-        </div>
-      </div>
+      <p className="text_regular_14">Audio</p>
     </div>
   );
 

@@ -36,9 +36,17 @@ const Header = () => {
   const [dropdown, setDropdown] = useState(false);
   const [connectWalletModal, setConnectWalletModal] = useState(false);
   const [sidebar, setSidebar] = useState(false);
+  // const [copied, setCopied] = useState(false);
   const user = useSelector((state) => state.user);
 
   //HANDLING METHODS
+
+  const handleCopy = () => {
+    // setCopied(true);
+    // setTimeout(() => {
+    //   setCopied(false);
+    // }, 3000);
+  };
 
   //RENDER LINKS
 
@@ -89,7 +97,12 @@ const Header = () => {
         {user?.isConnected && <img src={down_arrow} alt="down_arrow" />}
       </Button>
       {user?.isConnected && (
-        <img src={profile} alt="profile" style={{ marginLeft: "5px" }} />
+        <img
+          src={profile}
+          alt="profile"
+          style={{ marginLeft: "5px" }}
+          className="profile_img"
+        />
       )}
     </>
   );
@@ -124,7 +137,7 @@ const Header = () => {
             <p>
               <span className="text_regular_12_o7">Copy</span>
               <CopyToClipboard text={user?.address}>
-                <img src={copy} alt="copy" />
+                <img src={copy} alt="copy" onClick={() => handleCopy()} />
               </CopyToClipboard>
             </p>
             <p>
@@ -190,7 +203,13 @@ const Header = () => {
   return (
     <>
       {renderHeader}
-      {sidebar && <Sidebar setSidebar={setSidebar} />}
+      {sidebar && (
+        <Sidebar
+          setSidebar={setSidebar}
+          connectWalletModal={connectWalletModal}
+          setConnectWalletModal={setConnectWalletModal}
+        />
+      )}
       <Modal variant="grid" />
       {connectWalletModal && (
         <Modal variant="connectWallet" setIsOpenModal={setConnectWalletModal} />

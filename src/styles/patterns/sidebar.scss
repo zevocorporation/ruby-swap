@@ -5,7 +5,8 @@
   top: 0;
   right: 0;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  overflow-y: auto;
   z-index: 1120;
   background: rgba(26, 25, 25, 0.95);
 
@@ -17,6 +18,47 @@
 
     @media (max-width: 576px) {
       padding: 2em 1em;
+    }
+
+    .close_icon {
+      margin-left: 2em;
+    }
+
+    .profile_img {
+      display: none;
+      @media (max-width: 576px) {
+        display: flex;
+      }
+    }
+
+    button {
+      font-size: 1em;
+      line-height: 20px;
+      letter-spacing: 0.05em;
+      color: #010202;
+      background: $primaryText;
+      font-family: $fontRegular;
+      padding: 0.5em 1.25em;
+      border: none;
+      outline: none;
+      border-radius: 50px;
+      cursor: pointer;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      display: none;
+
+      @media (max-width: 576px) {
+        display: flex;
+      }
+
+      span {
+        font-weight: bold;
+      }
+
+      img {
+        margin-left: 0.5em;
+      }
     }
   }
 
