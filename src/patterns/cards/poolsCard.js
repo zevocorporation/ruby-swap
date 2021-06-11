@@ -17,99 +17,102 @@ const PoolsCard = ({ variant }) => {
   const [isGridOpen, setIsGridOpen] = useState(false);
 
   const renderCardView = (
-    <div className="cardPool">
-      <div className="card">
-        <div className="cardHead">
-          <div className="cardName">
-            <p className="text_regular_14">Auto RUBY</p>
+    <div>
+      <div className="cardPool">
+        <div className="card">
+          <div className="cardHead">
+            <div className="cardName">
+              <p className="text_regular_14">Auto RUBY</p>
 
-            <p className="text_regular_12_o7">Automatic restaking</p>
+              <p className="text_regular_12_o7">Automatic restaking</p>
+            </div>
+            <div className="cardLogo">
+              <img
+                src={singleCoin}
+                alt="t"
+                style={{ width: "75px", height: "78px" }}
+              />
+            </div>
           </div>
-          <div className="cardLogo">
+          <div className="cardAbout">
+            <div className="cardDes">
+              <p className="text_regular_14_o7">ARP:</p>
+            </div>
+            <div className="cardStats">
+              <img
+                src={bar_chart}
+                alt="chart"
+                style={{ width: "15px", height: "15px" }}
+              />
+              <p className="text_regular_14">61.4%</p>
+            </div>
+          </div>
+          <div className="cardAbout">
+            <p className="text_regular_14">Recent RUBY profit:</p>
+            <br />
+          </div>
+          <div className="cardAbout">
+            <div className="cardDes">
+              <p className="text_regular_14_o7">
+                0.1% unstaking fee if withdrawn within 72h
+              </p>
+            </div>
+            <div className="cardStats">
+              <Button className="btn-secondary" style={{ padding: "5px 1em" }}>
+                Collect
+              </Button>
+            </div>
+          </div>
+          <div className="cardAbout">
+            <p className="text_regular_14_o7">Stake RUBY</p>
+          </div>
+          <div className="cardButton">
+            <Button className="btn-primary ">Enable</Button>
+          </div>
+          <div className="cardLine"></div>
+          <div className="cardDropDown">
+            <p className="text_regular_14">{isOpen ? "Hide" : "Details"}</p>
             <img
-              src={singleCoin}
+              src={dropDown}
               alt="t"
-              style={{ width: "75px", height: "78px" }}
+              onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
+              className={
+                isOpen ? "card_details_arrow active" : "card_details_arrow"
+              }
             />
           </div>
-        </div>
-        <div className="cardAbout">
-          <div className="cardDes">
-            <p className="text_regular_14_o7">ARP:</p>
-          </div>
-          <div className="cardStats">
-            <img
-              src={bar_chart}
-              alt="chart"
-              style={{ width: "15px", height: "15px" }}
-            />
-            <p className="text_regular_14">61.4%</p>
-          </div>
-        </div>
-        <div className="cardAbout">
-          <p className="text_regular_14">Recent RUBY profit:</p>
-          <br />
-        </div>
-        <div className="cardAbout">
-          <div className="cardDes">
-            <p className="text_regular_14_o7">
-              0.1% unstaking fee if withdrawn within 72h
-            </p>
-          </div>
-          <div className="cardStats">
-            <Button className="btn-secondary" style={{ padding: "5px 1em" }}>
-              Collect
-            </Button>
-          </div>
-        </div>
-        <div className="cardAbout">
-          <p className="text_regular_14_o7">Stake RUBY</p>
-        </div>
-        <div className="cardButton">
-          <Button className="btn-primary ">Enable</Button>
-        </div>
-        <div className="cardLine"></div>
-        <div className="cardDropDown">
-          <p className="text_regular_14">{isOpen ? "Hide" : "Details"}</p>
-          <img
-            src={dropDown}
-            alt="t"
-            onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
-            className={
-              isOpen ? "card_details_arrow active" : "card_details_arrow"
-            }
-          />
-        </div>
 
-        <div
-          className={isOpen ? "dropdown_content active" : "dropdown_content"}
-        >
-          <div>
-            <p className="text_regular_16_o7">Total Staked</p>
-            <p className="text_regular_20_w500">175,329,827</p>
-          </div>
-          <div>
-            <p className="text_regular_16_o7">Performance Fee</p>
-            <p className="text_regular_16_w500">2%</p>
-          </div>
-          <div>
-            <p>
-              <span className="text_regular_14">View project site</span>
-              <img src={learn_more} alt="learn" />
-            </p>
-          </div>
-          <div>
-            <p>
-              <span className="text_regular_14">View contract</span>
-              <img src={learn_more} alt="learn" />
-            </p>
-            <p>
-              <span className="text_regular_14">Add to Metamask</span>
-              <img src={metamask} alt="learn" />
-            </p>
+          <div
+            className={isOpen ? "dropdown_content active" : "dropdown_content"}
+          >
+            <div>
+              <p className="text_regular_16_o7">Total Staked</p>
+              <p className="text_regular_20_w500">175,329,827</p>
+            </div>
+            <div>
+              <p className="text_regular_16_o7">Performance Fee</p>
+              <p className="text_regular_16_w500">2%</p>
+            </div>
+            <div>
+              <p>
+                <span className="text_regular_14">View project site</span>
+                <img src={learn_more} alt="learn" />
+              </p>
+            </div>
+            <div>
+              <p>
+                <span className="text_regular_14">View contract</span>
+                <img src={learn_more} alt="learn" />
+              </p>
+              <p>
+                <span className="text_regular_14">Add to Metamask</span>
+                <img src={metamask} alt="learn" />
+              </p>
+            </div>
           </div>
         </div>
       </div>
+      
     </div>
   );
 

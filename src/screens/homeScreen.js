@@ -165,6 +165,7 @@ const HomeScreen = () => {
   return (
     <>
       {renderScreen}
+      
       {approveRuby && (
         <Modal variant="warning" setIsOpenModal={setApproveRuby} />
       )}

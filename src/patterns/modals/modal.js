@@ -16,9 +16,10 @@ import * as actionType from "../../redux/constants/actionsTypes";
 // import warning from "../../assets/icons/warning.svg";
 import wrongNetworkIcon from "../../assets/icons/wrong_network.svg";
 import closeIcon from "../../assets/icons/close.svg";
+import clock from "../../assets/icons/clock.svg";
 import paymentConfirmedIcon from "../../assets/icons/paymentConfirmed.svg";
 import paymentProcessingIcon from "../../assets/icons/paymentProcessing.svg";
-import clockIcon from "../../assets/icons/clock.svg";
+// import clockIcon from "../../assets/icons/clock.svg";
 import metamask from "../../assets/icons/metamask.svg";
 import mathWallet from "../../assets/icons/mathWallet.svg";
 import tokenPocket from "../../assets/icons/tokenPocket.svg";
@@ -28,6 +29,17 @@ import walletConnect from "../../assets/icons/walletConnect.svg";
 import binanceChain from "../../assets/icons/binanceChain.svg";
 import settings from "../../assets/icons/settings.svg";
 import help_circle from "../../assets/icons/help_circle.svg";
+import binance from "../../assets/icons/binance.svg";
+import processOn from "../../assets/icons/processOn.svg";
+import processDone from "../../assets/icons/processDone.svg";
+import settingModal from "../../assets/icons/settingModal.svg";
+import tokenModal from "../../assets/icons/tokenModal.svg";
+import etherium from "../../assets/icons/etherium.svg";
+import alpaca from "../../assets/icons/alpaca.svg";
+import bar_chart from "../../assets/icons/bar_chart.svg";
+import learn_more from "../../assets/icons/learn_more.svg";
+import downarrow_white from "../../assets/icons/downarrow_white.svg";
+import liquidity from "../../assets/icons/liquidity.svg";
 
 //GET USER BALANCE
 
@@ -115,56 +127,59 @@ const Modal = ({ variant, setIsOpenModal }) => {
 
   const renderRecent = (
     <div className="recentModal">
-      <div>
-        <p>
-          <img
-            src={clockIcon}
-            alt="x"
-            style={{ width: "32px", height: "32px" }}
-          />
-          <span className="text_regular_24_w600">Recent transactions</span>
-        </p>
-        <img
-          src={closeIcon}
-          alt="x"
-          className="cursor"
-          style={{ width: "24px", height: "24px" }}
-          onClick={() => setIsOpenModal(false)}
-        />
+      <div className="modalHead">
+        <div className="modalLogo">
+          <div id="icon">
+            <img src={clock} alt="clock" />
+          </div>
+        </div>
+        <div className="modalText">
+          <p>Recent transactions</p>
+        </div>
+        <div className="modalCloseCrossBox">
+          <div className="modalCloseIcon">
+            <img src={closeIcon} alt="x" />
+          </div>
+        </div>
       </div>
-      <p className="text_regular_14_o7">
-        Please connect your crypto wallet to view your recent transactions
-      </p>
-      <Button className="btn-primary" onClick={() => setIsOpenModal(false)}>
-        Close
-      </Button>
+
+      <div className="modalAbout" id="recentAbout">
+        <p className="text_regular_14_o7">
+          Please connect your crypto wallet to view your recent transactions
+        </p>
+        <Button className="btn-primary" onClick={() => setIsOpenModal(false)}>
+          Close
+        </Button>
+      </div>
     </div>
   );
 
   //RENDER WARNING
 
-  const renderWarning = (
-    <div className="modal">
-      <div className="flex">
-        <img src={wrongNetworkIcon} alt="wrongNetwork" />
-        <p className="text_regular_24_w600">Warning</p>
-      </div>
-      <div>
-        <p className="text_regular_14_o7">
-          Lottery ticket purchases are final. Your RUBY will not be returned to
-          you after you spend it to buy tickets. Tickets are only valid for one
-          lottery draw, and will be burned after the draw. Buying tickets does
-          not guarantee you will win anything. Please only participate once you
-          understand the risks.
-        </p>
-      </div>
-      <div>
-        <Button className="btn-primary" onClick={() => setIsOpenModal(false)}>
-          I understand
-        </Button>
-      </div>
-    </div>
-  );
+  // const renderWarning = (
+  //   <div className="modal">
+  //     <div className="flex">
+  //       <img src={wrongNetworkIcon} alt="wrongNetwork" />
+  //       <p className="text_regular_24_w600">Warning</p>
+  //     </div>
+  //     <div>
+  //       <p className="text_regular_14_o7">
+  //         Lottery ticket purchases are final. Your RUBY will not be returned to
+  //         you after you spend it to buy tickets. Tickets are only valid for one
+  //         lottery draw, and will be burned after the draw. Buying tickets does
+  //         not guarantee you will win anything. Please only participate once you
+  //         understand the risks.
+  //       </p>
+  //     </div>
+  //     <div>
+  //       <Button className="btn-primary" onClick={() => setIsOpenModal(false)}>
+  //         I understand
+  //       </Button>
+  //     </div>
+  //   </div>
+  // );
+
+  const renderWarning = <div className="card"></div>;
 
   const renderPaymentProcessing = (
     <div className="modal paymentModal">
@@ -186,7 +201,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
 
       <div className="modalFooter">
         <div className="modalFooterIcon">
-          <img src="" alt="u" />
+          <img src={processOn} alt="u" />
         </div>
         <div>
           <p className="text_regular_12 modalFooterText">
@@ -215,7 +230,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
 
       <div className="modalFooter">
         <div className="modalFooterIcon">
-          <img src="" alt="u" />
+          <img src={processDone} alt="u" />
         </div>
       </div>
     </div>
@@ -353,11 +368,11 @@ const Modal = ({ variant, setIsOpenModal }) => {
   const renderTokenModal = (
     <div className="modal tokenModal">
       <div className="flex">
-        <img src={wrongNetworkIcon} alt="token" />
+        <img src={tokenModal} alt="token" />
         <p className="text_regular_24_w600">Select a Token</p>
         <div className="modalCloseCrossBox">
           <div className="modalCloseIcon">
-            <img src={closeIcon} alt="x" />
+            <img src={closeIcon} alt="img" />
           </div>
         </div>
       </div>
@@ -377,14 +392,14 @@ const Modal = ({ variant, setIsOpenModal }) => {
         <p className="text_regular_14">Token Name</p>
         <div className="modalDownArrowBox">
           <div className="modalDownArrowIcon">
-            <img src={closeIcon} alt="x" />
+            <img src={closeIcon} alt="img" />
           </div>
         </div>
       </div>
 
       <div className="tokenName">
         <div className="tokenBox text_regular_14">
-          <img src="" alt="1" />
+          <img src={binance} alt="img" />
           <div className="token-name">
             <p>Binance</p>
           </div>
@@ -393,7 +408,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
           </div>
         </div>
         <div className="tokenBox text_regular_14">
-          <img src="" alt="1" />
+          <img src={etherium} alt="img" />
           <div className="token-name">
             <p>Etherium</p>
           </div>
@@ -402,7 +417,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
           </div>
         </div>
         <div className="tokenBox text_regular_14">
-          <img src="" alt="1" />
+          <img src={alpaca} alt="img" />
           <div className="token-name">
             <p>Alpaca</p>
           </div>
@@ -417,7 +432,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
   const renderReturnOfInvest = (
     <div className="modal investModal">
       <div className="flex">
-        <img src={wrongNetworkIcon} alt="invest" />
+        <img src={bar_chart} alt="invest" />
         <p className="text_regular_24_w600">Return of Invest</p>
         <div className="modalCloseCrossBox">
           <div className="modalCloseIcon">
@@ -464,7 +479,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
 
       <div className="investLink">
         <p className="text_regular_14_o7">Get RUBY-BNB LP</p>
-        <img src={wrongNetworkIcon} alt="w" />
+        <img src={learn_more} alt="img" />
       </div>
     </div>
   );
@@ -472,11 +487,11 @@ const Modal = ({ variant, setIsOpenModal }) => {
   const renderLiquidityModal = (
     <div className="modal liquidityModal">
       <div className="flex">
-        <img src={wrongNetworkIcon} alt="liquidity" />
+        <img src={liquidity} alt="liquidity" />
         <p className="text_regular_24_w600">Add liquidity</p>
         <div className="modalCloseCrossBox">
           <div className="modalCloseIcon">
-            <img src={closeIcon} alt="x" />
+            <img src={closeIcon} alt="img" />
           </div>
         </div>
       </div>
@@ -494,16 +509,16 @@ const Modal = ({ variant, setIsOpenModal }) => {
           <div className="boxData">
             <p>0.0</p>
             <div className="liquidDropDown">
-              <img src="" alt="p" />
+              <img src={binance} alt="img" />
               <p className="text_regular_12_o7">Binance</p>
-              <img src="" alt="p" />
+              <img src={downarrow_white} alt="img" />
             </div>
           </div>
         </div>
       </div>
 
       <div className="liquidAdd">
-        <img src="" alt="p" />
+        <img src="" alt="img" />
       </div>
 
       <div className="liquidBox" id="boxL2">
@@ -520,13 +535,133 @@ const Modal = ({ variant, setIsOpenModal }) => {
             <p>0.0</p>
             <div className="liquidDropDown" id="boxL2Drop">
               <p className="text_regular_12_o7">Select Currency</p>
-              <img src="" alt="p" />
+              <img src={downarrow_white} alt="img" />
             </div>
           </div>
         </div>
       </div>
 
       <Button className="btn-secondary modalButton">Invalid Pair</Button>
+    </div>
+  );
+
+  const renderSaveChart = (
+    <div className="card">
+      <div className="cardHead" style={{ justifyContent: "left" }}>
+        <img src="" alt="t" style={{ width: "75px", height: "78px" }} />
+        <p className="text_regular_16">Save Chart</p>
+      </div>
+      <div className="cardAbout">
+        <input type="text" placeholder="https://tradingview_chartimage.in" />
+        <p className="text_regular_14_o7">Copy URL</p>
+      </div>
+      <div className="cardAbout" style={{ justifyContent: "left" }}>
+        <img src="" alt="down" />
+        <p>Save Image</p>
+      </div>
+    </div>
+  );
+
+  const renderIndicator = (
+    <div className="card">
+      <div className="cardHead" style={{ justifyContent: "space-between" }}>
+        <div>
+          <img src="" alt="i" />
+          <p>Indicators</p>
+        </div>
+        <div>
+          <img src="" alt="cross" />
+        </div>
+      </div>
+      <div className="cardAbout">
+        <input type="text" placeholder="Search token name or paste address" />
+        <img src="" alt="i" />
+      </div>
+      <div className="cardAbout">
+        <p>Script Name</p>
+        <img src="" alt="i" />
+      </div>
+      <div className="cardAbout">
+        <p className="text_regular_14">Accumulation/Distribution</p>
+      </div>
+      <div className="cardLine" style={{ marginBottom: "5%" }}></div>
+      <div className="cardAbout">
+        <p className="text_regular_14">Advance Decline Line</p>
+      </div>
+      <div className="cardLine" style={{ marginBottom: "5%" }}></div>
+      <div className="cardAbout">
+        <p className="text_regular_14">Advance Decline Ratio</p>
+      </div>
+    </div>
+  );
+
+  const renderHistory = (
+    <div className="card">
+      <div className="cardHead" style={{ justifyContent: "space-between" }}>
+        <div className="cardHeadRight">
+          <img src={clock} alt="i" />
+          <p>History</p>
+          <p className="text_regular_14">Rounds</p> <p>|</p>
+          <p className="text_regular_12_o7">PNL</p>
+        </div>
+        <div>
+          <img src={closeIcon} alt="cross" />
+        </div>
+      </div>
+      <div className="cardHead" style={{ justifyContent: "space-between" }}>
+        <div className="cardHeadRight">
+          <p>Filter:</p>
+          <p>All</p>
+          <p>Collected</p>
+          <p>Uncollected</p>
+        </div>
+      </div>
+      <div className="cardAbout">
+        <p className="text_regular_14">No prediction history available</p>
+      </div>
+
+      <div className="cardAbout">
+        <p className="text_regular_12_o7">
+          If you are sure you should see history here, make sure you’re
+          connected to the correct wallet and try again.
+        </p>
+      </div>
+    </div>
+  );
+
+  const settingLen = (
+    <div className="card">
+      <div className="cardHead" style={{ justifyContent: "left" }}>
+        <img src={settingModal} alt="t" />
+        <p className="text_regular_16">Settings</p>
+      </div>
+      <div className="cardHead" style={{ justifyContent: "space-between" }}>
+        <div className="cardHeadRight">
+          <p className="text_regular_12_o7" style={{ color: "#EC1654" }}>
+            Input
+          </p>
+          <p className="text_regular_12_o7">Stock</p>
+        </div>
+      </div>
+      <div className="cardAbout">
+        <p className="text_regular_14">MA Length:</p>
+      </div>
+
+      <div className="cardAbout">
+        <input type="text" placeholder="20" />
+        <div
+          style={{
+            backgroundColor: "#0B0B0B",
+            borderRadius: "5px",
+            marginLeft: "-6%",
+          }}
+        >
+          <img src="" alt="arror" />
+          <img src="" alt="arror" />
+        </div>
+      </div>
+      <Button className="btn-primary">OK</Button>
+      <Button className="btn-secondary">Cancel</Button>
     </div>
   );
 
@@ -553,6 +688,12 @@ const Modal = ({ variant, setIsOpenModal }) => {
       return renderReturnOfInvest;
     case "liquidity":
       return renderLiquidityModal;
+    case "saveChart":
+      return renderSaveChart;
+    case "indicator":
+      return renderIndicator;
+    case "history":
+      return renderHistory;
     default:
       return null;
   }
