@@ -14,6 +14,10 @@ import play from "../assets/icons/play.svg";
 import prediction from "../assets/icons/prediction.svg";
 import singleCoin from "../assets/icons/singleCoin.svg";
 import clock from "../assets/icons/clock.svg";
+import greenArrow from "../assets/icons/greenArrow.svg";
+import redArrow from "../assets/icons/redArrow.svg";
+import bitcoin from "../assets/icons/bitcoin.svg";
+import arrowRightCircle from "../assets/icons/arrowRightCircle.svg";
 
 import Button from "../components/button";
 
@@ -22,7 +26,7 @@ const PredictionScreen = () => {
     dot: false,
     infinte: false,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     cssEase: "linear",
     responsive: [
@@ -124,6 +128,7 @@ const PredictionScreen = () => {
                   </div>
                   <div className="cardStats">
                     {/* <img src="" alt="stats" /> */}
+                    <img src={greenArrow} alt="up" />
                     <p className="text_regular_14">$0.993</p>
                   </div>
                 </div>
@@ -164,7 +169,7 @@ const PredictionScreen = () => {
           </div>
         </div>
       </div>
-      <div className="card_container">
+      <div className="card_container flip">
         <div className="cardPrediction" style={{ width: "315px" }}>
           <div className="card">
             <div className="cardHead">
@@ -191,10 +196,7 @@ const PredictionScreen = () => {
             </div>
 
             <div className="cardAbout" id="changeFlex">
-              <div
-                className="prediction_upDown"
-                style={{ background: "#EC1654" }}
-              >
+              <div className="prediction_upDown">
                 <span>
                   <p>
                     UP 3.74X{" "}
@@ -224,7 +226,7 @@ const PredictionScreen = () => {
               </div>
               <div
                 className="prediction_upDown"
-                style={{ background: "#1A1919" }}
+                style={{ background: "#EC1654" }}
               >
                 <span>
                   <p>
@@ -320,6 +322,48 @@ const PredictionScreen = () => {
             </div>
           </div>
         </div>
+        <div className="card" style={{width:"313px"}}>
+        <div className="cardHead">
+          <div className="cardHeadRight" style={{ width: "120px" }}>
+            <img src={arrowRightCircle} alt="r" />
+            <p classname="text_regular_12_o7">Set Position</p>
+          </div>
+          <div className="cardHeadRight">
+            <img src={greenArrow} />
+            <p>UP</p>
+          </div>
+        </div>
+        <div className="cardHead">
+          <p classname="text_regular_12_o7">Commit:</p>
+          <div className="cardHeadRight">
+            <img src={bitcoin} />
+            <p>BNB</p>
+          </div>
+        </div>
+        <input type="text" placeholder="52.6" style={{ width: "100%" }} />
+        <p style={{ float: "right" }} className="text_regular_12_o7">
+          Balance:0
+        </p>
+        <div className="cardAbout">
+          <div className="cardHeadRight btn-prediction">
+            <Button className="btn-secondary">10X</Button>
+            <Button className="btn-secondary">25X</Button>
+            <Button className="btn-secondary">50X</Button>
+            <Button className="btn-secondary">75X</Button>
+            <Button className="btn-secondary">MAX</Button>
+          </div>
+        </div>
+        <div>
+          <Button className="btn-secondary" style={{marginLeft:"15%"}}>Insufficient BNB Balance</Button>
+        </div>
+        <br></br>
+        <div className="cardHead">
+        <p className="text_regular_12_o7">
+        You won’t be able to remove or change your position once you enter it.
+        </p>
+        
+        </div>
+      </div>
       </div>
       <div className="card_container">
         <div className="cardPrediction" style={{ width: "315px" }}>
@@ -376,6 +420,7 @@ const PredictionScreen = () => {
                   </div>
                   <div className="cardStats">
                     {/* <img src="" alt="stats" /> */}
+                    <img src={redArrow} alt="down" />
                     <p className="text_regular_14">$0.993</p>
                   </div>
                 </div>
@@ -416,6 +461,7 @@ const PredictionScreen = () => {
           </div>
         </div>
       </div>
+      
     </Slider>
   );
 
