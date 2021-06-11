@@ -41,24 +41,21 @@ import bar_chart from "../../assets/icons/bar_chart.svg";
 import learn_more from "../../assets/icons/learn_more.svg";
 import downarrow_white from "../../assets/icons/downarrow_white.svg";
 import liquidity from "../../assets/icons/liquidity.svg";
-import line from "../assets/icons/line.svg";
-import Button from "../components/button";
-import downarrow_white from "../assets/icons/downarrow_white.svg";
-import areachart from "../assets/icons/areachart.svg";
-import barchart from "../assets/icons/bar-chart.svg";
-import candlestick from "../assets/icons/candlestick.svg";
-import lineChart from "../assets/icons/line-chart.svg";
-import plusCircle from "../assets/icons/plusCircle.svg";
-import soundfx from "../assets/icons/soundfx.svg";
-import camera from "../assets/icons/camera.svg";
-import close from "../assets/icons/close.svg";
-import chart from "../assets/icons/chart.svg";
-import sun from "../assets/icons/sun.svg";
-import eye from "../assets/icons/eye.svg";
-import points from "../assets/icons/points.svg";
-import whiteCross from "../assets/icons/whiteCross.svg";
-import greenDot from "../assets/icons/greenDot.svg";
-import settings from "../assets/icons/settings.svg";
+import line from "../../assets/icons/line.svg";
+import areachart from "../../assets/icons/areachart.svg";
+import barchart from "../../assets/icons/bar-chart.svg";
+import candlestick from "../../assets/icons/candlestick.svg";
+import lineChart from "../../assets/icons/line-chart.svg";
+import plusCircle from "../../assets/icons/plusCircle.svg";
+import soundfx from "../../assets/icons/soundfx.svg";
+import camera from "../../assets/icons/camera.svg";
+import close from "../../assets/icons/close.svg";
+import chart from "../../assets/icons/chart.svg";
+import sun from "../../assets/icons/sun.svg";
+import eye from "../../assets/icons/eye.svg";
+import points from "../../assets/icons/points.svg";
+import whiteCross from "../../assets/icons/whiteCross.svg";
+import greenDot from "../../assets/icons/greenDot.svg";
 
 //GET USER BALANCE
 
@@ -173,32 +170,32 @@ const Modal = ({ variant, setIsOpenModal }) => {
     </div>
   );
 
-  //RENDER WARNING
+  // RENDER WARNING
 
-  // const renderWarning = (
-  //   <div className="modal">
-  //     <div className="flex">
-  //       <img src={wrongNetworkIcon} alt="wrongNetwork" />
-  //       <p className="text_regular_24_w600">Warning</p>
-  //     </div>
-  //     <div>
-  //       <p className="text_regular_14_o7">
-  //         Lottery ticket purchases are final. Your RUBY will not be returned to
-  //         you after you spend it to buy tickets. Tickets are only valid for one
-  //         lottery draw, and will be burned after the draw. Buying tickets does
-  //         not guarantee you will win anything. Please only participate once you
-  //         understand the risks.
-  //       </p>
-  //     </div>
-  //     <div>
-  //       <Button className="btn-primary" onClick={() => setIsOpenModal(false)}>
-  //         I understand
-  //       </Button>
-  //     </div>
-  //   </div>
-  // );
+  const renderWarning = (
+    <div className="modal">
+      <div className="flex">
+        <img src={wrongNetworkIcon} alt="wrongNetwork" />
+        <p className="text_regular_24_w600">Warning</p>
+      </div>
+      <div>
+        <p className="text_regular_14_o7">
+          Lottery ticket purchases are final. Your RUBY will not be returned to
+          you after you spend it to buy tickets. Tickets are only valid for one
+          lottery draw, and will be burned after the draw. Buying tickets does
+          not guarantee you will win anything. Please only participate once you
+          understand the risks.
+        </p>
+      </div>
+      <div>
+        <Button className="btn-primary" onClick={() => setIsOpenModal(false)}>
+          I understand
+        </Button>
+      </div>
+    </div>
+  );
 
-  const renderWarning = <div className="card"></div>;
+  
 
   const renderPaymentProcessing = (
     <div className="modal paymentModal">
@@ -585,11 +582,11 @@ const Modal = ({ variant, setIsOpenModal }) => {
     <div className="card">
       <div className="cardHead" style={{ justifyContent: "space-between" }}>
         <div>
-          <img src="" alt="i" />
+          <img src={soundfx} alt="i" />
           <p>Indicators</p>
         </div>
         <div>
-          <img src="" alt="cross" />
+          <img src={closeIcon} alt="cross" />
         </div>
       </div>
       <div className="cardAbout">
