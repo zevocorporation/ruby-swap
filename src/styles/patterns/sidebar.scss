@@ -9,6 +9,12 @@
   overflow-y: auto;
   z-index: 1120;
   background: rgba(26, 25, 25, 0.95);
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    width: 60%;
+  }
 
   .sidebar_header {
     padding: 2em;

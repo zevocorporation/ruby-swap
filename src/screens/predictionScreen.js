@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,35 +9,66 @@ import "../styles/screens/predictionScreen.scss";
 import "../styles/patterns/card.scss";
 
 import play from "../assets/icons/play.svg";
-// import arrowRight from "../assets/icons/arrowRight.svg";
-// import arrowLeft from "../assets/icons/arrowLeft.svg";
+import circle_right from "../assets/icons/circle_right.svg";
+import circle_left from "../assets/icons/circle_left.svg";
 import prediction from "../assets/icons/prediction.svg";
-import singleCoin from "../assets/icons/singleCoin.svg";
+import bnb from "../assets/icons/bnb.svg";
 import clock from "../assets/icons/clock.svg";
+import primary_alarm from "../assets/icons/primary_alarm.svg";
+import next_circle from "../assets/icons/next_circle.svg";
+import expired_close from "../assets/icons/expired_close.svg";
+import prediction_line from "../assets/icons/prediction_line.svg";
+import trade_up from "../assets/icons/trade_up.svg";
+import trade_down from "../assets/icons/trade_down.svg";
 
 import Button from "../components/button";
 
+function Arrow(props) {
+  let className = props.type === "next" ? "nextArrow" : "prevArrow";
+  const char =
+    props.type === "next" ? (
+      <img src={circle_right} alt="rightarrow" />
+    ) : (
+      <img src={circle_left} alt="leftarow" />
+    );
+
+  return (
+    <span className={className} onClick={props.onClick}>
+      {char}
+    </span>
+  );
+}
+
 const PredictionScreen = () => {
-  let settings = {
-    dot: false,
-    infinte: false,
+  const [iscard, setIsCard] = useState(false);
+  var settings = {
+    dots: false,
+    infinite: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    cssEase: "linear",
+    initialSlide: 1,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 1024,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 1000,
+        breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],
@@ -45,378 +76,203 @@ const PredictionScreen = () => {
 
   const renderScreenHeader = (
     <div className="prediction_header">
-      <div className="block_left" id="bg">
-        <img src={singleCoin} alt="t" />
-        <p>BNBUSDT</p>
-        <p>$429.905</p>
+      <div className="col_one">
+        <img alt="coin" src={bnb} />
+        <p className="text_regular_20_w500">BNBUSDT</p>
+        <span className="text_regular_14">$429.905</span>
       </div>
-      <div className="block_mid">
-        {/* <img src={arrowLeft} alt="t" /> */}
-        <img src={prediction} alt="t" />
-        {/* <img src={arrowRight} alt="t" /> */}
+      <div className="col_two">
+        <img src={prediction} alt="prediction" />
       </div>
-      <div className="block_right">
-        <div className="bR" id="bg">
-          <p>04:27</p>
-          <p>5m</p>
-          {"   "}
-          <img src={clock} alt="t" />
+      <div className="col_three">
+        <div>
+          <span className="text_regular_20_w500">04.57</span>
+          <p className="text_regular_14">5m</p>
+          <img src={primary_alarm} alt="alarm" />
         </div>
-        <img src={clock} alt="t" />
+        <img src={clock} alt="clock" />
+      </div>
+    </div>
+  );
+
+  const renderExpiredCard = (
+    <div className="prediction_card">
+      <div className="card_wrapper  expired_card">
+        <div className="card_header">
+          <p>
+            <img src={expired_close} alt="play_icon" />
+            <span className="text_regular_14_w500">EXPIRED</span>
+          </p>
+          <p className="text_regular_14">#1234</p>
+        </div>
+        <div className="row_one" style={{ margin: "2em auto 0" }}>
+          <p className="text_regular_14_w500">UP</p>
+          <p className="text_regular_12_o7">3.74X Payout</p>
+        </div>
+        <div className="row_two">
+          <p className="text_regular_14">Last Price</p>
+          <div>
+            <p className="text_regular_20_w500">$412.03</p>
+            <p>
+              <img src={trade_down} alt="down" />
+              <span className="text_regular_14">$0.993</span>
+            </p>
+          </div>
+          <div>
+            <p className="text_regular_14_o7">closed price</p>
+            <p className="text_regular_14_o7">$424.85</p>
+          </div>
+          <div>
+            <p className="text_regular_14_o7">Prize pool</p>
+            <p className="text_regular_16_w500">61.187 BNB</p>
+          </div>
+        </div>
+        <div className="row_three">
+          <p className="text_regular_14_w500">DOWN</p>
+          <p className="text_regular_12_o7">3.74X Payout</p>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderLivecard = (
+    <div className="prediction_card live_card">
+      <div className="card_wrapper">
+        <div className="card_header">
+          <p>
+            <img src={play} alt="play_icon" />
+            <span className="text_regular_14_w500">LIVE</span>
+          </p>
+          <p className="text_regular_14">#1234</p>
+        </div>
+        <div style={{ margin: "1em 0 2em" }}>
+          <img src={prediction_line} alt="line" style={{ width: "100%" }} />
+        </div>
+        <div className="row_one">
+          <p className="text_regular_14_w500">UP</p>
+          <p className="text_regular_12_o7">3.74X Payout</p>
+        </div>
+        <div className="row_two">
+          <p className="text_regular_14">Last Price</p>
+          <div>
+            <p className="text_regular_20_w500">$412.03</p>
+            <p>
+              <img src={trade_up} alt="up" />
+              <span className="text_regular_14">$0.993</span>
+            </p>
+          </div>
+          <div>
+            <p className="text_regular_14_o7">Locked price</p>
+            <p className="text_regular_14_o7">$424.85</p>
+          </div>
+          <div>
+            <p className="text_regular_14_o7">Prize pool</p>
+            <p className="text_regular_16_w500">61.187 BNB</p>
+          </div>
+        </div>
+        <div className="row_three">
+          <p className="text_regular_14_w500">DOWN</p>
+          <p className="text_regular_12_o7">3.74X Payout</p>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderNextCard = (
+    <div className="prediction_card">
+      <div className={iscard ? "next_card active" : "next_card"}>
+        <div className="face front">
+          <div className="card_header">
+            <p>
+              <img src={next_circle} alt="play_icon" />
+              <span className="text_regular_14_w500">NEXT</span>
+            </p>
+            <p className="text_regular_14">#1234</p>
+          </div>
+          <div className="row_one" style={{ margin: "2em auto 0" }}>
+            <p className="text_regular_14_w500">UP</p>
+            <p className="text_regular_12_o7">3.74X Payout</p>
+          </div>
+          <div className="row_two">
+            <div>
+              <p className="text_regular_14_o7">Prize pool</p>
+              <p className="text_regular_16_w500">61.187 BNB</p>
+            </div>
+            <section>
+              <Button className="btn-primary" onClick={() => setIsCard(true)}>
+                Enter UP
+              </Button>
+            </section>
+            <section>
+              <Button className="btn-primary">Enter DOWN</Button>
+            </section>
+          </div>
+          <div className="row_three">
+            <p className="text_regular_14_w500">DOWN</p>
+            <p className="text_regular_12_o7">3.74X Payout</p>
+          </div>
+        </div>
+        <div className="face back">
+          <div className="card_header">
+            <p>
+              <img
+                src={circle_left}
+                alt="left"
+                onClick={() => setIsCard(false)}
+              />
+              <span className="text_regular_14_w500">Set Position</span>
+            </p>
+            <p>
+              <img src={trade_up} alt="up" />
+              <span className="text_regular_14">UP</span>
+            </p>
+          </div>
+          <div className="card_header" style={{ marginTop: "1em" }}>
+            <p className="text_regular_14">Commit:</p>
+            <p>
+              <img src={bnb} alt="up" />
+              <span className="text_regular_14">BNB</span>
+            </p>
+          </div>
+          <section>
+            <input type="number" />
+          </section>
+          <div className="card_header">
+            <span></span>
+            <span className="text_regular_12_o7">Balance: 0</span>
+          </div>
+          <div className="price_stats">
+            <p>10X</p>
+            <p>20X</p>
+            <p>50X</p>
+            <p>75X</p>
+            <p>MAX</p>
+          </div>
+          <div className="btn_class">
+            <Button>Insufficient BNB Balance</Button>
+          </div>
+          <p className="text_regular_12_o7">
+            You won’t be able to remove or change your position once you enter
+            it.
+          </p>
+        </div>
       </div>
     </div>
   );
 
   const renderView = (
-    <Slider {...settings}>
-      <div className="card_container">
-        <div className="cardPrediction" style={{ width: "315px" }}>
-          <div className="card">
-            <div className="cardHead">
-              <div className="cardLogo">
-                <img
-                  src={play}
-                  alt="t"
-                  style={{ width: "75px", height: "45px" }}
-                />
-                {/* <p>LIVE</p> */}
-              </div>
-
-              <div className="cardName">
-                <p className="text_regular_14_o7">
-                  <p>#1234</p>
-                </p>
-              </div>
-            </div>
-
-            <div className="cardAbout">
-              <div className="prediction_progress">
-                <div className="progress_per"></div>
-              </div>
-            </div>
-
-            <div className="cardAbout" id="changeFlex">
-              <div
-                className="prediction_upDown"
-                style={{ background: "#EC1654" }}
-              >
-                <span>
-                  <p>
-                    UP 3.74X{" "}
-                    <span
-                      className="text_regular_12"
-                      style={{ color: "white" }}
-                    >
-                      Payout
-                    </span>
-                  </p>
-                </span>
-              </div>
-              <div className="prediction_body">
-                <div className="cardAbout">
-                  <div className="cardDes">
-                    <p className="text_regular_12_o7">Last Price</p>
-                  </div>
-                </div>
-                <div className="cardAbout">
-                  <div className="cardDes">
-                    <p className="text_regular_16">$412.03</p>
-                  </div>
-                  <div className="cardStats">
-                    {/* <img src="" alt="stats" /> */}
-                    <p className="text_regular_14">$0.993</p>
-                  </div>
-                </div>
-                <div className="cardAbout">
-                  <div className="cardDes">
-                    <p className="text_regular_14_o7">Locked price</p>
-                  </div>
-                  <div className="cardStats">
-                    <p className="text_regular_14">$424.85</p>
-                  </div>
-                </div>
-                <div className="cardAbout">
-                  <div className="cardDes">
-                    <p className="text_regular_14_o7">Prize pool</p>
-                  </div>
-                  <div className="cardStats">
-                    <p className="text_regular_16">61.187 BNB</p>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="prediction_upDown"
-                style={{ background: "#1A1919" }}
-              >
-                <span>
-                  <p>
-                    Down 3.74X{" "}
-                    <span
-                      className="text_regular_12"
-                      style={{ color: "white" }}
-                    >
-                      Payout
-                    </span>
-                  </p>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="card_container">
-        <div className="cardPrediction" style={{ width: "315px" }}>
-          <div className="card">
-            <div className="cardHead">
-              <div className="cardLogo">
-                <img
-                  src={play}
-                  alt="t"
-                  style={{ width: "75px", height: "45px" }}
-                />
-                {/* <p>Next</p> */}
-              </div>
-
-              <div className="cardName">
-                <p className="text_regular_14_o7">
-                  <p>#1234</p>
-                </p>
-              </div>
-            </div>
-
-            <div className="cardAbout">
-              <div className="prediction_progress">
-                <div className="progress_per"></div>
-              </div>
-            </div>
-
-            <div className="cardAbout" id="changeFlex">
-              <div
-                className="prediction_upDown"
-                style={{ background: "#EC1654" }}
-              >
-                <span>
-                  <p>
-                    UP 3.74X{" "}
-                    <span
-                      className="text_regular_12"
-                      style={{ color: "white" }}
-                    >
-                      Payout
-                    </span>
-                  </p>
-                </span>
-              </div>
-              <div className="prediction_body">
-                <div className="cardAbout">
-                  <div className="cardDes">
-                    <p className="text_regular_14_o7">Prize pool</p>
-                  </div>
-                  <div className="cardStats">
-                    <p className="text_regular_14">61.187 BNB</p>
-                  </div>
-                </div>
-                <div className="buttons">
-                  <Button className="btn-primary">Enter UP</Button>
-                  <br></br>
-                  <Button className="btn-primary">Enter DOWN</Button>
-                </div>
-              </div>
-              <div
-                className="prediction_upDown"
-                style={{ background: "#1A1919" }}
-              >
-                <span>
-                  <p>
-                    Down 3.74X{" "}
-                    <span
-                      className="text_regular_12"
-                      style={{ color: "white" }}
-                    >
-                      Payout
-                    </span>
-                  </p>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="card_container">
-        <div className="cardPrediction" style={{ width: "315px" }}>
-          <div className="card">
-            <div className="cardHead">
-              <div className="cardLogo">
-                <img
-                  src={play}
-                  alt="t"
-                  style={{ width: "75px", height: "45px" }}
-                />
-                {/* <p>Next</p> */}
-              </div>
-
-              <div className="cardName">
-                <p className="text_regular_14_o7">
-                  <p>#1234</p>
-                </p>
-              </div>
-            </div>
-
-            <div className="cardAbout">
-              <div className="prediction_progress">
-                <div className="progress_per"></div>
-              </div>
-            </div>
-
-            <div className="cardAbout" id="changeFlex">
-              <div
-                className="prediction_upDown"
-                style={{ background: "#EC1654" }}
-              >
-                <span>
-                  <p>
-                    UP 3.74X{" "}
-                    <span
-                      className="text_regular_12"
-                      style={{ color: "white" }}
-                    >
-                      Payout
-                    </span>
-                  </p>
-                </span>
-              </div>
-              <div className="prediction_body">
-                <div className="cardAbout">
-                  <div className="cardDes">
-                    <p className="text_regular_14_o7">Prize pool</p>
-                  </div>
-                  <div className="cardStats">
-                    <p className="text_regular_14">61.187 BNB</p>
-                  </div>
-                </div>
-                <div className="buttons">
-                  <Button className="btn-primary">Enter UP</Button>
-                  <br></br>
-                  <Button className="btn-primary">Enter DOWN</Button>
-                </div>
-              </div>
-              <div
-                className="prediction_upDown"
-                style={{ background: "#1A1919" }}
-              >
-                <span>
-                  <p>
-                    Down 3.74X{" "}
-                    <span
-                      className="text_regular_12"
-                      style={{ color: "white" }}
-                    >
-                      Payout
-                    </span>
-                  </p>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="card_container">
-        <div className="cardPrediction" style={{ width: "315px" }}>
-          <div className="card">
-            <div className="cardHead">
-              <div className="cardLogo">
-                <img
-                  src={play}
-                  alt="t"
-                  style={{ width: "75px", height: "45px" }}
-                />
-                {/* <p>LIVE</p> */}
-              </div>
-
-              <div className="cardName">
-                <p className="text_regular_14_o7">
-                  <p>#1234</p>
-                </p>
-              </div>
-            </div>
-
-            <div className="cardAbout">
-              <div className="prediction_progress">
-                <div className="progress_per"></div>
-              </div>
-            </div>
-
-            <div className="cardAbout" id="changeFlex">
-              <div
-                className="prediction_upDown"
-                style={{ background: "#EC1654" }}
-              >
-                <span>
-                  <p>
-                    UP 3.74X{" "}
-                    <span
-                      className="text_regular_12"
-                      style={{ color: "white" }}
-                    >
-                      Payout
-                    </span>
-                  </p>
-                </span>
-              </div>
-              <div className="prediction_body">
-                <div className="cardAbout">
-                  <div className="cardDes">
-                    <p className="text_regular_12_o7">Last Price</p>
-                  </div>
-                </div>
-                <div className="cardAbout">
-                  <div className="cardDes">
-                    <p className="text_regular_16">$412.03</p>
-                  </div>
-                  <div className="cardStats">
-                    {/* <img src="" alt="stats" /> */}
-                    <p className="text_regular_14">$0.993</p>
-                  </div>
-                </div>
-                <div className="cardAbout">
-                  <div className="cardDes">
-                    <p className="text_regular_14_o7">Locked price</p>
-                  </div>
-                  <div className="cardStats">
-                    <p className="text_regular_14">$424.85</p>
-                  </div>
-                </div>
-                <div className="cardAbout">
-                  <div className="cardDes">
-                    <p className="text_regular_14_o7">Prize pool</p>
-                  </div>
-                  <div className="cardStats">
-                    <p className="text_regular_16">61.187 BNB</p>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="prediction_upDown"
-                style={{ background: "#1A1919" }}
-              >
-                <span>
-                  <p>
-                    Down 3.74X{" "}
-                    <span
-                      className="text_regular_12"
-                      style={{ color: "white" }}
-                    >
-                      Payout
-                    </span>
-                  </p>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Slider>
+    <div className="slider">
+      <Slider
+        {...settings}
+        nextArrow={<Arrow type="next" />}
+        prevArrow={<Arrow type="prev" />}
+      >
+        {renderExpiredCard}
+        {renderExpiredCard}
+        {renderLivecard}
+        {renderNextCard}
+      </Slider>
+    </div>
   );
 
   //RENDER SCREEN
