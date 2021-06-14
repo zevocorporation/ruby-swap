@@ -2,6 +2,7 @@
 
 .prediction_screen {
   margin-top: 90px;
+  padding-bottom: 3em;
 
   .prediction_header {
     padding: 1em 4em;
@@ -326,5 +327,32 @@
     position: absolute;
     top: -15%;
     left: 52.5%;
+  }
+
+  .chart_btn {
+    margin-left: 3em;
+
+    @media (max-width: 768px) {
+      margin-left: 2em;
+    }
+    @media (max-width: 576px) {
+      margin-left: 1em;
+    }
+
+    > p {
+      display: flex;
+      align-items: center;
+      padding: 0.75em;
+      background: #1a1919;
+      border-radius: 5px;
+      width: fit-content;
+      cursor: pointer;
+
+      img {
+        width: 24px;
+        height: 24px;
+        margin-right: 1em;
+      }
+    }
   }
 }

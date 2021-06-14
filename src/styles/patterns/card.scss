@@ -18,12 +18,42 @@
   justify-content: space-between;
 }
 
-.cardHeadRight{
+.cardHeadRight, .box_1{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  p{
-    margin-left: 5%;
+  p, img{
+    margin-left: 3%;
+  }
+  Button{
+    margin-left: 1%;
+  }
+}
+
+.box_1{
+  display: flex;
+  width: 240px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0b0b0b;
+  padding:1%;
+  border-radius: 15px;
+  p, img{
+    margin-left: 3%;
+  }
+}
+
+#posImg{
+  display: block;
+  // justify-content: space-between;
+  margin: 2%;
+  .image {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  .image:nth-of-type(1) {
+    margin-left: 10px;
   }
 }
 

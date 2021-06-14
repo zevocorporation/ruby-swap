@@ -18,6 +18,9 @@ import {
 import learn_more from "../assets/icons/learn_more.svg";
 import right_arrow from "../assets/icons/right_arrow.svg";
 
+
+//Modal
+
 const TradeScreen = () => {
   //INITIALIZING HOOKS
 
@@ -85,6 +88,8 @@ const TradeScreen = () => {
       {toggleState === 4 && <ViLiquidity />}
     </>
   );
+
+  
 
   //RENDER TRADE SCREEN
 

@@ -8,6 +8,16 @@ import "slick-carousel/slick/slick-theme.css";
 import "../styles/screens/predictionScreen.scss";
 import "../styles/patterns/card.scss";
 
+//IMPORTING COMPONENTS
+
+import Button from "../components/button";
+
+//IMPORTING PATTERNS
+
+import Modal from "../patterns/modals/modal";
+
+//IMPORTING MEDIA ASSETS
+
 import play from "../assets/icons/play.svg";
 import circle_right from "../assets/icons/circle_right.svg";
 import circle_left from "../assets/icons/circle_left.svg";
@@ -20,8 +30,7 @@ import expired_close from "../assets/icons/expired_close.svg";
 import prediction_line from "../assets/icons/prediction_line.svg";
 import trade_up from "../assets/icons/trade_up.svg";
 import trade_down from "../assets/icons/trade_down.svg";
-
-import Button from "../components/button";
+import chart from "../assets/icons/chart.svg";
 
 function Arrow(props) {
   let className = props.type === "next" ? "nextArrow" : "prevArrow";
@@ -41,6 +50,10 @@ function Arrow(props) {
 
 const PredictionScreen = () => {
   const [iscard, setIsCard] = useState(false);
+  const [isChartOpen, setIsChartOpen] = useState(false);
+  const [indicator, setIndicator] = useState(false);
+  const [saveChartModal, setSaveChartModal] = useState(false);
+
   var settings = {
     dots: false,
     infinite: false,
@@ -218,6 +231,7 @@ const PredictionScreen = () => {
               <img
                 src={circle_left}
                 alt="left"
+                className="cursor"
                 onClick={() => setIsCard(false)}
               />
               <span className="text_regular_14_w500">Set Position</span>
@@ -275,20 +289,42 @@ const PredictionScreen = () => {
     </div>
   );
 
+  const renderChartButton = (
+    <div className="chart_btn">
+      <p onClick={() => setIsChartOpen(true)}>
+        <img src={chart} alt="chart" />
+        <span className="text_regular_16_w500">Chart</span>
+      </p>
+    </div>
+  );
+
   //RENDER SCREEN
 
   const renderScreen = (
     <div className="prediction_screen">
       {renderScreenHeader}
       {renderView}
+      {renderChartButton}
     </div>
   );
 
   return (
     <>
       {renderScreen}
+      {isChartOpen && (
+        <Modal
+          variant="chart"
+          setIsOpenModal={setIsChartOpen}
+          setIndicator={setIndicator}
+          setSaveChartModal={setSaveChartModal}
+        />
+      )}
+      {indicator && <Modal variant="indicator" setIndicator={setIndicator} />}
+      {saveChartModal && (
+        <Modal variant="saveChart" setSaveChartModal={setSaveChartModal} />
+      )}
 
-      {/* <div className={"backdrop_transition active"}></div> */}
+      {isChartOpen && <div className={"backdrop_transition active"}></div>}
     </>
   );
 };

@@ -1,5 +1,21 @@
 @import "../../index.scss";
 
+.fixed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1100;
+}
+
+.chart_modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1150;
+}
+
 .modal_header {
   display: flex;
   align-items: center;

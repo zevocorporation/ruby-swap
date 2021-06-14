@@ -5,6 +5,7 @@ import Web3 from "web3";
 //IMPORTING STYLESHEETS
 
 import "../../styles/patterns/modal.scss";
+import "../../styles/patterns/card.scss";
 
 //IMPORTING COMPONENTS
 
@@ -40,6 +41,23 @@ import bar_chart from "../../assets/icons/bar_chart.svg";
 import learn_more from "../../assets/icons/learn_more.svg";
 import downarrow_white from "../../assets/icons/downarrow_white.svg";
 import liquidity from "../../assets/icons/liquidity.svg";
+import line from "../../assets/icons/line.svg";
+import areachart from "../../assets/icons/areachart.svg";
+import barchart from "../../assets/icons/bar-chart.svg";
+import candlestick from "../../assets/icons/candlestick.svg";
+import lineChart from "../../assets/icons/line-chart.svg";
+import plusCircle from "../../assets/icons/plusCircle.svg";
+import soundfx from "../../assets/icons/soundfx.svg";
+import camera from "../../assets/icons/camera.svg";
+import close from "../../assets/icons/close.svg";
+import chart from "../../assets/icons/chart.svg";
+import sun from "../../assets/icons/sun.svg";
+import eye from "../../assets/icons/eye.svg";
+import points from "../../assets/icons/points.svg";
+import whiteCross from "../../assets/icons/whiteCross.svg";
+import greenDot from "../../assets/icons/greenDot.svg";
+import bitcoin from "../../assets/icons/bitcoin.svg";
+import warning from "../../assets/icons/warning.svg";
 
 //GET USER BALANCE
 
@@ -50,7 +68,12 @@ export const balance = async (address) => {
   return balance2;
 };
 
-const Modal = ({ variant, setIsOpenModal }) => {
+const Modal = ({
+  variant,
+  setIsOpenModal,
+  setIndicator,
+  setSaveChartModal,
+}) => {
   const dispatch = useDispatch();
 
   const connect = async () => {
@@ -154,32 +177,30 @@ const Modal = ({ variant, setIsOpenModal }) => {
     </div>
   );
 
-  //RENDER WARNING
+  // RENDER WARNING
 
-  // const renderWarning = (
-  //   <div className="modal">
-  //     <div className="flex">
-  //       <img src={wrongNetworkIcon} alt="wrongNetwork" />
-  //       <p className="text_regular_24_w600">Warning</p>
-  //     </div>
-  //     <div>
-  //       <p className="text_regular_14_o7">
-  //         Lottery ticket purchases are final. Your RUBY will not be returned to
-  //         you after you spend it to buy tickets. Tickets are only valid for one
-  //         lottery draw, and will be burned after the draw. Buying tickets does
-  //         not guarantee you will win anything. Please only participate once you
-  //         understand the risks.
-  //       </p>
-  //     </div>
-  //     <div>
-  //       <Button className="btn-primary" onClick={() => setIsOpenModal(false)}>
-  //         I understand
-  //       </Button>
-  //     </div>
-  //   </div>
-  // );
-
-  const renderWarning = <div className="card"></div>;
+  const renderWarning = (
+    <div className="modal">
+      <div className="flex">
+        <img src={warning} alt="wrongNetwork" />
+        <p className="text_regular_24_w600">Warning</p>
+      </div>
+      <div>
+        <p className="text_regular_14_o7">
+          Lottery ticket purchases are final. Your RUBY will not be returned to
+          you after you spend it to buy tickets. Tickets are only valid for one
+          lottery draw, and will be burned after the draw. Buying tickets does
+          not guarantee you will win anything. Please only participate once you
+          understand the risks.
+        </p>
+      </div>
+      <div>
+        <Button className="btn-primary" onClick={() => setIsOpenModal(false)}>
+          I understand
+        </Button>
+      </div>
+    </div>
+  );
 
   const renderPaymentProcessing = (
     <div className="modal paymentModal">
@@ -546,7 +567,7 @@ const Modal = ({ variant, setIsOpenModal }) => {
   );
 
   const renderSaveChart = (
-    <div className="card">
+    <div className="primary_gradient_bg chart_modal">
       <div className="cardHead" style={{ justifyContent: "left" }}>
         <img src="" alt="t" style={{ width: "75px", height: "78px" }} />
         <p className="text_regular_16">Save Chart</p>
@@ -557,20 +578,25 @@ const Modal = ({ variant, setIsOpenModal }) => {
       </div>
       <div className="cardAbout" style={{ justifyContent: "left" }}>
         <img src="" alt="down" />
-        <p>Save Image</p>
+        <p onClick={() => setSaveChartModal(false)}>Save Image</p>
       </div>
     </div>
   );
 
   const renderIndicator = (
-    <div className="card">
+    <div className="primary_gradient_bg chart_modal">
       <div className="cardHead" style={{ justifyContent: "space-between" }}>
         <div>
-          <img src="" alt="i" />
+          <img src={soundfx} alt="i" />
           <p>Indicators</p>
         </div>
         <div>
-          <img src="" alt="cross" />
+          <img
+            src={closeIcon}
+            alt="cross"
+            className="cursor"
+            onClick={() => setIndicator(false)}
+          />
         </div>
       </div>
       <div className="cardAbout">
@@ -629,39 +655,151 @@ const Modal = ({ variant, setIsOpenModal }) => {
     </div>
   );
 
-  const settingLen = (
-    <div className="card">
-      <div className="cardHead" style={{ justifyContent: "left" }}>
-        <img src={settingModal} alt="t" />
-        <p className="text_regular_16">Settings</p>
-      </div>
-      <div className="cardHead" style={{ justifyContent: "space-between" }}>
+  // const settingLen = (
+  //   <div className="card">
+  //     <div className="cardHead" style={{ justifyContent: "left" }}>
+  //       <img src={settingModal} alt="t" />
+  //       <p className="text_regular_16">Settings</p>
+  //     </div>
+  //     <div className="cardHead" style={{ justifyContent: "space-between" }}>
+  //       <div className="cardHeadRight">
+  //         <p className="text_regular_12_o7" style={{ color: "#EC1654" }}>
+  //           Input
+  //         </p>
+  //         <p className="text_regular_12_o7">Stock</p>
+  //       </div>
+  //     </div>
+  //     <div className="cardAbout">
+  //       <p className="text_regular_14">MA Length:</p>
+  //     </div>
+
+  //     <div className="cardAbout">
+  //       <input type="text" placeholder="20" />
+  //       <div
+  //         style={{
+  //           backgroundColor: "#0B0B0B",
+  //           borderRadius: "5px",
+  //           marginLeft: "-6%",
+  //         }}
+  //       >
+  //         <img src="" alt="arror" />
+  //         <img src="" alt="arror" />
+  //       </div>
+  //     </div>
+  //     <Button className="btn-primary">OK</Button>
+  //     <Button className="btn-secondary">Cancel</Button>
+  //   </div>
+  // );
+
+  const renderChart = (
+    <div className="primary_gradient_bg fixed" style={{ width: "1079px" }}>
+      <div className="cardHead">
         <div className="cardHeadRight">
-          <p className="text_regular_12_o7" style={{ color: "#EC1654" }}>
-            Input
-          </p>
-          <p className="text_regular_12_o7">Stock</p>
+          <img src={chart} alt="u" />
+          <p>Chart</p>
+          <img src={line} alt="|" />
+          <Button className="btn-secondary">1m</Button>
+          <Button className="btn-secondary">5m</Button>
+          <Button className="btn-secondary">30m</Button>
+          <Button className="btn-secondary">1hr</Button>
+          <img src={downarrow_white} alt="arrow" />
+          <img src={line} alt="|" />
+          <img src={barchart} alt="barChart" />
+          <img src={candlestick} alt="candlestick" />
+          <img src={areachart} alt="areaChart" />
+          <img src={lineChart} alt="lineChart" />
+          <img src={line} alt="|" />
+          <img src={plusCircle} alt="plus" />
+          <p>Compare</p>
+          <img src={soundfx} alt="fx" onClick={() => setIndicator(true)} />
+          <p>Indicator</p>
+        </div>
+
+        <div>
+          <div>
+            <img
+              src={camera}
+              alt="camera"
+              className="cursor"
+              onClick={() => setSaveChartModal(true)}
+            />
+            <img
+              src={close}
+              alt="close"
+              className="cursor"
+              onClick={() => setIsOpenModal(false)}
+            />
+          </div>
         </div>
       </div>
-      <div className="cardAbout">
-        <p className="text_regular_14">MA Length:</p>
+      <div>
+        <div className="cardAbout" style={{ justifyContent: "left" }}>
+          <p className="text_regular_14">Binance Coin / TetherUS 5 BINANCE</p>
+          <div id="posImg">
+            <div className="image">
+              <img src={eye} alt="see" />
+            </div>
+            <div className="image">
+              <img src={points} alt="point" />
+            </div>
+            <div className="image">
+              <img src={greenDot} alt="dot" />
+            </div>
+          </div>
+          <p>418.24</p>
+          <p style={{ marginLeft: "2%" }}>+2.59 (+0.82%)</p>
+        </div>
+      </div>
+      <div className="box_1">
+        <p>Vol</p>
+        <p>23,885k</p>
+        <img src={eye} alt="see" />
+        <img src={settings} alt="settings" />
+        <img src={whiteCross} alt="cross" />
+        <img src={points} alt="point" />
+      </div>
+      <div style={{ float: "right" }}>
+        <img src={sun} alt="sun" />
+      </div>
+    </div>
+  );
+
+  const renderCompare = (
+    <div className="card" style={{ width: "463px" }}>
+      <div className="cardHead text_regular_12_o7">
+        <p>All</p>
+        <p>Stock</p>
+        <p>Futures</p>
+        <p>Forex</p>
+        <p>CFD</p>
+        <p>Crypto</p>
+        <p>Index</p>
+        <p>Economy</p>
       </div>
 
-      <div className="cardAbout">
-        <input type="text" placeholder="20" />
-        <div
-          style={{
-            backgroundColor: "#0B0B0B",
-            borderRadius: "5px",
-            marginLeft: "-6%",
-          }}
-        >
-          <img src="" alt="arror" />
-          <img src="" alt="arror" />
+      <div className="cardHead">
+        <div className="cardHead" style={{ width: "200px", marginTop: "3%" }}>
+          <p>TUSDBTC</p>
+          <p className="text_regular_12_o7">TRUEUSD / BITCOIN</p>
+        </div>
+        <div className="cardHead" style={{ width: "150px" }}>
+          <p>Crypto- Bitrex</p>
+          <img src={bitcoin} alt="bitcoin" />
         </div>
       </div>
-      <Button className="btn-primary">OK</Button>
-      <Button className="btn-secondary">Cancel</Button>
+
+      <div className="cardLine" style={{ marginBottom: "5%" }}></div>
+
+      <div className="cardHead">
+        <div className="cardHead" style={{ width: "200px" }}>
+          <p>TUSDBTC</p>
+          <p className="text_regular_12_o7">TRUEUSD / BITCOIN</p>
+        </div>
+        <div className="cardHead" style={{ width: "150px" }}>
+          <p>Crypto- Bitrex</p>
+          <img src={bitcoin} alt="bitcoin" />
+        </div>
+      </div>
     </div>
   );
 
@@ -694,6 +832,10 @@ const Modal = ({ variant, setIsOpenModal }) => {
       return renderIndicator;
     case "history":
       return renderHistory;
+    case "chart":
+      return renderChart;
+    case "compare":
+      return renderCompare;
     default:
       return null;
   }
