@@ -29,6 +29,7 @@ const ViLiquidity = () => {
   const [bridgeCheckbox, setBridgeCheckbox] = useState(false);
   const [recentTransactionModal, setRecentTransactionModal] = useState(false);
   const [settingsModal, setSettingsModal] = useState(false);
+  const [liquidityModal, setLiquidityModal] = useState(false);
 
   //RENDER TRADE HEADER
 
@@ -88,6 +89,7 @@ const ViLiquidity = () => {
       <Button
         className="btn-primary"
         style={{ marginTop: "1.5em", padding: "0.5em 3em" }}
+        onClick={() => setLiquidityModal(true)}
       >
         Add Liquidity
       </Button>
@@ -181,7 +183,10 @@ const ViLiquidity = () => {
       {settingsModal && (
         <Modal variant="settings" setIsOpenModal={setSettingsModal} />
       )}
-      {(recentTransactionModal || settingsModal) && (
+      {liquidityModal && (
+        <Modal variant="liquidity" setIsOpenModal={setLiquidityModal} />
+      )}
+      {(recentTransactionModal || settingsModal || liquidityModal) && (
         <div className={"backdrop_transition active"}></div>
       )}
     </>

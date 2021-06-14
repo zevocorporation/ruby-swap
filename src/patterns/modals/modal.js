@@ -150,30 +150,23 @@ const Modal = ({
 
   const renderRecent = (
     <div className="recentModal">
-      <div className="modalHead">
-        <div className="modalLogo">
-          <div id="icon">
-            <img src={clock} alt="clock" />
-          </div>
-        </div>
-        <div className="modalText">
-          <p>Recent transactions</p>
-        </div>
-        <div className="modalCloseCrossBox">
-          <div className="modalCloseIcon">
-            <img src={closeIcon} alt="x" />
-          </div>
-        </div>
-      </div>
-
-      <div className="modalAbout" id="recentAbout">
-        <p className="text_regular_14_o7">
-          Please connect your crypto wallet to view your recent transactions
+      <div>
+        <p>
+          <img src={clock} alt="clock" />
+          <span className="text_regular_24_w600">Recent Transactions</span>
         </p>
-        <Button className="btn-primary" onClick={() => setIsOpenModal(false)}>
-          Close
-        </Button>
+        <img
+          src={closeIcon}
+          alt="x"
+          className="cursor"
+          onClick={() => setIsOpenModal(false)}
+        />
       </div>
+      <p>Please connect your crypto wallet to view your recent transactions</p>
+
+      <Button className="btn-primary" onClick={() => setIsOpenModal(false)}>
+        Close
+      </Button>
     </div>
   );
 
@@ -512,7 +505,12 @@ const Modal = ({
         <p className="text_regular_24_w600">Add liquidity</p>
         <div className="modalCloseCrossBox">
           <div className="modalCloseIcon">
-            <img src={closeIcon} alt="img" />
+            <img
+              src={closeIcon}
+              alt="img"
+              className="cursor"
+              onClick={() => setIsOpenModal(false)}
+            />
           </div>
         </div>
       </div>
