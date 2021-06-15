@@ -61,6 +61,7 @@ import warning from "../../assets/icons/warning.svg";
 import add from "../../assets/icons/addSign.svg";
 import magnify from "../../assets/icons/magnify.svg";
 import whiteDownArrow from "../../assets/icons/whiteDownArrow.svg";
+import switchToDesktop from "../../assets/icons/switchToDesktop.svg";
 
 //GET USER BALANCE
 
@@ -361,9 +362,12 @@ const Modal = ({
 
   const renderSwitchToDesktop = (
     <div className="modal switchToDesktopModal">
+      <div>
+        <img src={switchToDesktop} alt="switch"/>
+      </div>
       <div className="aboutSwitch">
         <div className="aboutSwitchText">
-          <div id="aboutText1">
+          <div id="aboutText1"> 
             <p className="text_regular_14">
               Experience the best in desktop version
             </p>
