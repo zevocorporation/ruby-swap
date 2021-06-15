@@ -58,6 +58,9 @@ import whiteCross from "../../assets/icons/whiteCross.svg";
 import greenDot from "../../assets/icons/greenDot.svg";
 import bitcoin from "../../assets/icons/bitcoin.svg";
 import warning from "../../assets/icons/warning.svg";
+import add from "../../assets/icons/addSign.svg";
+import magnify from "../../assets/icons/magnify.svg";
+import whiteDownArrow from "../../assets/icons/whiteDownArrow.svg";
 
 //GET USER BALANCE
 
@@ -162,7 +165,7 @@ const Modal = ({
           onClick={() => setIsOpenModal(false)}
         />
       </div>
-      <p>Please connect your crypto wallet to view your recent transactions</p>
+      <p className="text_regular_14_o7" style={{marginBottom:"5%"}}>Please connect your crypto wallet to view your recent transactions</p>
 
       <Button className="btn-primary" onClick={() => setIsOpenModal(false)}>
         Close
@@ -398,7 +401,7 @@ const Modal = ({
           placeholder="Search token name or paste address"
         />
         <button>
-          <img src="" alt="Magnify" />
+          <img src={magnify} alt="Magnify" />
         </button>
       </form>
 
@@ -406,7 +409,7 @@ const Modal = ({
         <p className="text_regular_14">Token Name</p>
         <div className="modalDownArrowBox">
           <div className="modalDownArrowIcon">
-            <img src={closeIcon} alt="img" />
+            <img src={whiteDownArrow} alt="img" />
           </div>
         </div>
       </div>
@@ -529,7 +532,7 @@ const Modal = ({
             <p>0.0</p>
             <div className="liquidDropDown">
               <img src={binance} alt="img" />
-              <p className="text_regular_12_o7">Binance</p>
+              <p className="text_regular_16">Binance</p>
               <img src={downarrow_white} alt="img" />
             </div>
           </div>
@@ -537,7 +540,7 @@ const Modal = ({
       </div>
 
       <div className="liquidAdd">
-        <img src="" alt="img" />
+        <img src={add} alt="img" />
       </div>
 
       <div className="liquidBox" id="boxL2">
@@ -690,7 +693,7 @@ const Modal = ({
   // );
 
   const renderChart = (
-    <div className="primary_gradient_bg fixed" style={{ width: "1079px" }}>
+    <div className="primary_gradient_bg fixed chartModal1" style={{ width: "1059px" }}>
       <div className="cardHead">
         <div className="cardHeadRight">
           <img src={chart} alt="u" />
@@ -708,9 +711,9 @@ const Modal = ({
           <img src={lineChart} alt="lineChart" />
           <img src={line} alt="|" />
           <img src={plusCircle} alt="plus" />
-          <p>Compare</p>
+          <p className="text_regular_14_o7">Compare</p>
           <img src={soundfx} alt="fx" onClick={() => setIndicator(true)} />
-          <p>Indicator</p>
+          <p className="text_regular_14_o7">Indicator</p>
         </div>
 
         <div>
@@ -719,6 +722,7 @@ const Modal = ({
               src={camera}
               alt="camera"
               className="cursor"
+              style={{marginRight : "20px"}}
               onClick={() => setSaveChartModal(true)}
             />
             <img
@@ -745,7 +749,7 @@ const Modal = ({
             </div>
           </div>
           <p>418.24</p>
-          <p style={{ marginLeft: "2%" }}>+2.59 (+0.82%)</p>
+          <p style={{ marginLeft: "2%", color:"#EC1654" }}>+2.59 (+0.82%)</p>
         </div>
       </div>
       <div className="box_1">
