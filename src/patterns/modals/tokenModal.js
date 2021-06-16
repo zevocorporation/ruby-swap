@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 //IMPORTING STYLESHEETS
 
@@ -24,6 +24,22 @@ const TokenModal = ({
   setSelectedOutputToken,
   selectedOutputToken,
 }) => {
+  //INITIALIZING HOOKS
+
+  const [searchInput, setSearchInput] = useState("");
+  const [filteredList, setFilteredList] = useState([]);
+  //HANDLING METHODS
+
+  useEffect(() => {
+    setFilteredList(
+      Token.filter((tokenList) => {
+        return tokenList.title
+          .toLocaleLowerCase()
+          .match(searchInput.toLocaleLowerCase());
+      })
+    );
+  }, [searchInput]);
+
   const handleToken = (tokenlist) => {
     if (variant === "output") {
       setSelectedOutputToken({
@@ -41,9 +57,10 @@ const TokenModal = ({
       setIsOpenModal(false);
     }
   };
+
   return (
     <div className="tokenModal">
-      <div className="flex">
+      <div className="flex modal_header">
         <div>
           <img src={tokenModal} alt="token" />
           <p className="text_regular_24_w600">Select a Token</p>
@@ -58,8 +75,10 @@ const TokenModal = ({
       </div>
       <div className="search_input">
         <input
-          class="searchToken"
+          className="searchToken"
           type="text"
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
           placeholder="Search token name or paste address"
         />
 
@@ -78,17 +97,25 @@ const TokenModal = ({
         />
       </div>
       <div className="token_list">
-        {Token.map((tokenList) => {
-          return (
-            <div className="tokens" onClick={() => handleToken(tokenList)}>
-              <div>
-                <img src={binance} alt="symbol" />
-                <p className="text_regular_16">{tokenList.title}</p>
+        {filteredList.length > 0 ? (
+          filteredList.map((tokenList, index) => {
+            return (
+              <div
+                className="tokens"
+                onClick={() => handleToken(tokenList)}
+                key={index}
+              >
+                <div>
+                  <img src={binance} alt="symbol" />
+                  <p className="text_regular_16">{tokenList.title}</p>
+                </div>
+                <p className="text_regular_14">{tokenList.symbol}</p>
               </div>
-              <p className="text_regular_14">{tokenList.symbol}</p>
-            </div>
-          );
-        })}
+            );
+          })
+        ) : (
+          <div className="text_regular_16_w500 no_match">No Results Found</div>
+        )}
       </div>
     </div>
   );

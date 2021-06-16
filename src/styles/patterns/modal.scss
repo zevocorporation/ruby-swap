@@ -218,7 +218,7 @@
   }
 
   .transaction {
-    input {
+    input[type="number"] {
       width: 75px;
       margin-right: 1em;
 
@@ -229,9 +229,8 @@
       }
 
       /* Firefox */
-      &[type="number"] {
-        -moz-appearance: textfield;
-      }
+
+      -moz-appearance: textfield;
     }
   }
 
@@ -298,6 +297,13 @@
   transform: translate(-50%, -50%);
   z-index: 1100;
   padding: 1em;
+  max-height: 400px;
+  overflow-y: auto;
+  transition: all 200ms linear;
+
+  @media (max-width: 768px) {
+    width: 80%;
+  }
 
   .flex {
     display: flex;
@@ -316,6 +322,8 @@
   }
 
   .token_list {
+    transition: all 200ms linear;
+
     > div:last-of-type {
       border-bottom: none;
     }
@@ -337,6 +345,12 @@
           margin-right: 1em;
         }
       }
+    }
+
+    .no_match {
+      display: grid;
+      place-items: center;
+      padding: 1em;
     }
   }
 
