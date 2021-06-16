@@ -61,10 +61,12 @@ import switchToDesktop from "../../assets/icons/switchToDesktop.svg";
 //GET USER BALANCE
 
 export const balance = async (address) => {
-  const balance1 = await window.web3.eth.getBalance(address);
-  const balance2 = Web3.utils.fromWei(balance1, "ether");
+  if (window.ethereum.selectedAddress != null) {
+  const balance2 = Web3.utils.fromWei('0', "ether");
 
   return balance2;
+  }
+  
 };
 
 const Modal = ({

@@ -17,10 +17,12 @@ import {
 
 import learn_more from "../assets/icons/learn_more.svg";
 import right_arrow from "../assets/icons/right_arrow.svg";
+import { init } from "../data/fromChain";
 
 //Modal
 
 const TradeScreen = () => {
+  init();
   //INITIALIZING HOOKS
 
   const [toggleState, setToggleState] = useState(1);

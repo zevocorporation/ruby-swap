@@ -24,6 +24,7 @@ import checkbox from "../../assets/icons/checkbox.svg";
 import checkbox_square from "../../assets/icons/checkbox_square.svg";
 import upDownArrow from "../../assets/icons/upDownArrow.svg";
 import ethereum from "../../assets/icons/ethereum.svg";
+import { getQuote } from "../../data/fromChain/getQuote";
 
 const Exchange = () => {
   //INITIALIZING HOOKS
@@ -49,8 +50,18 @@ const Exchange = () => {
     title: "Test",
   });
 
+  const handleInput = async(_in) => {
+    setExchangeInput(_in);
+    console.log(_in,exchangeInput);
+    const path = new Array(1);
+    path[0] = selectedToken.address;
+    path[1] = selectedOutputToken.address;
+    const output = await getQuote(exchangeInput, path);
+    setExchangeOutput(output[1]);
+  }
+
   const handleSwap = () => {
-    console.log(selectedOutputToken, selectedToken);
+    
   };
   //RENDER TRADE HEADER
 
@@ -87,7 +98,7 @@ const Exchange = () => {
             min="0"
             value={exchangeInput === 0 ? "" : exchangeInput}
             className="text_regular_20_w500"
-            onChange={(e) => setExchangeInput(e.target.value)}
+            onChange={(e) => handleInput(e.target.value)}
           />
           <div onClick={() => setInputTokenModal(true)}>
             <img
@@ -114,7 +125,6 @@ const Exchange = () => {
             type="number"
             value={exchangeOutput}
             className="text_regular_20_w500"
-            onChange={(e) => setExchangeOutput(e.target.value)}
             readOnly
           />
           <div onClick={() => setOutputTokenModal(true)}>
