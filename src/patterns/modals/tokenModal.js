@@ -33,9 +33,14 @@ const TokenModal = ({
   useEffect(() => {
     setFilteredList(
       Token.filter((tokenList) => {
-        return tokenList.title
-          .toLocaleLowerCase()
-          .match(searchInput.toLocaleLowerCase());
+        return (
+          tokenList.title
+            .toLocaleLowerCase()
+            .match(searchInput.toLocaleLowerCase()) ||
+          tokenList.address
+            .toLocaleLowerCase()
+            .match(searchInput.toLocaleLowerCase())
+        );
       })
     );
   }, [searchInput]);
