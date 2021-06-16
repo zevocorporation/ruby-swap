@@ -4,82 +4,91 @@ import React from "react";
 
 import "../../styles/patterns/modal.scss";
 
+import { Token } from "./tokenList";
+
 //IMPORTING MEDIA ASSETS
 
 import closeIcon from "../../assets/icons/close.svg";
 import magnify from "../../assets/icons/magnify.svg";
 import binance from "../../assets/icons/binance.svg";
-import etherium from "../../assets/icons/etherium.svg";
-import alpaca from "../../assets/icons/alpaca.svg";
+// import ethereum from "../../assets/icons/ethereum.svg";
+// import alpaca from "../../assets/icons/alpaca.svg";
 import tokenModal from "../../assets/icons/tokenModal.svg";
 import whiteDownArrow from "../../assets/icons/whiteDownArrow.svg";
 
-const TokenModal = ({ setIsOpenModal }) => {
+const TokenModal = ({
+  setIsOpenModal,
+  setSelectedToken,
+  selectedToken,
+  variant,
+  setSelectedOutputToken,
+  selectedOutputToken,
+}) => {
+  const handleToken = (tokenlist) => {
+    if (variant === "output") {
+      setSelectedOutputToken({
+        ...selectedOutputToken,
+        title: tokenlist.title,
+        address: tokenlist.address,
+      });
+      setIsOpenModal(false);
+    } else {
+      setSelectedToken({
+        ...selectedToken,
+        title: tokenlist.title,
+        address: tokenlist.address,
+      });
+      setIsOpenModal(false);
+    }
+  };
   return (
-    <div className="modal tokenModal">
+    <div className="tokenModal">
       <div className="flex">
-        <img src={tokenModal} alt="token" />
-        <p className="text_regular_24_w600">Select a Token</p>
-        <div className="modalCloseCrossBox">
-          <div className="modalCloseIcon">
-            <img
-              src={closeIcon}
-              alt="img"
-              className="cursor"
-              onClick={() => setIsOpenModal(false)}
-            />
-          </div>
+        <div>
+          <img src={tokenModal} alt="token" />
+          <p className="text_regular_24_w600">Select a Token</p>
         </div>
-      </div>
 
-      <form>
+        <img
+          src={closeIcon}
+          alt="img"
+          className="cursor"
+          onClick={() => setIsOpenModal(false)}
+        />
+      </div>
+      <div className="search_input">
         <input
           class="searchToken"
           type="text"
           placeholder="Search token name or paste address"
         />
-        <button>
-          <img src={magnify} alt="Magnify" />
-        </button>
-      </form>
 
-      <div className="tokenHead">
-        <p className="text_regular_14">Token Name</p>
-        <div className="modalDownArrowBox">
-          <div className="modalDownArrowIcon">
-            <img src={whiteDownArrow} alt="img" />
-          </div>
-        </div>
+        <img
+          src={magnify}
+          alt="Magnify"
+          style={{ width: 24, height: 24, marginLeft: 16 }}
+        />
       </div>
-
-      <div className="tokenName">
-        <div className="tokenBox text_regular_14">
-          <img src={binance} alt="img" />
-          <div className="token-name">
-            <p>Binance</p>
-          </div>
-          <div className="smallName">
-            <p>bnb</p>
-          </div>
-        </div>
-        <div className="tokenBox text_regular_14">
-          <img src={etherium} alt="img" />
-          <div className="token-name">
-            <p>Etherium</p>
-          </div>
-          <div className="smallName">
-            <p>eth</p>
-          </div>
-        </div>
-        <div className="tokenBox text_regular_14">
-          <img src={alpaca} alt="img" />
-          <div className="token-name">
-            <p>Alpaca</p>
-          </div>
-          <div className="smallName">
-            <p>ALP</p>
-          </div>
-        </div>
+      <div className="flex">
+        <p className="text_regular_16_w500">Token Name</p>
+        <img
+          src={whiteDownArrow}
+          alt="arrow"
+          style={{ width: 24, height: 24 }}
+        />
+      </div>
+      <div className="token_list">
+        {Token.map((tokenList) => {
+          return (
+            <div className="tokens" onClick={() => handleToken(tokenList)}>
+              <div>
+                <img src={binance} alt="symbol" />
+                <p className="text_regular_16">{tokenList.title}</p>
+              </div>
+              <p className="text_regular_14">{tokenList.symbol}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

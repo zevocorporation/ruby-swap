@@ -23,6 +23,7 @@ import binance from "../../assets/icons/binance.svg";
 import checkbox from "../../assets/icons/checkbox.svg";
 import checkbox_square from "../../assets/icons/checkbox_square.svg";
 import upDownArrow from "../../assets/icons/upDownArrow.svg";
+import ethereum from "../../assets/icons/ethereum.svg";
 
 const Exchange = () => {
   //INITIALIZING HOOKS
@@ -34,9 +35,23 @@ const Exchange = () => {
   const [settingsModal, setSettingsModal] = useState(false);
   const [inputTokenModal, setInputTokenModal] = useState(false);
   const [outputTokenModal, setOutputTokenModal] = useState(false);
+  const [connectWalletModal, setConnectWalletModal] = useState(false);
   const [exchangeInput, setExchangeInput] = useState(0);
   const [exchangeOutput, setExchangeOutput] = useState(0);
+  const [selectedToken, setSelectedToken] = useState({
+    image: ethereum,
+    address: "0xc778417e063141139fce010982780140aa0cd5ab",
+    title: "Ethereum",
+  });
+  const [selectedOutputToken, setSelectedOutputToken] = useState({
+    image: binance,
+    address: "0xBFc358F36Be8eB80Cc73b39f3E99e09906bD44A6",
+    title: "Test",
+  });
 
+  const handleSwap = () => {
+    console.log(selectedOutputToken, selectedToken);
+  };
   //RENDER TRADE HEADER
 
   const renderHeader = (
@@ -69,17 +84,18 @@ const Exchange = () => {
         <div>
           <input
             type="number"
+            min="0"
             value={exchangeInput === 0 ? "" : exchangeInput}
             className="text_regular_20_w500"
             onChange={(e) => setExchangeInput(e.target.value)}
           />
           <div onClick={() => setInputTokenModal(true)}>
             <img
-              src={binance}
+              src={selectedToken.image}
               alt="binance"
               style={{ width: "1.25em", marginRight: "0.5em" }}
             />
-            <span className="text_regular_14_w500">Binance</span>
+            <span className="text_regular_14_w500">{selectedToken.title}</span>
             <img
               src={downarrow_white}
               alt="down_arrow"
@@ -103,11 +119,13 @@ const Exchange = () => {
           />
           <div onClick={() => setOutputTokenModal(true)}>
             <img
-              src={binance}
+              src={selectedOutputToken.image}
               alt="binance"
               style={{ width: "1.25em", marginRight: "0.5em" }}
             />
-            <span className="text_regular_14_w500">Binance</span>
+            <span className="text_regular_14_w500">
+              {selectedOutputToken.title}
+            </span>
             <img
               src={downarrow_white}
               alt="down_arrow"
@@ -123,7 +141,18 @@ const Exchange = () => {
 
   const renderButton = (
     <div className="btn_block">
-      <Button className="btn-primary">Unlock Wallet</Button>
+      {window.ethereum.selectedAddress !== null ? (
+        <Button className="btn-primary" onClick={() => handleSwap()}>
+          Swap
+        </Button>
+      ) : (
+        <Button
+          className="btn-primary"
+          onClick={() => setConnectWalletModal(true)}
+        >
+          Unlock Wallet
+        </Button>
+      )}
       <p className="text_regular_12_o7">Slippage Tolerance 0.1 %</p>
     </div>
   );
@@ -226,8 +255,26 @@ const Exchange = () => {
       {settingsModal && (
         <Modal variant="settings" setIsOpenModal={setSettingsModal} />
       )}
-      {inputTokenModal && <TokenModal setIsOpenModal={setInputTokenModal} />}
-      {outputTokenModal && <TokenModal setIsOpenModal={setOutputTokenModal} />}
+      <Modal
+        variant="connectWallet"
+        isOpenModal={connectWalletModal}
+        setIsOpenModal={setConnectWalletModal}
+      />
+      {inputTokenModal && (
+        <TokenModal
+          setIsOpenModal={setInputTokenModal}
+          setSelectedToken={setSelectedToken}
+          selectedToken={selectedToken}
+        />
+      )}
+      {outputTokenModal && (
+        <TokenModal
+          variant="output"
+          setIsOpenModal={setOutputTokenModal}
+          selectedOutputToken={selectedOutputToken}
+          setSelectedOutputToken={setSelectedOutputToken}
+        />
+      )}
       {(recentTransactionModal ||
         settingsModal ||
         inputTokenModal ||

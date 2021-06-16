@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-
+import { useDispatch } from "react-redux";
 //IMPORTING STYLESHEET
 
 import "../styles/patterns/header.scss";
@@ -10,12 +10,13 @@ import "../styles/patterns/header.scss";
 
 import Modal from "./modals/modal";
 import Sidebar from "./sidebar";
+import { balance } from "./modals/modal";
 
 //IMPORTING COMPONENTS
 
 import Link from "../components/link";
 import Button from "../components/button";
-
+import * as actionType from "../redux/constants/actionsTypes";
 //IMPORTING MEDIA ASSETS
 
 import logo from "../assets/logo/logo.svg";
@@ -38,6 +39,7 @@ const Header = () => {
   const [sidebar, setSidebar] = useState(false);
   // const [copied, setCopied] = useState(false);
   const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
   //HANDLING METHODS
 
@@ -48,6 +50,28 @@ const Header = () => {
     // }, 3000);
   };
 
+  useEffect(() => {
+    if (window.ethereum.selectedAddress !== null) {
+      handleReconnect();
+    }
+  }, []);
+
+  const handleReconnect = async () => {
+    dispatch({
+      type: actionType.START_LOADING,
+    });
+    const res = await balance(window.ethereum.selectedAddress);
+    dispatch({
+      type: actionType.CONNECT,
+      payload: {
+        address: window.ethereum.selectedAddress,
+        balance: res,
+      },
+    });
+    dispatch({
+      type: actionType.STOP_LOADING,
+    });
+  };
   //RENDER LINKS
 
   const renderLinks = (

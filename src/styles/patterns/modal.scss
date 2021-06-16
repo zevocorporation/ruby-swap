@@ -278,99 +278,77 @@
 
 .tokenModal {
   width: 603px;
-  height: 404px;
+  // height: 400px;
+  background: #1a1919;
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1100;
+  padding: 1em;
 
-  .modalCloseCrossBox {
-    left: 550px;
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2em;
+
+    div {
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-right: 1em;
+      }
+    }
   }
 
-  form {
+  .token_list {
+    > div:last-of-type {
+      border-bottom: none;
+    }
+    .tokens {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1em 0;
+      border-bottom: 0.5px solid #6d6d6d;
+      cursor: pointer;
+
+      div {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 32px;
+          height: 32px;
+          margin-right: 1em;
+        }
+      }
+    }
+  }
+
+  .search_input {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    padding: 0px;
-    position: absolute;
-    width: 543px;
-    height: 45px;
-    left: 30px;
-    top: 92px;
+    justify-content: space-between;
+    margin-bottom: 2em;
 
     input {
-      position: absolute;
-      width: 509px;
-      height: 45px;
-      left: 0px;
-      top: 0px;
-      margin-left: 2px;
       background: #0b0b0b;
       border-radius: 5px;
       border: none;
-    }
-
-    .searchToken::-webkit-input-placeholder {
-      position: absolute;
-      left: 3.68%;
-      right: 47.15%;
-      top: 26.67%;
-      bottom: 28.89%;
-    }
-
-    button {
-      position: static;
-      width: 24px;
-      height: 24px;
-      left: 519px;
-      top: 10.5px;
-      flex: none;
-      order: 1;
-      flex-grow: 0;
-      margin: 0px 10px;
-
-      img {
-        position: absolute;
-        left: 95.52%;
-        right: 16.28%;
-        top: 12.5%;
-        bottom: 18.3%;
-        background: #ffffff;
-      }
-    }
-  }
-
-  .tokenHead {
-    position: absolute;
-    width: 90%;
-    height: 20px;
-    left: 30px;
-    top: 157px;
-    display: flex;
-  }
-
-  .tokenName {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 200px;
-    margin-left: 15px;
-    width: 90%;
-    .tokenBox {
-      display: flex;
-      flex-direction: row;
-      margin-bottom: 0.55em;
-      padding: 20px;
+      outline: none;
       width: 100%;
-      border-bottom: 1px solid #6d6d6d;
-
-      .token-name {
-        position: absolute;
-        left: 10%;
-        text-transform: capitalize;
-      }
-
-      .smallName {
-        position: absolute;
-        left: 95%;
-        text-transform: uppercase;
+      padding: 0.75em;
+      font-size: 1em;
+      color: #fff;
+      &::-webkit-input-placeholder {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.07em;
+        color: rgba(255, 255, 255, 0.7);
       }
     }
   }
