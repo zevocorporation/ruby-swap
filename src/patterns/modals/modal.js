@@ -33,10 +33,7 @@ import help_circle from "../../assets/icons/help_circle.svg";
 import binance from "../../assets/icons/binance.svg";
 import processOn from "../../assets/icons/processOn.svg";
 import processDone from "../../assets/icons/processDone.svg";
-import settingModal from "../../assets/icons/settingModal.svg";
-import tokenModal from "../../assets/icons/tokenModal.svg";
-import etherium from "../../assets/icons/etherium.svg";
-import alpaca from "../../assets/icons/alpaca.svg";
+// import settingModal from "../../assets/icons/settingModal.svg";
 import bar_chart from "../../assets/icons/bar_chart.svg";
 import learn_more from "../../assets/icons/learn_more.svg";
 import downarrow_white from "../../assets/icons/downarrow_white.svg";
@@ -59,8 +56,6 @@ import greenDot from "../../assets/icons/greenDot.svg";
 import bitcoin from "../../assets/icons/bitcoin.svg";
 import warning from "../../assets/icons/warning.svg";
 import add from "../../assets/icons/addSign.svg";
-import magnify from "../../assets/icons/magnify.svg";
-import whiteDownArrow from "../../assets/icons/whiteDownArrow.svg";
 import switchToDesktop from "../../assets/icons/switchToDesktop.svg";
 
 //GET USER BALANCE
@@ -167,7 +162,9 @@ const Modal = ({
           onClick={() => setIsOpenModal(false)}
         />
       </div>
-      <p className="text_regular_14_o7" style={{marginBottom:"5%"}}>Please connect your crypto wallet to view your recent transactions</p>
+      <p className="text_regular_14_o7" style={{ marginBottom: "5%" }}>
+        Please connect your crypto wallet to view your recent transactions
+      </p>
 
       <Button className="btn-primary" onClick={() => setIsOpenModal(false)}>
         Close
@@ -368,11 +365,11 @@ const Modal = ({
   const renderSwitchToDesktop = (
     <div className="modal switchToDesktopModal">
       <div>
-        <img src={switchToDesktop} alt="switch"/>
+        <img src={switchToDesktop} alt="switch" />
       </div>
       <div className="aboutSwitch">
         <div className="aboutSwitchText">
-          <div id="aboutText1"> 
+          <div id="aboutText1">
             <p className="text_regular_14">
               Experience the best in desktop version
             </p>
@@ -387,75 +384,6 @@ const Modal = ({
       </div>
       <div className="switchButton">
         <Button className="btn-primary">Request Desktop Site</Button>
-      </div>
-    </div>
-  );
-
-  const renderTokenModal = (
-    <div className="modal tokenModal">
-      <div className="flex">
-        <img src={tokenModal} alt="token" />
-        <p className="text_regular_24_w600">Select a Token</p>
-        <div className="modalCloseCrossBox">
-          <div className="modalCloseIcon">
-            <img
-              src={closeIcon}
-              alt="img"
-              className="cursor"
-              onClick={() => setIsOpenModal(false)}
-            />
-          </div>
-        </div>
-      </div>
-
-      <form>
-        <input
-          class="searchToken"
-          type="text"
-          placeholder="Search token name or paste address"
-        />
-        <button>
-          <img src={magnify} alt="Magnify" />
-        </button>
-      </form>
-
-      <div className="tokenHead">
-        <p className="text_regular_14">Token Name</p>
-        <div className="modalDownArrowBox">
-          <div className="modalDownArrowIcon">
-            <img src={whiteDownArrow} alt="img" />
-          </div>
-        </div>
-      </div>
-
-      <div className="tokenName">
-        <div className="tokenBox text_regular_14">
-          <img src={binance} alt="img" />
-          <div className="token-name">
-            <p>Binance</p>
-          </div>
-          <div className="smallName">
-            <p>bnb</p>
-          </div>
-        </div>
-        <div className="tokenBox text_regular_14">
-          <img src={etherium} alt="img" />
-          <div className="token-name">
-            <p>Etherium</p>
-          </div>
-          <div className="smallName">
-            <p>eth</p>
-          </div>
-        </div>
-        <div className="tokenBox text_regular_14">
-          <img src={alpaca} alt="img" />
-          <div className="token-name">
-            <p>Alpaca</p>
-          </div>
-          <div className="smallName">
-            <p>ALP</p>
-          </div>
-        </div>
       </div>
     </div>
   );
@@ -707,7 +635,10 @@ const Modal = ({
   // );
 
   const renderChart = (
-    <div className="primary_gradient_bg fixed chartModal1" style={{ width: "1059px" }}>
+    <div
+      className="primary_gradient_bg fixed chartModal1"
+      style={{ width: "1059px" }}
+    >
       <div className="cardHead">
         <div className="cardHeadRight">
           <img src={chart} alt="u" />
@@ -736,7 +667,7 @@ const Modal = ({
               src={camera}
               alt="camera"
               className="cursor"
-              style={{marginRight : "20px"}}
+              style={{ marginRight: "20px" }}
               onClick={() => setSaveChartModal(true)}
             />
             <img
@@ -763,7 +694,7 @@ const Modal = ({
             </div>
           </div>
           <p>418.24</p>
-          <p style={{ marginLeft: "2%", color:"#EC1654" }}>+2.59 (+0.82%)</p>
+          <p style={{ marginLeft: "2%", color: "#EC1654" }}>+2.59 (+0.82%)</p>
         </div>
       </div>
       <div className="box_1">
@@ -836,8 +767,6 @@ const Modal = ({
       return renderSettings;
     case "switchToDesktop":
       return renderSwitchToDesktop;
-    case "token":
-      return renderTokenModal;
     case "returnOfInvestment":
       return renderReturnOfInvest;
     case "liquidity":

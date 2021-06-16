@@ -11,6 +11,7 @@ import Button from "../../components/button";
 //IMPORTING PATTERNS
 
 import Modal from "../../patterns/modals/modal";
+import TokenModal from "../../patterns/modals/tokenModal";
 
 //IMPORTING MEDIA ASSETS
 
@@ -31,7 +32,8 @@ const Exchange = () => {
   const [bridgeCheckbox, setBridgeCheckbox] = useState(false);
   const [recentTransactionModal, setRecentTransactionModal] = useState(false);
   const [settingsModal, setSettingsModal] = useState(false);
-  const [tokenModal, setTokenModal] = useState(false);
+  const [inputTokenModal, setInputTokenModal] = useState(false);
+  const [outputTokenModal, setOutputTokenModal] = useState(false);
   const [exchangeInput, setExchangeInput] = useState(0);
   const [exchangeOutput, setExchangeOutput] = useState(0);
 
@@ -67,12 +69,11 @@ const Exchange = () => {
         <div>
           <input
             type="number"
-            value={exchangeInput}
+            value={exchangeInput === 0 ? "" : exchangeInput}
             className="text_regular_20_w500"
             onChange={(e) => setExchangeInput(e.target.value)}
-            readOnly
           />
-          <div onClick={() => setTokenModal(true)}>
+          <div onClick={() => setInputTokenModal(true)}>
             <img
               src={binance}
               alt="binance"
@@ -87,8 +88,8 @@ const Exchange = () => {
           </div>
         </div>
       </div>
-      <div style={{marginLeft:"50%",marginTop:"2%"}}>
-        <img src={upDownArrow} alt="p"/>
+      <div style={{ marginLeft: "50%", marginTop: "2%" }}>
+        <img src={upDownArrow} alt="p" />
       </div>
       <div className="exchange_trade_input">
         <p className="text_regular_14">Output (estimated)</p>
@@ -100,7 +101,7 @@ const Exchange = () => {
             onChange={(e) => setExchangeOutput(e.target.value)}
             readOnly
           />
-          <div>
+          <div onClick={() => setOutputTokenModal(true)}>
             <img
               src={binance}
               alt="binance"
@@ -225,8 +226,12 @@ const Exchange = () => {
       {settingsModal && (
         <Modal variant="settings" setIsOpenModal={setSettingsModal} />
       )}
-      {tokenModal && <Modal variant="token" setIsOpenModal={setTokenModal} />}
-      {(recentTransactionModal || settingsModal || tokenModal) && (
+      {inputTokenModal && <TokenModal setIsOpenModal={setInputTokenModal} />}
+      {outputTokenModal && <TokenModal setIsOpenModal={setOutputTokenModal} />}
+      {(recentTransactionModal ||
+        settingsModal ||
+        inputTokenModal ||
+        outputTokenModal) && (
         <div className={"backdrop_transition active"}></div>
       )}
     </>
