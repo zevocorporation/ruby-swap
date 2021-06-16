@@ -211,12 +211,20 @@ const Header = () => {
         />
       )}
       <Modal variant="grid" />
-      {connectWalletModal && (
-        <Modal variant="connectWallet" setIsOpenModal={setConnectWalletModal} />
-      )}
-      {connectWalletModal && (
-        <div className={"backdrop_transition active"}></div>
-      )}
+
+      <Modal
+        variant="connectWallet"
+        isOpenModal={connectWalletModal}
+        setIsOpenModal={setConnectWalletModal}
+      />
+
+      <div
+        className={
+          connectWalletModal
+            ? "backdrop_transition active"
+            : "backdrop_transition"
+        }
+      ></div>
     </>
   );
 };

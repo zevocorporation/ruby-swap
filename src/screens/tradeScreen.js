@@ -18,7 +18,6 @@ import {
 import learn_more from "../assets/icons/learn_more.svg";
 import right_arrow from "../assets/icons/right_arrow.svg";
 
-
 //Modal
 
 const TradeScreen = () => {
@@ -44,7 +43,7 @@ const TradeScreen = () => {
         </p>
         <p>
           <span className="text_regular_14">Learn more</span>
-          <img src={learn_more} alt="learn_more" />
+          <img src={learn_more} alt="learn_more" className="cursor" />
         </p>
       </div>
       <div>
@@ -88,8 +87,6 @@ const TradeScreen = () => {
       {toggleState === 4 && <ViLiquidity />}
     </>
   );
-
-  
 
   //RENDER TRADE SCREEN
 

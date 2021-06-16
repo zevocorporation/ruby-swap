@@ -150,7 +150,7 @@ const PredictionScreen = () => {
 
   const renderLivecard = (
     <div className="prediction_card">
-      <div className="card_wrapper" style={{ transform: "scale(1.1)" }}>
+      <div className="card_wrapper" style={{ transform: "scale(1.05)" }}>
         <div className="card_header">
           <p>
             <img src={play} alt="play_icon" />

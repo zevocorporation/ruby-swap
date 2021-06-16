@@ -116,7 +116,8 @@ const Sidebar = ({ setSidebar, setConnectWalletModal }) => {
         <img
           src={downarrow_white}
           alt="arrow"
-          style={{ width: "14px", height: "14px" }}
+          className={isDropdown ? "down_arrow active" : "down_arrow"}
+          style={{ width: "24px", height: "24px" }}
         />
       </p>
       <ul className={isDropdown ? "lists active" : "lists"}>

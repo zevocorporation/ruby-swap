@@ -168,7 +168,7 @@ const ViLiquidity = () => {
         </p>
         <p className="flex">
           <span className="text_regular_14_o7">Learn more</span>
-          <img src={learn_more} alt="learn_more" />
+          <img src={learn_more} alt="learn_more" className="cursor" />
         </p>
       </div>
     </div>

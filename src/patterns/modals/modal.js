@@ -70,6 +70,7 @@ export const balance = async (address) => {
 
 const Modal = ({
   variant,
+  isOpenModal,
   setIsOpenModal,
   setIndicator,
   setSaveChartModal,
@@ -251,7 +252,11 @@ const Modal = ({
   );
 
   const renderConnectWallet = (
-    <div className="modal connectWalletModal">
+    <div
+      className={
+        isOpenModal ? "connectWalletModal visible" : "connectWalletModal"
+      }
+    >
       <div className="modal_header">
         <div>
           <img src={vector} alt="vector" style={{ width: "28px" }} />
@@ -386,7 +391,12 @@ const Modal = ({
         <p className="text_regular_24_w600">Select a Token</p>
         <div className="modalCloseCrossBox">
           <div className="modalCloseIcon">
-            <img src={closeIcon} alt="img" />
+            <img
+              src={closeIcon}
+              alt="img"
+              className="cursor"
+              onClick={() => setIsOpenModal(false)}
+            />
           </div>
         </div>
       </div>

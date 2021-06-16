@@ -108,6 +108,16 @@
         transition: all 300ms ease-in-out;
       }
     }
+
+    .down_arrow {
+      transform: rotate(0deg);
+      transition: transform 300ms ease-in-out;
+
+      &.active {
+        transform: rotate(180deg);
+        transition: transform 300ms ease-in-out;
+      }
+    }
   }
 
   p {

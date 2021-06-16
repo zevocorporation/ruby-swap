@@ -30,6 +30,7 @@ const Exchange = () => {
   const [bridgeCheckbox, setBridgeCheckbox] = useState(false);
   const [recentTransactionModal, setRecentTransactionModal] = useState(false);
   const [settingsModal, setSettingsModal] = useState(false);
+  const [tokenModal, setTokenModal] = useState(false);
   const [exchangeInput, setExchangeInput] = useState(0);
   const [exchangeOutput, setExchangeOutput] = useState(0);
 
@@ -70,7 +71,7 @@ const Exchange = () => {
             onChange={(e) => setExchangeInput(e.target.value)}
             readOnly
           />
-          <div>
+          <div onClick={() => setTokenModal(true)}>
             <img
               src={binance}
               alt="binance"
@@ -204,7 +205,7 @@ const Exchange = () => {
         </p>
         <p className="flex">
           <span className="text_regular_14_o7">Learn more</span>
-          <img src={learn_more} alt="learn_more" />
+          <img src={learn_more} alt="learn_more" className="cursor" />
         </p>
       </div>
     </div>
@@ -220,7 +221,8 @@ const Exchange = () => {
       {settingsModal && (
         <Modal variant="settings" setIsOpenModal={setSettingsModal} />
       )}
-      {(recentTransactionModal || settingsModal) && (
+      {tokenModal && <Modal variant="token" setIsOpenModal={setTokenModal} />}
+      {(recentTransactionModal || settingsModal || tokenModal) && (
         <div className={"backdrop_transition active"}></div>
       )}
     </>
