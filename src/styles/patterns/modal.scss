@@ -16,6 +16,13 @@
   z-index: 1150;
 }
 
+.chartModal1 {
+  .btn-secondary {
+    font-size: 0.8em;
+    letter-spacing: 0em;
+  }
+}
+
 .modal_header {
   display: flex;
   align-items: center;
@@ -432,7 +439,6 @@
     height: 24px;
     left: 250px;
     top: 228px;
-    border: 1px solid white;
   }
 
   .boxHead {

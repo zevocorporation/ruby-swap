@@ -21,6 +21,7 @@ import clock from "../../assets/icons/clock.svg";
 import binance from "../../assets/icons/binance.svg";
 import checkbox from "../../assets/icons/checkbox.svg";
 import checkbox_square from "../../assets/icons/checkbox_square.svg";
+import upDownArrow from "../../assets/icons/upDownArrow.svg";
 
 const Exchange = () => {
   //INITIALIZING HOOKS
@@ -85,6 +86,9 @@ const Exchange = () => {
             />
           </div>
         </div>
+      </div>
+      <div style={{marginLeft:"50%",marginTop:"2%"}}>
+        <img src={upDownArrow} alt="p"/>
       </div>
       <div className="exchange_trade_input">
         <p className="text_regular_14">Output (estimated)</p>
