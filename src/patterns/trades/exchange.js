@@ -32,13 +32,20 @@ const Exchange = () => {
   const [swapCheckbox, setSwapCheckbox] = useState(false);
   const [liquidityCheckbox, setLiquidityCheckbox] = useState(false);
   const [bridgeCheckbox, setBridgeCheckbox] = useState(false);
+
+  //MODAL STATES
+
   const [recentTransactionModal, setRecentTransactionModal] = useState(false);
   const [settingsModal, setSettingsModal] = useState(false);
   const [inputTokenModal, setInputTokenModal] = useState(false);
   const [outputTokenModal, setOutputTokenModal] = useState(false);
   const [connectWalletModal, setConnectWalletModal] = useState(false);
+
+  //INPUT STATES
+
   const [exchangeInput, setExchangeInput] = useState(0);
   const [exchangeOutput, setExchangeOutput] = useState(0);
+  const [minutes, setMinutes] = useState(20);
   const [selectedToken, setSelectedToken] = useState({
     image: ethereum,
     address: "0xc778417e063141139fce010982780140aa0cd5ab",
@@ -50,19 +57,16 @@ const Exchange = () => {
     title: "Test",
   });
 
-  const handleInput = async(_in) => {
+  const handleInput = async (_in) => {
     setExchangeInput(_in);
-    console.log(_in,exchangeInput);
     const path = new Array(1);
     path[0] = selectedToken.address;
     path[1] = selectedOutputToken.address;
-    const output = await getQuote(exchangeInput, path);
+    const output = await getQuote(_in, path);
     setExchangeOutput(output[1]);
-  }
-
-  const handleSwap = () => {
-    
   };
+
+  const handleSwap = () => {};
   //RENDER TRADE HEADER
 
   const renderHeader = (
@@ -263,7 +267,12 @@ const Exchange = () => {
         <Modal variant="recent" setIsOpenModal={setRecentTransactionModal} />
       )}
       {settingsModal && (
-        <Modal variant="settings" setIsOpenModal={setSettingsModal} />
+        <Modal
+          variant="settings"
+          setIsOpenModal={setSettingsModal}
+          minutes={minutes}
+          setMinutes={setMinutes}
+        />
       )}
       <Modal
         variant="connectWallet"

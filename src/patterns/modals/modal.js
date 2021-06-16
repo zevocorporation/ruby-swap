@@ -62,11 +62,10 @@ import switchToDesktop from "../../assets/icons/switchToDesktop.svg";
 
 export const balance = async (address) => {
   if (window.ethereum.selectedAddress != null) {
-  const balance2 = Web3.utils.fromWei('0', "ether");
+    const balance2 = Web3.utils.fromWei("0", "ether");
 
-  return balance2;
+    return balance2;
   }
-  
 };
 
 const Modal = ({
@@ -75,6 +74,8 @@ const Modal = ({
   setIsOpenModal,
   setIndicator,
   setSaveChartModal,
+  minutes,
+  setMinutes,
 }) => {
   const dispatch = useDispatch();
 
@@ -357,7 +358,12 @@ const Modal = ({
         <img src={help_circle} alt="help" />
       </p>
       <div className="transaction">
-        <input type="number" value="02" readOnly />
+        <input
+          type="number"
+          value={minutes}
+          min="20"
+          onChange={(e) => setMinutes(e.target.value)}
+        />
         <span className="text_regular_14_o7">Minutes</span>
       </div>
       <p className="text_regular_14">Audio</p>

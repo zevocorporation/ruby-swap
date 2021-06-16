@@ -29,7 +29,6 @@ import edit_user from "../assets/icons/edit_user.svg";
 import logout from "../assets/icons/logout.svg";
 import chat from "../assets/icons/chat.svg";
 import menuIcon from "../assets/icons/menu.svg";
-import Web3 from "web3";
 
 const Header = () => {
   //INITIALIZING HOOKS
